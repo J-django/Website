@@ -1,0 +1,415 @@
+<template>
+    <div class="body">
+        <label class="blog-label">博客：</label>
+        <div class="blog-wrapper">
+            <jy-card>
+                <div class="blog" :style="{ 'background-image': `url(${Github})` }">
+                    <div class="backdrop"></div>
+                    <div class="link-box">
+                        <span class="logo">
+                            <svg class="button-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="push-wrapper">
+                            <span class="blog-title">J-Django-Github</span>
+                            <div class="push-inner">
+                                <div class="push-desc">
+                                    <span class="push-title">Source URL:</span>
+                                    <span class="push-url">
+                                        <jy-a :href="'https://github.com'" type :title="'目标首页：https://github.com'">
+                                            (https://github.com)
+                                        </jy-a>
+                                    </span>
+                                </div>
+                                <div class="push-link">
+                                    <jy-a :href="'https://github.com/J-Django-Github'" type
+                                        :title="'https://github.com/J-Django-Github'">
+                                        <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
+                                            <path
+                                                d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
+                                                p-id="13330"></path>
+                                        </svg>
+                                    </jy-a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </jy-card>
+            <jy-card>
+                <div class="blog" :style="{ 'background-image': `url(${Gitee})` }">
+                    <div class="backdrop"></div>
+                    <div class="link-box">
+                        <span class="logo">
+                            <svg class="button-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512z m259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-0.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l0.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="push-wrapper">
+                            <span class="blog-title">J-Django-Gitee</span>
+                            <div class="push-inner">
+                                <div class="push-desc">
+                                    <span class="push-title">Source URL:</span>
+                                    <span class="push-url">
+                                        <jy-a :href="'https://gitee.com'" type :title="'目标首页：https://gitee.com'">
+                                            (https://gitee.com)
+                                        </jy-a>
+                                    </span>
+                                </div>
+                                <div class="push-link">
+                                    <jy-a :href="'https://gitee.com/J-Django-Gitee'" type
+                                        :title="'https://gitee.com/J-Django-Gitee'">
+                                        <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
+                                            <path
+                                                d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
+                                                p-id="13330"></path>
+                                        </svg>
+                                    </jy-a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </jy-card>
+            <jy-card>
+                <div class="blog" :style="{ 'background-image': `url(${Juejin})` }">
+                    <div class="backdrop"></div>
+                    <div class="link-box">
+                        <span class="logo">
+                            <svg class="button-icon" viewBox="0 0 36 28" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.5875 6.77268L21.8232 3.40505L17.5875 0.00748237L17.5837 0L13.3555 3.39757L17.5837 6.76894L17.5875 6.77268ZM17.5863 17.3955H17.59L28.5161 8.77432L25.5526 6.39453L17.59 12.6808H17.5863L17.5825 12.6845L9.61993 6.40201L6.66016 8.78181L17.5825 17.3992L17.5863 17.3955ZM17.5828 23.2891L17.5865 23.2854L32.2133 11.7456L35.1768 14.1254L28.5238 19.3752L17.5865 28L0.284376 14.3574L0 14.1291L2.95977 11.7531L17.5828 23.2891Z" />
+                            </svg>
+                        </span>
+                        <span class="push-wrapper">
+                            <span class="blog-title">J-Django-Juejin</span>
+                            <div class="push-inner">
+                                <div class="push-desc">
+                                    <span class="push-title">Source URL:</span>
+                                    <span class="push-url">
+                                        <jy-a :href="'https://juejin.cn'" type :title="'目标首页：https://juejin.cn'">
+                                            (https://juejin.cn)
+                                        </jy-a>
+                                    </span>
+                                </div>
+                                <div class="push-link">
+                                    <jy-a :href="'https://juejin.cn/user/4130211768306391'" type
+                                        :title="'https://juejin.cn/user/4130211768306391'">
+                                        <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
+                                            <path
+                                                d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
+                                                p-id="13330"></path>
+                                        </svg>
+                                    </jy-a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </jy-card>
+            <jy-card>
+                <div class="blog" :style="{ 'background-image': `url(${Zhihu})` }">
+                    <div class="backdrop"></div>
+                    <div class="link-box">
+                        <span class="logo">
+                            <svg t="1687277805345" class="button-icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="9137">
+                                <path
+                                    d="M572.228571 189.828571V844.571429h68.571429l28.8 81.6L791.2 844.571429h150.285714V189.828571H572.228571z m283.085715 568h-68.457143l-85.828572 57.6-20.342857-57.6h-20.571428V279.2h195.085714v478.628571zM528.114286 483.314286H376.342857c2.4-51.314286 4.914286-119.2 7.542857-197.6h149.6l-0.114285-9.257143c0-0.685714-0.228571-16.8-2.628572-33.257143-2.4-17.142857-7.542857-39.885714-24-39.885714H255.771429c5.028571-23.542857 17.942857-79.657143 33.6-107.2l7.314285-12.8-14.742857-0.8c-0.914286 0-22.4-1.028571-47.314286 12.114285-40.8 21.714286-59.085714 64.457143-67.085714 96.457143-21.028571 83.542857-50.971429 141.6-63.657143 166.4-3.771429 7.314286-6.057143 11.657143-7.085714 14.628572-2.057143 5.6-0.914286 11.2 3.2 14.857143 12 10.857143 43.657143-3.314286 44-3.428572 0.685714-0.342857 1.485714-0.685714 2.514286-1.142857 15.885714-7.2 62.971429-28.571429 79.771428-96.571429h64.8c0.8 36.8 3.542857 158.171429 3.314286 197.6h-161.142857l-2.4 1.714286c-26.4 19.314286-34.857143 72.228571-35.2 74.514286l-1.6 10.514286h190.857143c-14.057143 89.485714-30.285714 129.6-38.857143 145.6-4.228571 8-8.342857 16-12.228572 23.771428-24.342857 48.228571-49.6 98.057143-144.342857 175.542857-4.114286 3.2-8 9.142857-5.485714 15.657143 2.742857 7.2 10.628571 10.4 28.114286 10.4 6.171429 0 13.485714-0.342857 22.171428-1.142857 57.028571-5.028571 115.2-20.571429 154.4-100.114286 19.428571-40.114286 36.228571-81.942857 50.171429-124.457143L494.857143 898.285714l5.714286-13.714285c0.914286-2.171429 21.714286-52.914286 5.828571-109.6l-0.571429-2.057143-123.542857-140.571429-25.142857 18.971429c7.314286-29.828571 12.114286-57.028571 14.285714-81.257143h181.371429v-9.142857c0-45.828571-21.142857-73.028571-21.942857-74.171429l-2.742857-3.428571z"
+                                    p-id="9138"></path>
+                            </svg>
+                        </span>
+                        <span class="push-wrapper">
+                            <span class="blog-title">J-Django-Zhihu</span>
+                            <div class="push-inner">
+                                <div class="push-desc">
+                                    <span class="push-title">Source URL:</span>
+                                    <span class="push-url">
+                                        <jy-a :href="'https://www.zhihu.com'" type :title="'目标首页：https://www.zhihu.com'">
+                                            (https://www.zhihu.com)
+                                        </jy-a>
+                                    </span>
+                                </div>
+                                <div class="push-link">
+                                    <jy-a :href="'https://www.zhihu.com/people/a-zheng-68-32-80'" type
+                                        :title="'https://www.zhihu.com/people/a-zheng-68-32-80'">
+                                        <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
+                                            <path
+                                                d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
+                                                p-id="13330"></path>
+                                        </svg>
+                                    </jy-a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </jy-card>
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import Github from '@/assets/images/github.jpeg'
+import Gitee from '@/assets/images/gitee.jpeg'
+import Juejin from '@/assets/images/juejin.jpeg'
+import Zhihu from '@/assets/images/zhihu.jpeg'
+</script>
+
+<style lang="scss" scoped>
+.body {
+    padding: 16px;
+    margin: 0 auto;
+    width: 100%;
+
+    .blog-label {
+        margin-left: 16px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .blog-wrapper {
+        $blogSize: 217px;
+        $blogGap: 16px;
+        $radius: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        ::v-deep .jy-card {
+            margin: $blogGap;
+            width: $blogSize;
+            height: $blogSize;
+            border-radius: $radius;
+            overflow: hidden;
+            border: none;
+
+            &:hover {
+                .blog {
+                    background-size: 105%;
+
+                    .backdrop {
+                        backdrop-filter: blur(2px);
+                        background-color: rgba(var(--t-background-color-rgba), .65);
+                    }
+
+                    .link-box {
+                        opacity: 1;
+                        visibility: visible;
+                        z-index: 10;
+                    }
+                }
+            }
+
+            .jy-card-body {
+                padding: 0;
+                margin: 0;
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
+            .blog {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: background-size .35s;
+
+                .backdrop {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 5;
+                    transition: backdrop-filter .35s, background-color .35s;
+                }
+
+
+                .link-box {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    visibility: hidden;
+                    z-index: -1;
+                    transition: opacity .35s, visibility .35s, z-index .35s;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .logo {
+                        padding: 10px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+
+                        .button-icon {
+                            width: 24px;
+                            height: 24px;
+                            fill: currentColor;
+                        }
+                    }
+
+                    .push-wrapper {
+                        $iconSize: 28px;
+                        $padding: 8px;
+                        $gap: 8px;
+                        padding: $padding;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .blog-title {
+                            margin-bottom: $gap;
+                            display: block;
+                            width: 100%;
+                            color: var(--t-text-color);
+                            font-size: 18px;
+                            font-weight: 600;
+                            text-align: left;
+                            word-break: keep-all;
+                            overflow: hidden;
+                        }
+
+                        .push-inner {
+                            $pushButtonSize: 36px;
+                            flex-grow: 1;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            justify-content: center;
+                            gap: $gap;
+
+                            .push-desc {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                font-weight: 600;
+                                text-align: left;
+
+                                .push-title {
+                                    width: 100%;
+                                    display: block;
+                                    color: var(--t-text-color-1);
+                                    font-size: 14px;
+                                }
+
+                                .push-url {
+                                    width: calc($blogSize - $gap - $pushButtonSize - calc($padding * 2));
+                                    color: var(--t-text-color-2);
+                                    font-size: 12px;
+
+                                    .jy-a {
+                                        display: block;
+                                        width: 100%;
+                                        color: inherit;
+                                        font-size: inherit;
+                                        height: auto;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+
+                                        &:hover {
+                                            color: var(--t-text-color-1);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .push-link {
+                                width: $pushButtonSize;
+                                height: $pushButtonSize;
+                                flex-shrink: 0;
+                                display: flex;
+                                align-items: flex-end;
+
+                                .push-icon {
+                                    flex-shrink: 0;
+                                    width: $iconSize;
+                                    height: $iconSize;
+                                    fill: var(--t-text-color);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    .body {
+        max-width: 640px;
+
+        .blog-wrapper {
+            justify-content: center;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .body {
+        max-width: 768px;
+
+        .blog-wrapper {
+            justify-content: center;
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .body {
+        max-width: 960px;
+
+        .blog-wrapper {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .body {
+        max-width: 1024px;
+
+        .blog-wrapper {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .body {
+        max-width: 1280px;
+
+        .blog-wrapper {
+            justify-content: flex-start;
+        }
+    }
+}
+</style>

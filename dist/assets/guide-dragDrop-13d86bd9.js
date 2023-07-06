@@ -1,0 +1,1 @@
+import{T as o,E as a}from"./example-2dfd9c54.js";import{f as r,o as t,c as n,b as e}from"./index-340af4a6.js";const _=r({__name:"guide-dragDrop",setup(i){return(p,d)=>(t(),n("div",null,[e(o,{title:"Drag'n'Drop",id:"Id_DragDrop",size:"large"}),e(a,{title:"基础 Foundation",id:"Id_DragDrop_Foundation"})]))}});export{_ as default};
