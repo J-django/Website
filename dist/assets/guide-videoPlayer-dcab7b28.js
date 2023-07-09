@@ -1,1 +1,0 @@
-import{T as o,E as a}from"./example-2dfd9c54.js";import{f as t,o as i,c as r,b as e}from"./index-340af4a6.js";const c=t({__name:"guide-videoPlayer",setup(d){return(l,n)=>(i(),r("div",null,[e(o,{title:"VideoPlayer 视频播放器",id:"Id_VideoPlayer",size:"large"}),e(a,{title:"基础 Foundation",id:"Id_VideoPlayer_Foundation"})]))}});export{c as default};

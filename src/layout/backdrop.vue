@@ -34,5 +34,7 @@ onUnmounted(() => {
     left: 0;
     z-index: var(--backdrop-z-index);
     background: var(--backdrop-bg-color);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
 </style>

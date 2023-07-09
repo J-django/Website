@@ -1,0 +1,1 @@
+import{f as t,h as o,g as n,C as _,D as a,c,o as i,_ as d}from"./index-da3afd77.js";const l={class:"home"},r=t({__name:"index",setup(u){const e=o(!0);return n(()=>{setTimeout(()=>{e.value=!1},1e3)}),(p,f)=>{const s=_("loading");return a((i(),c("div",l,null,512)),[[s,e.value]])}}});const m=d(r,[["__scopeId","data-v-352cb2fe"]]);export{m as default};

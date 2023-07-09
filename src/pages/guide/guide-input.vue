@@ -104,7 +104,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>事件名</th>
+                        <th>事件名<Code text="@/v-on" /></th>
                         <th>说明</th>
                         <th>类型</th>
                     </Thead>
@@ -125,9 +125,23 @@
                         </td>
                     </Tbody>
                     <Tbody>
+                        <td>focus</td>
+                        <td>输入框获得焦点时触发</td>
+                        <td>
+                            <Code text="Function() => void" />
+                        </td>
+                    </Tbody>
+                    <Tbody>
+                        <td>blur</td>
+                        <td>输入框失去焦点时触发</td>
+                        <td>
+                            <Code text="Function() => void" />
+                        </td>
+                    </Tbody>
+                    <Tbody>
                         <td>clear</td>
                         <td>
-                            当<Code text="clear" />属性存在并且点击时触发
+                            当<Code :text="`clear=\x22true\x22`" />并且点击时触发
                         </td>
                         <td>
                             <Code text="Function() => void" />
@@ -140,18 +154,46 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>插槽名</th>
+                        <th>插槽名<Code text="#" /></th>
                         <th>说明</th>
                     </Thead>
                 </template>
                 <template #tbody>
                     <Tbody>
                         <td>prefix-icon</td>
-                        <td>前缀</td>
+                        <td>输入框前缀<Code :text="`type=\x22textarea\x22`" />时无效</td>
                     </Tbody>
                     <Tbody>
                         <td>suffix-icon</td>
-                        <td>后缀</td>
+                        <td>输入框后缀<Code :text="`type=\x22textarea\x22`" />时无效</td>
+                    </Tbody>
+                </template>
+            </Table>
+        </Example>
+        <Example title="暴露 Exposes" id="Id_Input_Exposes">
+            <Table>
+                <template #thead>
+                    <Thead>
+                        <th>名称</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                    </Thead>
+                </template>
+                <template #tbody>
+                    <Tbody>
+                        <td>focus</td>
+                        <td>输入框获得焦点</td>
+                        <td><Code text="Function() => void" /></td>
+                    </Tbody>
+                    <Tbody>
+                        <td>blur</td>
+                        <td>输入框失去焦点</td>
+                        <td><Code text="Function() => void" /></td>
+                    </Tbody>
+                    <Tbody>
+                        <td>clear</td>
+                        <td>清空输入框内容</td>
+                        <td><Code text="Function() => void" /></td>
                     </Tbody>
                 </template>
             </Table>

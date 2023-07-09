@@ -95,11 +95,11 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-DragDrop",
-        path: "/guide/dragDrop",
-        component: () => import("@/pages/guide/guide-dragDrop.vue"),
+        name: "Guide-Draggable",
+        path: "/guide/draggable",
+        component: () => import("@/pages/guide/guide-draggable.vue"),
         meta: <RouteMeta>{
-          title: "Drag'n'Drop 拖放",
+          title: "Draggable 拖放",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,

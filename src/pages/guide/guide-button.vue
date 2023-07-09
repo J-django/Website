@@ -151,7 +151,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>插槽名</th>
+                        <th>插槽名<Code text="#" /></th>
                         <th>说明</th>
                     </Thead>
                 </template>

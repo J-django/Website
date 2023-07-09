@@ -1,6 +1,5 @@
 /// <reference types="vite/client" />
 declare module 'prismjs';
-declare module 'vue-instantsearch';
 declare module '@popperjs/core';
 declare module '*.vue' {
     import type { DefineComponent } from 'vue'

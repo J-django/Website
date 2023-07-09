@@ -3,7 +3,7 @@ import "@/styles/style.scss";
 import App from "./App.vue";
 import router from "@/router";
 import pinia from '@/store'
-import useComponent from '@/components/component'
+import useComponent from '@/components'
 import * as useDirective from '@/directives'
 import "bootstrap-icons/font/bootstrap-icons.css";
 

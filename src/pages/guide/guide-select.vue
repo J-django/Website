@@ -67,7 +67,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>事件名</th>
+                        <th>事件名<Code text="@/v-on" /></th>
                         <th>说明</th>
                         <th>类型</th>
                     </Thead>

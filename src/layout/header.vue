@@ -13,8 +13,11 @@
                 <div class="content">
                     <div class="curtain" v-if="curtainChecked"></div>
                     <div class="content-body">
+                        <!-- 此处插入Agolia查询 -->
+                        <div class="JYNavBarSearch search">
+                            <Algolia />
+                        </div>
                         <nav class="JYFlyout navBarMenu">
-                            <!-- 此处插入Agolia查询 -->
                             <template v-for="(item, index) of AsideBar" :key="index">
                                 <div class="JYFlyout navBarMenuGroup" v-if="Array.isArray(item.children)">
                                     <button class="button">
@@ -136,6 +139,7 @@ import ThemeSwitch from '@/components/theme.vue'
 import Appearance from '@/components/appearance.vue'
 import Hamburger from '@/components/hamburger.vue'
 import Outside from '@/components/outside.vue'
+import Algolia from '@/components/algolia-button.vue'
 import { menuGroupActive } from '@/utils/interface/index'
 
 const env = import.meta.env;
@@ -544,6 +548,11 @@ onUnmounted(() => {
         position: relative;
     }
 
+    .JYNavBarSearch {
+        display: flex;
+        align-items: center;
+    }
+
     .screen {
         position: fixed;
         // top: calc(var(--header-height) + 1px);
@@ -777,6 +786,11 @@ onUnmounted(() => {
                 }
             }
         }
+
+        .JYNavBarSearch {
+            flex-grow: 1;
+            padding-left: 24px;
+        }
     }
 
     .hamburger {
@@ -869,6 +883,10 @@ onUnmounted(() => {
                     }
                 }
             }
+        }
+
+        .JYNavBarSearch {
+            padding-left: 32px;
         }
     }
 }
