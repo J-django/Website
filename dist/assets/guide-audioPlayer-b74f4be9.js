@@ -1,1 +1,0 @@
-import{T as a,E as o}from"./example-dd8d5b01.js";import{f as t,o as i,c as r,b as e}from"./index-da3afd77.js";const _=t({__name:"guide-audioPlayer",setup(d){return(l,n)=>(i(),r("div",null,[e(a,{title:"AudioPlayer 音频播放器",id:"Id_AudioPlayer",size:"large"}),e(o,{title:"基础 Foundation",id:"Id_AudioPlayer_Foundation"})]))}});export{_ as default};
