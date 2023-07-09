@@ -8,12 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-# dist
+dist
 #dist-ssr
 *.local
-#.env
-#.env.delvlopment
-#.env.production
+dialin.cn_nginx
+.env
+.env.delvlopment
+.env.production
 
 # Editor directories and files
 .vscode/*
