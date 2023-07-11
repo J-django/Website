@@ -7,14 +7,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-/node_modules
-/dist
+node_modules/
+dist/
 #dist-ssr
-*.local
+.local
 dialin.cn_nginx
-env
-env.delvlopment
-env.production
+.env
+.env.delvlopment
+.env.production
+.docsearch.json
+.nginx.conf
 
 # Editor directories and files
 .vscode/*
