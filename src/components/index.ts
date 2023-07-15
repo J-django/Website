@@ -10,6 +10,7 @@ import JYOption from './controls/jy-option.vue'
 import JYDivider from './controls/jy-divider.vue'
 import JYAccordion from './controls/jy-accordion.vue'
 import JYDraggable from './controls/jy-draggable.vue'
+import JYAudio from './controls/jy-audio.vue'
 
 export default {
     install(Vue: any) {
@@ -25,5 +26,6 @@ export default {
         Vue.component('jy-divider', JYDivider);
         Vue.component('jy-accordion', JYAccordion);
         Vue.component('jy-draggable', JYDraggable);
+        Vue.component('jy-audio', JYAudio);
     }
 }

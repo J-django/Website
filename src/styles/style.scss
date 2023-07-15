@@ -157,6 +157,7 @@ div {
   --header-height   : 64px;
   --jy-input-height : 34px;
   --jy-select-height: 34px;
+  --jy-audio-height : 58px;
 
   // color
   --blue          : #0D6EFD;
@@ -201,6 +202,8 @@ div {
   --backdrop-z-index: 40;
   --sidebar-z-index : 50;
   --loading-z-index : 60;
+  --progress-z-index: 10;
+  --buffered-z-index: 5;
 
   // transition
   --transition-duration-fast: .2s;
@@ -242,11 +245,6 @@ div {
   --t-background-color-rgba      : 255, 255, 255; // 背景色rgba
   --t-card-background-color-rgba : 241, 241, 242; // 卡片背景rgba
   --t-label-background-color-rgba: 246, 246, 247; // 标签背景色rgba
-
-  // scrollbar
-  --t-scrollbar-color            : rgb(241, 241, 241);
-  --t-scrollbar-thumb-color      : rgb(193, 193, 193);
-  --t-scrollbar-thumb-hover-color: rgb(168, 168, 168);
 }
 
 html.dark {
@@ -278,11 +276,6 @@ html.dark {
   --t-background-color-rgba      : 30, 30, 32; // 背景色rgba
   --t-card-background-color-rgba : 37, 37, 41; // 卡片背景rgba
   --t-label-background-color-rgba: 49, 49, 54; // 标签背景色rgba
-
-  // scrollbar
-  --t-scrollbar-color            : rgb(66, 66, 66);
-  --t-scrollbar-thumb-color      : rgb(104, 104, 104);
-  --t-scrollbar-thumb-hover-color: rgb(123, 123, 123);
 }
 
 // 引导页
@@ -354,6 +347,7 @@ div#driver-popover-item {
   background             : transparent;
   -webkit-backdrop-filter: none;
   backdrop-filter        : none;
+  will-change            : background, backdrop-filter;
   animation              : containerTranslate .25s 1 forwards;
 
   .DocSearch-Modal {
@@ -361,8 +355,9 @@ div#driver-popover-item {
     transform    : translateY(30px) scale(.85);
     background   : var(--t-background-color);
     box-shadow   : var(--box-shadow-2);
-    border-radius: 12px;
+    border-radius: calc(var(--border-radius) * 2);
     opacity      : 0;
+    will-change  : opacity, transform;
     animation    : modalTranslate .25s 1 forwards;
 
     .DocSearch-SearchBar {

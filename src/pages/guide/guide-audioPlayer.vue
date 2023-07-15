@@ -2,7 +2,7 @@
     <div>
         <Title title="AudioPlayer 音频播放器" id="Id_AudioPlayer" size="large" />
         <Example title="基础 Foundation" id="Id_AudioPlayer_Foundation">
-
+            <jy-audio />
         </Example>
     </div>
 </template>

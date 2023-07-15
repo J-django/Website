@@ -758,21 +758,24 @@ onUnmounted(() => {
 }
 
 @media (min-width: 640px) {
-    .navbar-wrapper {
-        .container {
-            max-width: 640px;
-        }
+    .navbar-wrapper {}
+
+    .container {
+        max-width: 640px;
     }
 }
 
 @media (min-width: 768px) {
+
+    .container {
+        max-width: 768px;
+    }
+
     .navbar {
         .navbar-wrapper {
             padding: 0 32px;
 
             .container {
-                max-width: 768px;
-
                 .content {
                     .content-body {
                         .navBarMenu {
@@ -799,13 +802,15 @@ onUnmounted(() => {
 }
 
 @media (min-width: 960px) {
+    .container {
+        max-width: 768px;
+    }
+
     .navbar {
         position: fixed;
 
         .navbar-wrapper {
             .container {
-                max-width: 768px;
-
                 .content {
                     .content-body {
                         .navBarMenu {
@@ -892,21 +897,23 @@ onUnmounted(() => {
 }
 
 @media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
     .navbar {
-        .navbar-wrapper {
-            .container {
-                max-width: 1024px;
-            }
-        }
+        .navbar-wrapper {}
     }
 }
 
 @media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+
     .navbar {
         .navbar-wrapper {
             .container {
-                max-width: 1280px;
-
                 .content {
                     .content-body {
                         .navBarMenu {

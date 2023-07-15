@@ -11,9 +11,9 @@ import '@docsearch/css';
 onMounted(() => {
     docsearch({
         container: '#docsearch',
-        appId: 'R2IYF7ETH7',
-        apiKey: '599cec31baffa4868cae4e79f180729b',
-        indexName: 'docsearch',
+        appId: '41VQCFDI5L',
+        apiKey: '52537ec0321c82228a0094698355d117',
+        indexName: 'dialin',
         maxResultsPerGroup: 5,
     });
 })
@@ -85,13 +85,8 @@ onMounted(() => {
         .DocSearch.DocSearch-Button {
             color: var(--t-text-color-2);
             background-color: var(--t-card-background-color);
-            border: 1px solid transparent;
             box-shadow: var(--box-shadow);
             transition: color .25s, border-color .25s;
-
-            &:hover {
-                border-color: var(--t-border-color);
-            }
 
             .DocSearch-Button-Container {
                 margin-right: 8px;

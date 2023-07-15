@@ -11,12 +11,10 @@ node_modules/
 dist/
 #dist-ssr
 .local
-dialin.cn_nginx
+dialin.cn_nginx/
 .env
-.env.delvlopment
+.env.development
 .env.production
-.docsearch.json
-.nginx.conf
 
 # Editor directories and files
 .vscode/*
