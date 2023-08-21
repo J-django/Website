@@ -1,20 +1,6 @@
 <template>
     <div class="jy-audio">
         <div class="jy-audio__wrapper">
-            <div class="jy-audio-progress__wrapper">
-                <span class="jy-audio-progress__start-time">00:01</span>
-                <div class="jy-audio-progress__inner">
-                    <audio style="display: none;" @play="progressPlayChange" @loadedmetadata="progressLoadedMetaDataChange"
-                        @playing="progressPlayingChange" @timeupdate="progressTimeUpdateChange"
-                        @ended="progressEndedChange">
-                        <source type="audio/ogg" :src="props.url">
-                        <source type="audio/mpeg" :src="props.url">
-                    </audio>
-                    <div class="jy-audio-progress__bar"></div>
-                    <div class="jy-audio-buffered__bar"></div>
-                </div>
-                <span class="jy-audio-progress__end-time">01:30</span>
-            </div>
             <div class="jy-audio-operate__wrapper">
                 <button class="jy-audio-operate__rewind">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="button-icon"
@@ -25,12 +11,14 @@
                             d="M.404 7.304a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696L.404 7.304Z" />
                     </svg>
                 </button>
-                <button class="jy-audio-operate__play">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="button-icon" viewBox="0 0 16 16">
+                <button class="jy-audio-operate__play" @click="audioConfig.state = !audioConfig.state">
+                    <svg v-if="!audioConfig.state" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="button-icon" viewBox="0 0 16 16">
                         <path
                             d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                    </svg> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="button-icon" viewBox="0 0 32 32">
+                    </svg>
+                    <svg v-else xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="button-icon"
+                        viewBox="0 0 32 32">
                         <path fill="currentColor"
                             d="M12 6h-2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm10 0h-2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z" />
                     </svg>
@@ -43,6 +31,40 @@
                             d="M15.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C8.713 12.69 8 12.345 8 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692Z" />
                     </svg>
                 </button>
+            </div>
+            <div class="jy-audio-progress__wrapper">
+                <span class="jy-audio-progress__start-time">00:00</span>
+                <div class="jy-audio-progress__inner">
+                    <audio class="jy-audio-process__audio" @play="progressPlayChange"
+                        @loadedmetadata="progressLoadedMetaDataChange" @playing="progressPlayingChange"
+                        @timeupdate="progressTimeUpdateChange" @ended="progressEndedChange">
+                        <source type="audio/ogg" :src="props.url">
+                        <source type="audio/mpeg" :src="props.url">
+                    </audio>
+                    <!-- <div class="jy-audio-progress__bar"></div>
+                    <div class="jy-audio-buffered__bar"></div> -->
+                    <input type="range" v-model="audioConfig.progress" :style="{ '--value': `${audioConfig.progress}%` }">
+                </div>
+                <span class="jy-audio-progress__end-time">
+                    <svg v-if="audioConfig.loading" xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                        <circle cx="18" cy="12" r="0" fill="currentColor">
+                            <animate attributeName="r" begin=".67" calcMode="spline" dur="1.5s"
+                                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite"
+                                values="0;2;0;0" />
+                        </circle>
+                        <circle cx="12" cy="12" r="0" fill="currentColor">
+                            <animate attributeName="r" begin=".33" calcMode="spline" dur="1.5s"
+                                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite"
+                                values="0;2;0;0" />
+                        </circle>
+                        <circle cx="6" cy="12" r="0" fill="currentColor">
+                            <animate attributeName="r" begin="0" calcMode="spline" dur="1.5s"
+                                keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite"
+                                values="0;2;0;0" />
+                        </circle>
+                    </svg>
+                    <template v-else>01:30</template>
+                </span>
             </div>
         </div>
     </div>
@@ -61,20 +83,36 @@ const props = defineProps({
 const emits = defineEmits([])
 
 const audioConfig = reactive({
+    loading: <boolean>true,
     state: <boolean>false,
-    progress: <number>0
+    progress: <number>0,
 })
 
 // Event
-const progressPlayChange = () => { }
+// 预备开始播放时触发
+const progressPlayChange = () => {
+    console.log("progressPlayChange")
+}
 
-const progressLoadedMetaDataChange = () => { }
+// 缓冲完毕时触发
+const progressLoadedMetaDataChange = () => {
+    console.log("progressLoadedMetaDataChange")
+}
 
-const progressPlayingChange = () => { }
+// 开始播放时触发
+const progressPlayingChange = () => {
+    console.log("progressPlayingChange")
+}
 
-const progressTimeUpdateChange = () => { }
+// 播放中触发
+const progressTimeUpdateChange = () => {
+    console.log("progressTimeUpdateChange")
+}
 
-const progressEndedChange = () => { }
+// 播放结束时触发
+const progressEndedChange = () => {
+    console.log("progressEndedChange")
+}
 </script>
 
 <style lang="scss" scoped>
@@ -86,8 +124,9 @@ const progressEndedChange = () => { }
         $gap: 4px;
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         padding: $gap;
+        gap: $gap;
         width: 100%;
         height: var(--jy-audio-height);
         line-height: 1.5;
@@ -100,11 +139,81 @@ const progressEndedChange = () => { }
         transition: box-shadow .25s;
         box-shadow: 0 0 0 1px transparent inset;
 
+        .jy-audio-operate__wrapper {
+            $buttonSize: 24px;
+            $gap: 4px;
+            flex-shrink: 0;
+            padding: $gap;
+            color: var(--t-text-color-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $gap;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+
+            .jy-audio-operate__rewind,
+            .jy-audio-operate__play,
+            .jy-audio-operate__fast,
+            .jy-audio-operate__list,
+            .jy-audio-operate__volume {
+                color: inherit;
+                display: inline-flex;
+                opacity: .9;
+                transition: opacity .25s;
+
+                &:active {
+                    transform-origin: center;
+                    opacity: .6;
+
+                    .button-icon {
+                        transform: scale(.75);
+                    }
+                }
+
+                .button-icon {
+                    width: $buttonSize;
+                    height: $buttonSize;
+                    color: inherit;
+                    will-change: transform;
+                    transition: transform .25s;
+                }
+            }
+
+            .jy-audio-operate__rewind,
+            .jy-audio-operate__fast,
+            .jy-audio-operate__volume {
+
+                &:active {
+                    transform-origin: center;
+
+                    .button-icon {
+                        transform: scale(.55);
+                    }
+                }
+
+                .button-icon {
+                    transform: scale(.75);
+                }
+            }
+
+            .jy-audio-volume__inner {
+                margin-left: 20px;
+                display: inline-flex;
+                gap: $gap;
+
+                .jy-audio-volume__progress {
+                    display: inline-flex;
+                }
+            }
+        }
+
         .jy-audio-progress__wrapper {
             $barHeight: 6px;
             $progressTime: .75s;
             $radius: .1rem;
-            flex-shrink: 0;
+            flex-grow: 1;
             position: relative;
             display: flex;
             flex-direction: row;
@@ -121,21 +230,29 @@ const progressEndedChange = () => { }
                 min-width: 40px;
                 max-width: 80px;
                 font-size: 12px;
+                font-weight: 500;
                 line-height: 1;
-                will-change: color;
+                will-change: color, opacity;
                 animation: progressTimeAnimation $progressTime 1 forwards;
                 z-index: 20;
             }
 
             .jy-audio-progress__end-time {
-                animation-delay: $progressTime;
+                animation-delay: calc($progressTime - .25s);
+
+                .icon {
+                    -webkit-user-select: none;
+                    user-select: none;
+                    width: 32px;
+                    height: 32px;
+                    color: inherit;
+                }
             }
 
             .jy-audio-progress__inner {
                 position: relative;
                 width: 0;
                 height: $barHeight;
-                background-color: rgba(var(--t-text-color-rgba), .25);
                 border-radius: $radius;
                 cursor: pointer;
                 overflow: hidden;
@@ -143,7 +260,12 @@ const progressEndedChange = () => { }
                 user-select: none;
                 -webkit-user-drag: none;
                 will-change: width;
+                opacity: 0;
                 animation: progressInnerAnimation $progressTime 1 forwards;
+
+                .jy-audio-process__audio {
+                    display: none;
+                }
 
                 .jy-audio-progress__bar {
                     position: absolute;
@@ -164,65 +286,29 @@ const progressEndedChange = () => { }
                     background-color: rgba(var(--t-text-color-rgba), .2);
                     z-index: var(--buffered-z-index);
                 }
-            }
 
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(var(--t-text-color-rgba), .25);
+                    cursor: pointer;
 
-        }
-
-        .jy-audio-operate__wrapper {
-            $buttonSize: 28px;
-            $gap: 4px;
-            flex-grow: 1;
-            width: 100%;
-            color: var(--t-text-color-1);
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: $gap;
-            -webkit-user-select: none;
-            user-select: none;
-            -webkit-user-drag: none;
-            border: 1px solid red;
-
-            .jy-audio-operate__rewind,
-            .jy-audio-operate__play,
-            .jy-audio-operate__fast,
-            .jy-audio-operate__list {
-                color: inherit;
-                display: inline-flex;
-
-                &:active {
-                    transform-origin: center;
-                    color: var(--t-text-color-2);
-
-                    .button-icon {
-                        transform: scale(.8);
+                    &::-webkit-slider-thumb {
+                        display: none;
                     }
-                }
 
-                .button-icon {
-                    width: $buttonSize;
-                    height: $buttonSize;
-                    color: inherit;
-                    will-change: transform;
-                    transition: transform .25s, color .25s;
-                }
-            }
-
-            .jy-audio-operate__rewind,
-            .jy-audio-operate__fast {
-
-                &:active {
-                    transform-origin: center;
-
-                    .button-icon {
-                        transform: scale(.55);
+                    &::-webkit-slider-runnable-track {
+                        height: 6px;
+                        background: -webkit-linear-gradient(var(--blue), var(--blue)) no-repeat;
+                        background-size: var(--value) 100%;
                     }
-                }
-
-                .button-icon {
-                    transform: scale(.75);
                 }
             }
         }
@@ -231,6 +317,7 @@ const progressEndedChange = () => { }
 
 @keyframes progressInnerAnimation {
     100% {
+        opacity: 1;
         width: 100%;
     }
 }

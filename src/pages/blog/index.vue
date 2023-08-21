@@ -154,6 +154,44 @@
                     </div>
                 </div>
             </jy-card>
+            <jy-card>
+                <div class="blog" :style="{ 'background-image': `url(${JknWzy})` }">
+                    <div class="backdrop"></div>
+                    <div class="link-box">
+                        <span class="logo" style="color: var(--red);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" width="32" height="32"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 20.325q-.35 0-.713-.125t-.637-.4l-1.725-1.575q-2.65-2.425-4.788-4.813T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.538t2.5-.562q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.275.275-.637.4t-.713.125Z" />
+                            </svg>
+                        </span>
+                        <span class="push-wrapper">
+                            <span class="blog-title">JKN-WZY</span>
+                            <div class="push-inner">
+                                <div class="push-desc">
+                                    <span class="push-title">Source URL:</span>
+                                    <span class="push-url">
+                                        <jy-a :href="'https://www.dialin.cn'" type :title="'目标首页：https://www.dialin.cn'">
+                                            (https://www.dialin.cn)
+                                        </jy-a>
+                                    </span>
+                                </div>
+                                <div class="push-link">
+                                    <jy-a :href="'/JknLoveWzy'" type
+                                        :title="'https://www.zhihu.com/people/a-zheng-68-32-80'">
+                                        <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
+                                            <path
+                                                d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
+                                                p-id="13330"></path>
+                                        </svg>
+                                    </jy-a>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </jy-card>
         </div>
     </div>
 </template>
@@ -163,6 +201,7 @@ import Github from '@/assets/images/github.jpeg'
 import Gitee from '@/assets/images/gitee.jpeg'
 import Juejin from '@/assets/images/juejin.jpeg'
 import Zhihu from '@/assets/images/zhihu.jpeg'
+import JknWzy from '@/assets/images/z82.jpg'
 </script>
 
 <style lang="scss" scoped>

@@ -6,6 +6,8 @@ import pinia from '@/store'
 import useComponent from '@/components'
 import * as useDirective from '@/directives'
 import "bootstrap-icons/font/bootstrap-icons.css";
+// import VConsole from 'vconsole';
+// const vconsole = new VConsole();
 
 const app = createApp(App);
 app.use(router);

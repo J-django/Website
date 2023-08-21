@@ -1,12 +1,13 @@
 <template>
     <div class="home" v-loading="loading">
-
     </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
+
 const loading = ref<Boolean>(true);
+
 onMounted(() => {
     setTimeout(() => {
         loading.value = false

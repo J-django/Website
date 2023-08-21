@@ -152,19 +152,6 @@ export const Guide: Array<RouteRecordRaw> = [
 
 export const AsideBar: Array<RouteRecordRaw> = [
   ...Guide,
-  // {
-  //   name: "DifficultyAnalysis",
-  //   path: "/difficultyAnalysis",
-  //   component: () => import("@/pages/difficultyAnalysis/index.vue"),
-  //   meta: <RouteMeta>{
-  //     title: "难点",
-  //     keepAlive: false,
-  //     hasCurtain: true,
-  //     hasFooter: false,
-  //     hasNav: true,
-  //     hasSidebar: true,
-  //   },
-  // },
   {
     name: "Examples",
     path: "/examples",
@@ -247,5 +234,19 @@ export const routes: Array<RouteRecordRaw> = [
       hasSidebar: false,
       icon: "openAi-dark.png"
     },
+  },
+  {
+    name: "JknLoveWzy",
+    path: "/JknLoveWzy",
+    component: () => import("@/pages/jknwzy/index.vue"),
+    meta: {
+      title: "姜开南与王朝阳",
+      keepAlive: false,
+      hasCurtain: false,
+      hasFooter: false,
+      hasNav: false,
+      hasSidebar: false,
+      icon: "openAi-light.png"
+    }
   }
 ];

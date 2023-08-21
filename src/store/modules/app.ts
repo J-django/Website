@@ -13,8 +13,8 @@ export const useAppStore = defineStore('useAppStore', {
     state: () => ({
         mode: <boolean>false,
     }),
-    getters: {
-    }, actions: {
+    getters: {},
+    actions: {
         getSystemMode() {
             const isDark = useDark()
             this.mode = isDark.value;
