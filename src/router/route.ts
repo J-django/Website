@@ -235,18 +235,4 @@ export const routes: Array<RouteRecordRaw> = [
       icon: "openAi-dark.png"
     },
   },
-  {
-    name: "JknLoveWzy",
-    path: "/JknLoveWzy",
-    component: () => import("@/pages/jknwzy/index.vue"),
-    meta: {
-      title: "姜开南与王朝阳",
-      keepAlive: false,
-      hasCurtain: false,
-      hasFooter: false,
-      hasNav: false,
-      hasSidebar: false,
-      icon: "openAi-light.png"
-    }
-  }
 ];
