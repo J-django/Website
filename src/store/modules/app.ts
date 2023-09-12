@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { WritableComputedRef } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
+
 const isDark = useDark({
     storageKey: 'useDarkKEY',
     valueDark: 'dark',

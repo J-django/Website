@@ -21,11 +21,13 @@
         </div>
     </div>
     <div v-else class="jy-textarea" :class="[props.disabled ? 'is-disabled' : '']" :id="jy_input_id">
-        <textarea :id="props.id" class="jy-textarea__inner" :class="[textarea__inner.focus ? 'is-focus' : '']"
-            :rows="props.rows" :cols="props.cols" :placeholder="placeholder" :disabled="props.disabled"
-            :value="props.modelValue" @input="textarea__innerInputChange" @change="textarea__innerChange"
-            @focus="textarea__innerFocusChange" @focusout="textarea__innerFocusoutChange"
-            @keydown="input__innerKeydownChange" @keyup.enter.native="input__innerKeyupEnterChange" />
+        <div class="jy-textarea__wrapper" :class="[textarea__inner.focus ? 'is-focus' : '']">
+            <textarea :id="props.id" class="jy-textarea__inner" :rows="props.rows" :cols="props.cols"
+                :placeholder="placeholder" :disabled="props.disabled" :value="props.modelValue"
+                @input="textarea__innerInputChange" @change="textarea__innerChange" @focus="textarea__innerFocusChange"
+                @focusout="textarea__innerFocusoutChange" @keydown="input__innerKeydownChange"
+                @keyup.enter.native="input__innerKeyupEnterChange" />
+        </div>
     </div>
 </template>
 
@@ -325,38 +327,44 @@ defineExpose({ focus: getFocus, blur: getBlur, clear: clearInput })
         }
     }
 
-    .jy-textarea__inner {
-        position: relative;
-        display: block;
-        resize: none;
+    .jy-textarea__wrapper {
         padding: 8px 12px;
-        height: auto;
-        // min-height: calc(var(--jy-input-height) * 2);
-        max-height: calc(var(--jy-input-height) * 8);
-        line-height: 1.5;
-        width: 100%;
-        font-size: inherit;
-        font-family: inherit;
-        color: var(--t-text-color);
         background-color: var(--t-card-background-color);
         border-radius: var(--border-radius);
         box-shadow: 0 0 0 1px transparent inset;
-        border: none;
-        outline: none;
         transition: box-shadow .25s;
 
-        &::placeholder {
-            color: var(--t-text-color-2);
-        }
-
-        &:focus {
+        .jy-textarea__inner {
+            position: relative;
+            display: block;
+            resize: none;
+            height: auto;
+            max-height: calc(var(--jy-input-height) * 8);
+            line-height: 1.5;
+            width: 100%;
+            font-size: inherit;
+            font-family: inherit;
+            color: var(--t-text-color);
+            background: none;
+            border: none;
             outline: none;
+            box-shadow: none;
+
+            &::placeholder {
+                color: var(--t-text-color-2);
+            }
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 
-    .jy-textarea__inner.is-focus {
+    .jy-textarea__wrapper.is-focus {
         box-shadow: 0 0 0 1px var(--t-text-color-3) inset;
     }
+
+
 }
 
 .jy-textarea.is-disabled {
