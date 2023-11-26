@@ -66,10 +66,6 @@
             color: var(--t-text-color);
         }
 
-        i.bi {
-            font-size: 20px;
-        }
-
         .button-icon {
             width: 20px;
             height: 20px;

@@ -88,7 +88,7 @@
                     </Tbody>
                     <Tbody>
                         <td>enterkeyhint</td>
-                        <td>Enter键类型<Code text="ios端可用" /></td>
+                        <td>Enter键类型</td>
                         <td>
                             <div style="display: flex;flex-wrap: wrap;gap: 4px;">
                                 <Code text="enter" />/<Code text="done" />/<Code text="go" />/<Code text="next" />/<Code

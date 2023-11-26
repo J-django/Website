@@ -1,6 +1,6 @@
 <template>
     <div class="jy-divider">
-        <div class="jy-divider-inner" :class="['jy-divider-inner--' + props.type]">
+        <div class="jy-divider-inner" :class="['jy-divider-inner--' + props.style]">
             <slot v-if="slots['default']" />
             <template v-else>
                 {{ props.text }}
@@ -19,7 +19,7 @@ const props = defineProps({
         type: String,
         default: ""
     },
-    type: {
+    style: {
         type: String,
         default: "solid",
         validator: (type: string) => {

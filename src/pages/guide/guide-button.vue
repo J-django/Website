@@ -124,8 +124,10 @@
                         <td>类型</td>
                         <td>
                             <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                                <Code text="default" />/<Code text="primary" />/<Code text="success" />/<Code
-                                    text="warning" />/<Code text="danger" />
+                                <Code text="primary" />/
+                                <Code text="success" />/
+                                <Code text="warning" />/
+                                <Code text="danger" />
                             </div>
                         </td>
                         <td>
@@ -143,6 +145,12 @@
                         <td>自定义颜色</td>
                         <td>string</td>
                         <td>—</td>
+                    </Tbody>
+                    <Tbody>
+                        <td>disabled</td>
+                        <td>禁用</td>
+                        <td>boolean</td>
+                        <td>false</td>
                     </Tbody>
                 </template>
             </Table>

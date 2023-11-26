@@ -22,7 +22,7 @@
     z-index: var(--loading-z-index);
 
     svg {
-        width: 3em;
+        width: 2.5em;
         transform-origin: center;
         animation: rotate4 2s linear infinite;
     }

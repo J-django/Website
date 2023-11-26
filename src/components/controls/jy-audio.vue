@@ -3,12 +3,17 @@
         <div class="jy-audio__wrapper">
             <div class="jy-audio-operate__wrapper">
                 <button class="jy-audio-operate__rewind">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="button-icon"
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="button-icon"
                         viewBox="0 0 16 16">
                         <path
                             d="M8.404 7.304a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696L8.404 7.304Z" />
                         <path
                             d="M.404 7.304a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696L.404 7.304Z" />
+                    </svg> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="button-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M2.5 9.402c-2 1.155-2 4.041 0 5.196l9 5.196c1.515.875 3.317.259 4.102-1.096l1.898 1.096c2 1.155 4.5-.288 4.5-2.598V6.804c0-2.31-2.5-3.753-4.5-2.598l-1.898 1.096c-.785-1.355-2.587-1.971-4.102-1.096l-9 5.196ZM16 7.382v9.237l2.5 1.443a1 1 0 0 0 1.5-.866V6.804a1 1 0 0 0-1.5-.866L16 7.38Z"
+                            clip-rule="evenodd" />
                     </svg>
                 </button>
                 <button class="jy-audio-operate__play" @click="audioConfig.state = !audioConfig.state">
@@ -326,5 +331,4 @@ const progressEndedChange = () => {
     100% {
         color: var(--t-text-color-2);
     }
-}
-</style>
+}</style>

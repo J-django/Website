@@ -4,17 +4,30 @@
             :class="[select__inner.focus ? 'is-focus' : '', props.disabled ? 'is-disabled' : '']">
             <input class="jy-select-inner" :id="props.id" readonly :disabled="props.disabled"
                 :placeholder="props.placeholder" v-model="select__inner.currentOption.text" />
-            <div class="jy-select__tool" :class="[props.clear && props.modelValue ? 'clear' : 'checked']"
-                @click="clearSelect">
-                <i class="bi bi-chevron-down checked" />
-                <i class="bi bi-x-circle-fill clear" />
+            <div class="jy-select__tool" :class="[props.clear && props.modelValue ? 'clear' : 'checked']">
+                <div class="tool-inner checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="tool-icon checked"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M4.43 8.512a.75.75 0 0 1 1.058-.081L12 14.012l6.512-5.581a.75.75 0 0 1 .976 1.138l-7 6a.75.75 0 0 1-.976 0l-7-6a.75.75 0 0 1-.081-1.057Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="tool-inner clear" v-if="props.clear && props.modelValue" @click="clearSelect">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="tool-icon" viewBox="0 0 36 36">
+                        <path fill="currentColor"
+                            d="M18 2a16 16 0 1 0 16 16A16 16 0 0 0 18 2Zm8 22.1a1.4 1.4 0 0 1-2 2l-6-6l-6 6.02a1.4 1.4 0 1 1-2-2l6-6.04l-6.17-6.22a1.4 1.4 0 1 1 2-2L18 16.1l6.17-6.17a1.4 1.4 0 1 1 2 2L20 18.08Z"
+                            class="clr-i-solid clr-i-solid-path-1" />
+                        <path fill="none" d="M0 0h36v36H0z" />
+                    </svg>
+                </div>
             </div>
         </div>
         <div ref="slotRef" class="jy-option__wrapper" v-show="select__inner.focus">
             <ul class="jy-option__inner" :style="{ width: `${triggerRef?.offsetWidth}px` }">
                 <template v-if="slots.default" v-for="(item, index) of  slots.default && slots.default() " :key="index">
                     <li class="jy-option" v-if="(item as any).type['__name'] == 'jy-option'"
-                        :class="[select__inner.currentOption == item?.props?.value ? 'checked' : '']"
+                        :class="[select__inner.currentOption.value == item?.props?.value ? 'checked' : '']"
                         @click="checkedLi(item?.props)">
                         {{ item?.props?.text }}
                     </li>
@@ -166,11 +179,11 @@ onMounted(() => {
 
         &:hover {
             .jy-select__tool.clear {
-                .bi.checked {
+                .tool-inner.checked {
                     display: none;
                 }
 
-                .bi.clear {
+                .tool-inner.clear {
                     display: flex;
                 }
             }
@@ -199,34 +212,50 @@ onMounted(() => {
         }
 
         .jy-select__tool {
-            $tool_height: calc(var(--jy-select-height) - 2px);
-            height: $tool_height;
-            width: $tool_height;
-            height: $tool_height;
+            $padding: 4px;
+            $tool_size: calc(var(--jy-select-height) - 2px);
+            height: $tool_size;
+            width: $tool_size;
+            height: $tool_size;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
 
-            .bi {
+            .tool-inner {
+                padding: calc($padding * 2);
+                width: $tool_size;
+                height: $tool_size;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: $tool_height;
-                height: $tool_height;
-                color: var(--grey);
-                font-size: inherit;
-                transition: transform .25s;
+
+                .tool-icon {
+                    width: calc($tool_size);
+                    height: calc($tool_size);
+                    color: var(--grey);
+                    font-size: inherit;
+                    transition: transform .25s;
+                }
+            }
+
+            .tool-inner.clear {
+                display: none;
+
+                .tool-icon {
+                    width: calc($tool_size - calc($padding * 3));
+                    height: calc($tool_size - calc($padding * 3));
+                }
             }
         }
 
         .jy-select__tool.checked {
-            .bi.clear {
+            .tool-icon.clear {
                 display: none;
             }
         }
 
         .jy-select__tool.clear {
-            .bi.clear {
+            .tool-icon.clear {
                 color: var(--grey);
                 display: none;
             }
@@ -237,7 +266,7 @@ onMounted(() => {
         box-shadow: 0 0 0 1px var(--t-text-color-3) inset !important;
 
         .jy-select__tool {
-            .bi.checked {
+            .tool-icon.checked {
                 transform: rotate(180deg);
             }
         }

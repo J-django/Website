@@ -163,7 +163,6 @@ import Github from '@/assets/images/github.jpeg'
 import Gitee from '@/assets/images/gitee.jpeg'
 import Juejin from '@/assets/images/juejin.jpeg'
 import Zhihu from '@/assets/images/zhihu.jpeg'
-import JknWzy from '@/assets/images/z82.jpg'
 </script>
 
 <style lang="scss" scoped>
@@ -179,7 +178,7 @@ import JknWzy from '@/assets/images/z82.jpg'
     }
 
     .blog-wrapper {
-        $blogSize: 217px;
+        $blogSize: 12rem;
         $blogGap: 16px;
         $radius: 16px;
         display: flex;

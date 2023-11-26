@@ -1,5 +1,5 @@
 <template>
-    <div class="chat-box" v-cLoading="loading">
+    <div class="chat-box">
         <Backdrop v-if="chatConfig.backdropChecked" @backDropClose="backDropCloseChange" />
         <div class="chat-menu" :class="[chatConfig.hamburgerChecked ? 'open' : '']">
             <nav class="chat-dialogue-group">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="chat-content">
-            <div class="chat-content-wrapper">
+            <div class="chat-content-wrapper" v-loading="loading">
                 <div class="chat-tool-menu">
                     <jy-button class="hamburger-btn" id="chat-tool-hamburger">
                         <Hamburger :checked="chatConfig.hamburgerChecked" @toggleChange="hamburgerToggleChange" />
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="chat-input" id="collapseIcon">
-                    <div class="chat-input-tool">
+                    <!-- <div class="chat-input-tool">
                         <jy-button-group>
                             <jy-button class="chat-input-tool-button" @click="backTop">
                                 <i class="bi bi-shift button-icon up"></i>
@@ -73,9 +73,9 @@
                                 <i class="bi bi-shift-fill button-icon down"></i>
                             </jy-button>
                         </jy-button-group>
-                    </div>
+                    </div> -->
                     <div class="chat-input-wrapper">
-                        <jy-input type="textarea" enterkeyhint="send" rows="1" placeholder="按Enter发送信息"
+                        <jy-input type="textarea" enterkeyhint="send" :rows="1" placeholder="按Enter发送信息"
                             v-model="chatConfig.currentInput" @keyup.enter="send_Chat_Content" />
                         <div class="chat-input-tool-box">
                             <jy-button v-if="!chatConfig.waiting" class="chat-input__inner send"
@@ -594,11 +594,8 @@ $slideBarWidth: 260px;
                             padding-right: calc($buttonWidth + $padding);
                             min-height: 44px;
                             box-shadow: none;
-                            border: none;
-                            border-radius: var(--border-radius);
                             height: auto;
                             max-height: 200px;
-                            background-color: var(--t-chat-dialogue-color);
 
                             &::placeholder {
                                 color: var(--t-text-color-2);
@@ -690,9 +687,9 @@ $slideBarWidth: 260px;
     width: 100%;
     border-radius: var(--border-radius);
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(0);
     visibility: hidden;
-    animation: chat-exchange-show .25s forwards;
+    animation: chat-exchange-show .25s ease forwards;
 
     .request,
     .response {
