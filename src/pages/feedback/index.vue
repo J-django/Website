@@ -2,10 +2,10 @@
     <div class="feedBack-box">
         <div class="feedBack-content">
             <label class="title" for="feedBack-inner">问题描述：</label>
-            <jy-input id="feedBack-inner" :disabled="submitParams.disabled && submitParams.status == 'submitted'"
+            <dj-textarea id="feedBack-inner" :disabled="submitParams.disabled && submitParams.status == 'submitted'"
                 type="textarea" rows="10" placeholder="请描述您遇到的问题或需要改进的地方" v-model="submitContent" />
-            <jy-button class="submit" :class="[submitParams.status]" :disabled="submitParams.disabled" ref="submit"
-                @click="feedBackSubmit">提交</jy-button>
+            <dj-button class="submit" :class="[submitParams.status]" :disabled="submitParams.disabled" ref="submit"
+                @click="feedBackSubmit">提交</dj-button>
         </div>
     </div>
 </template>
@@ -14,24 +14,6 @@
 import { ref, reactive, watch } from 'vue'
 import * as  _ from 'lodash'
 
-const props = defineProps({
-    data: {
-        type: Array,
-        default: []
-    },
-    text: {
-        type: String,
-        default: ""
-    },
-    value: {
-        type: String,
-        default: ""
-    },
-    clear: {
-        type: Boolean,
-        default: false
-    }
-})
 
 const emits = defineEmits(["change"])
 

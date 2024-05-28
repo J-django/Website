@@ -1,13 +1,21 @@
+<script lang="ts" setup>
+import Example from '@/components/example.vue'
+import Title from '@/components/title.vue'
+import Table from '@/components/table.vue'
+import Thead from '@/components/table-thead.vue'
+import Tbody from '@/components/table-tbody.vue'
+</script>
+
 <template>
     <div>
         <Title title="Divider 分割线" id="Id_Divider" size="large" />
         <Example title="基础 Foundation" id="Id_Divider_Foundation">
-            <jy-divider :text="'New Divider'" />
-            <jy-code :code="`<template>\n\t<jy-divider text=\x22New Divider\x22 />\n</template>`" />
+            <dj-divider :text="'New Divider'" />
+            <dj-code :code="`<template>\n\t<dj-divider text=\x22New Divider\x22 />\n</template>`" />
         </Example>
         <Example title="风格 Style" id="Id_Divider_Style">
-            <jy-divider text="New Divider" type="dashed" />
-            <jy-code :code="`<template>\n\t<jy-divider text=\x22New Divider\x22 type=\x22dashed\x22 />\n</template>`" />
+            <dj-divider text="New Divider" type="dashed" />
+            <dj-code :code="`<template>\n\t<dj-divider text=\x22New Divider\x22 type=\x22dashed\x22 />\n</template>`" />
         </Example>
         <Example title="属性 Attributes" id="Id_Divider_Attributes">
             <Table>
@@ -59,11 +67,3 @@
         </Example>
     </div>
 </template>
-
-<script lang="ts" setup>
-import Example from '@/components/example.vue'
-import Title from '@/components/title.vue'
-import Table from '@/components/table.vue'
-import Thead from '@/components/table-thead.vue'
-import Tbody from '@/components/table-tbody.vue'
-</script>

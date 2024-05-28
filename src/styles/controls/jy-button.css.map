@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EAEF,wBAAwB,CAAA,oBAAC;EAGzB,8BAA8B,CAAA,+BAAC;CAQlC",
-    "sources": [
-        "jy-button.scss"
-    ],
-    "names": [],
-    "file": "jy-button.css"
-}

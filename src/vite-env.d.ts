@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 declare module 'prismjs';
+declare module 'django-ui';
 declare module '@popperjs/core';
 declare module '*.vue' {
     import type { DefineComponent } from 'vue'

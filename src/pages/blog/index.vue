@@ -1,8 +1,16 @@
+<script lang="ts" setup>
+import "./index.less"
+import Github from '@/assets/images/github.jpeg'
+import Gitee from '@/assets/images/gitee.jpeg'
+import Juejin from '@/assets/images/juejin.jpeg'
+import Zhihu from '@/assets/images/zhihu.jpeg'
+</script>
+
 <template>
     <div class="body">
         <label class="blog-label">博客：</label>
         <div class="blog-wrapper">
-            <jy-card>
+            <dj-card>
                 <div class="blog" :style="{ 'background-image': `url(${Github})` }">
                     <div class="backdrop"></div>
                     <div class="link-box">
@@ -19,28 +27,29 @@
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <jy-a :href="'https://github.com'" type :title="'目标首页：https://github.com'">
+                                        <dj-link :href="'https://github.com'" outside
+                                            :title="'目标首页：https://github.com'">
                                             (https://github.com)
-                                        </jy-a>
+                                        </dj-link>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <jy-a :href="'https://github.com/J-Django-Github'" type
-                                        :title="'https://github.com/J-Django-Github'">
+                                    <dj-link :href="'https://github.com/J-django'" outside
+                                        :title="'https://github.com/J-django'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
                                             <path
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </jy-a>
+                                    </dj-link>
                                 </div>
                             </div>
                         </span>
                     </div>
                 </div>
-            </jy-card>
-            <jy-card>
+            </dj-card>
+            <dj-card>
                 <div class="blog" :style="{ 'background-image': `url(${Gitee})` }">
                     <div class="backdrop"></div>
                     <div class="link-box">
@@ -57,13 +66,13 @@
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <jy-a :href="'https://gitee.com'" type :title="'目标首页：https://gitee.com'">
+                                        <dj-link :href="'https://gitee.com'" outside :title="'目标首页：https://gitee.com'">
                                             (https://gitee.com)
-                                        </jy-a>
+                                        </dj-link>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <jy-a :href="'https://gitee.com/J-Django-Gitee'" type
+                                    <dj-link :href="'https://gitee.com/J-Django-Gitee'" outside
                                         :title="'https://gitee.com/J-Django-Gitee'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -71,14 +80,14 @@
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </jy-a>
+                                    </dj-link>
                                 </div>
                             </div>
                         </span>
                     </div>
                 </div>
-            </jy-card>
-            <jy-card>
+            </dj-card>
+            <dj-card>
                 <div class="blog" :style="{ 'background-image': `url(${Juejin})` }">
                     <div class="backdrop"></div>
                     <div class="link-box">
@@ -94,13 +103,13 @@
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <jy-a :href="'https://juejin.cn'" type :title="'目标首页：https://juejin.cn'">
+                                        <dj-link :href="'https://juejin.cn'" outside :title="'目标首页：https://juejin.cn'">
                                             (https://juejin.cn)
-                                        </jy-a>
+                                        </dj-link>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <jy-a :href="'https://juejin.cn/user/4130211768306391'" type
+                                    <dj-link :href="'https://juejin.cn/user/4130211768306391'" outside
                                         :title="'https://juejin.cn/user/4130211768306391'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -108,14 +117,14 @@
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </jy-a>
+                                    </dj-link>
                                 </div>
                             </div>
                         </span>
                     </div>
                 </div>
-            </jy-card>
-            <jy-card>
+            </dj-card>
+            <dj-card>
                 <div class="blog" :style="{ 'background-image': `url(${Zhihu})` }">
                     <div class="backdrop"></div>
                     <div class="link-box">
@@ -133,13 +142,14 @@
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <jy-a :href="'https://www.zhihu.com'" type :title="'目标首页：https://www.zhihu.com'">
+                                        <dj-link :href="'https://www.zhihu.com'" outside
+                                            :title="'目标首页：https://www.zhihu.com'">
                                             (https://www.zhihu.com)
-                                        </jy-a>
+                                        </dj-link>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <jy-a :href="'https://www.zhihu.com/people/a-zheng-68-32-80'" type
+                                    <dj-link :href="'https://www.zhihu.com/people/a-zheng-68-32-80'" outside
                                         :title="'https://www.zhihu.com/people/a-zheng-68-32-80'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -147,269 +157,13 @@
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </jy-a>
+                                    </dj-link>
                                 </div>
                             </div>
                         </span>
                     </div>
                 </div>
-            </jy-card>
+            </dj-card>
         </div>
     </div>
 </template>
-
-<script lang="ts" setup>
-import Github from '@/assets/images/github.jpeg'
-import Gitee from '@/assets/images/gitee.jpeg'
-import Juejin from '@/assets/images/juejin.jpeg'
-import Zhihu from '@/assets/images/zhihu.jpeg'
-</script>
-
-<style lang="scss" scoped>
-.body {
-    padding: 16px;
-    margin: 0 auto;
-    width: 100%;
-
-    .blog-label {
-        margin-left: 16px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .blog-wrapper {
-        $blogSize: 12rem;
-        $blogGap: 16px;
-        $radius: 16px;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        align-content: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        ::v-deep .jy-card {
-            margin: $blogGap;
-            width: $blogSize;
-            height: $blogSize;
-            border-radius: $radius;
-            overflow: hidden;
-            border: none;
-
-            &:hover {
-                .blog {
-                    background-size: 105%;
-
-                    .backdrop {
-                        backdrop-filter: blur(2px);
-                        background-color: rgba(var(--t-background-color-rgba), .65);
-                    }
-
-                    .link-box {
-                        opacity: 1;
-                        visibility: visible;
-                        z-index: 10;
-                    }
-                }
-            }
-
-            .jy-card-body {
-                padding: 0;
-                margin: 0;
-                border: none;
-                outline: none;
-                box-shadow: none;
-            }
-
-            .blog {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                background-size: 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-                transition: background-size .35s;
-
-                .backdrop {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 5;
-                    transition: backdrop-filter .35s, background-color .35s;
-                }
-
-
-                .link-box {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 100%;
-                    height: 100%;
-                    opacity: 0;
-                    visibility: hidden;
-                    z-index: -1;
-                    transition: opacity .35s, visibility .35s, z-index .35s;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-
-                    .logo {
-                        padding: 10px;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-
-                        .button-icon {
-                            width: 24px;
-                            height: 24px;
-                            fill: currentColor;
-                        }
-                    }
-
-                    .push-wrapper {
-                        $iconSize: 28px;
-                        $padding: 8px;
-                        $gap: 8px;
-                        padding: $padding;
-                        position: absolute;
-                        right: 0;
-                        bottom: 0;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-
-                        .blog-title {
-                            margin-bottom: $gap;
-                            display: block;
-                            width: 100%;
-                            color: var(--t-text-color);
-                            font-size: 18px;
-                            font-weight: 600;
-                            text-align: left;
-                            word-break: keep-all;
-                            overflow: hidden;
-                        }
-
-                        .push-inner {
-                            $pushButtonSize: 36px;
-                            flex-grow: 1;
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: nowrap;
-                            justify-content: center;
-                            gap: $gap;
-
-                            .push-desc {
-                                flex: 1;
-                                display: flex;
-                                flex-direction: column;
-                                font-weight: 600;
-                                text-align: left;
-
-                                .push-title {
-                                    width: 100%;
-                                    display: block;
-                                    color: var(--t-text-color-1);
-                                    font-size: 14px;
-                                }
-
-                                .push-url {
-                                    width: calc($blogSize - $gap - $pushButtonSize - calc($padding * 2));
-                                    color: var(--t-text-color-2);
-                                    font-size: 12px;
-
-                                    .jy-a {
-                                        display: block;
-                                        width: 100%;
-                                        color: inherit;
-                                        font-size: inherit;
-                                        height: auto;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        white-space: nowrap;
-
-                                        &:hover {
-                                            color: var(--t-text-color-1);
-                                        }
-                                    }
-                                }
-                            }
-
-                            .push-link {
-                                width: $pushButtonSize;
-                                height: $pushButtonSize;
-                                flex-shrink: 0;
-                                display: flex;
-                                align-items: flex-end;
-
-                                .push-icon {
-                                    flex-shrink: 0;
-                                    width: $iconSize;
-                                    height: $iconSize;
-                                    fill: var(--t-text-color);
-                                    cursor: pointer;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 640px) {
-    .body {
-        max-width: 640px;
-
-        .blog-wrapper {
-            justify-content: center;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .body {
-        max-width: 768px;
-
-        .blog-wrapper {
-            justify-content: center;
-        }
-    }
-}
-
-@media (min-width: 960px) {
-    .body {
-        max-width: 960px;
-
-        .blog-wrapper {
-            justify-content: flex-start;
-        }
-    }
-}
-
-@media (min-width: 1024px) {
-    .body {
-        max-width: 1024px;
-
-        .blog-wrapper {
-            justify-content: flex-start;
-        }
-    }
-}
-
-@media (min-width: 1280px) {
-    .body {
-        max-width: 1280px;
-
-        .blog-wrapper {
-            justify-content: flex-start;
-        }
-    }
-}
-</style>

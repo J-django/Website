@@ -1,34 +1,42 @@
+<script lang="ts" setup>
+import Example from '@/components/example.vue'
+import Title from '@/components/title.vue'
+import Table from '@/components/table.vue'
+import Thead from '@/components/table-thead.vue'
+import Tbody from '@/components/table-tbody.vue'
+</script>
+
 <template>
     <div>
         <Title title="Card 卡片" id="Id_Card" size="large" />
         <Example title="基础（Foundation）" id="Id_Card_Foundation">
-            <jy-card align="center">
+            <dj-card align="center">
                 Content
-            </jy-card>
-            <jy-code :code="`<template>\n\t<jy-card align=\x22center\x22>\n\t\tContent\n\t</jy-card>\n</template>`" />
+            </dj-card>
+            <dj-code :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\tContent\n\t</dj-card>\n</template>`" />
         </Example>
         <Example title="页眉 Header" id="Id_Card_Header">
-            <jy-card align="center">
+            <dj-card align="center">
                 <template #header>
                     Header
                 </template>
                 Content
-            </jy-card>
-            <jy-code
-                :code="`<template>\n\t<jy-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t</jy-card>\n</template>`" />
+            </dj-card>
+            <dj-code
+                :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t</dj-card>\n</template>`" />
         </Example>
         <Example title="页脚 Footer" id="Id_Card_Footer">
-            <jy-card align="center">
+            <dj-card align="center">
                 Content
                 <template #footer>
                     Footer
                 </template>
-            </jy-card>
-            <jy-code
-                :code="`<template>\n\t<jy-card align=\x22center\x22>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</jy-card>\n</template>`" />
+            </dj-card>
+            <dj-code
+                :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</dj-card>\n</template>`" />
         </Example>
         <Example title="页眉，页脚 Header，Footer" id="Id_Card_HeaderFooter">
-            <jy-card align="center">
+            <dj-card align="center">
                 <template #header>
                     Header
                 </template>
@@ -36,9 +44,9 @@
                 <template #footer>
                     Footer
                 </template>
-            </jy-card>
-            <jy-code
-                :code="`<template>\n\t<jy-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</jy-card>\n</template>`" />
+            </dj-card>
+            <dj-code
+                :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</dj-card>\n</template>`" />
         </Example>
         <Example title="属性 Attributes" id="Id_Card_Attributes">
             <Table>
@@ -100,11 +108,3 @@
         </Example>
     </div>
 </template>
-
-<script lang="ts" setup>
-import Example from '@/components/example.vue'
-import Title from '@/components/title.vue'
-import Table from '@/components/table.vue'
-import Thead from '@/components/table-thead.vue'
-import Tbody from '@/components/table-tbody.vue'
-</script>

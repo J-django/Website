@@ -6,7 +6,7 @@ export const Guide: Array<RouteRecordRaw> = [
     name: "Guide",
     path: "/guide",
     component: () => import("@/pages/guide/view.vue"),
-    redirect: "/guide/card",
+    redirect: "/guide/button",
     meta: <RouteMeta>{
       title: "文档",
       keepAlive: false,
@@ -35,6 +35,19 @@ export const Guide: Array<RouteRecordRaw> = [
         component: () => import("@/pages/guide/guide-input.vue"),
         meta: <RouteMeta>{
           title: "Input 输入框",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
+        name: "Guide-Textarea",
+        path: "/guide/Textarea",
+        component: () => import("@/pages/guide/guide-textarea.vue"),
+        meta: <RouteMeta>{
+          title: "Textarea 文本域",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
@@ -82,11 +95,11 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-VideoPlayer",
-        path: "/guide/videoPlayer",
-        component: () => import("@/pages/guide/guide-videoPlayer.vue"),
+        name: "Guide-Video",
+        path: "/guide/video",
+        component: () => import("@/pages/guide/guide-video.vue"),
         meta: <RouteMeta>{
-          title: "VideoPlayer 视频播放器",
+          title: "Video 视频播放器",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
@@ -95,11 +108,11 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-AudioPlayer",
-        path: "/guide/audioPlayer",
-        component: () => import("@/pages/guide/guide-audioPlayer.vue"),
+        name: "Guide-Audio",
+        path: "/guide/audio",
+        component: () => import("@/pages/guide/guide-audio.vue"),
         meta: <RouteMeta>{
-          title: "AudioPlayer 音频播放器",
+          title: "Audio 音频播放器",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,

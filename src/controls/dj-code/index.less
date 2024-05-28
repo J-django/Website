@@ -1,143 +1,156 @@
 .dj-code {
+  --dj-code-border-radius: rem(6px);
+  --dj-code-font-size: rem(14px);
+  margin-top: 8px;
   position: relative;
 
   &::before {
     content: attr(language);
     position: absolute;
-    top: 8px;
-    right: 8px;
-    font-size: 12px;
-    color: var(--gray);
+    top: rem(8px);
+    right: rem(8px);
+    line-height: 1;
+    color: var(--t-text-color-3);
+    font-size: rem(12px);
     opacity: 1;
-    transition: color 0.4s, opacity 0.4s;
+    visibility: visible;
+    transition: color 0.25s, opacity 0.25s, visibility 0.25s;
   }
 
   &:hover {
     &:before {
       opacity: 0;
+      visibility: hidden;
     }
 
-    .copy,
-    .dj-code__foldUp {
+    .dj-copy,
+    .dj-code-foldUp {
       opacity: 1;
+      visibility: visible;
     }
   }
 
-  .dj-code-dark {
+  .dj-code-unfold {
+    @background-color: var(--t-background-color);
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    height: 100px;
     display: block;
-    background: linear-gradient(transparent 30%, var(--t-background-color));
+    width: 100%;
+    height: rem(100px);
+    background: linear-gradient(transparent 30%, @background-color);
     opacity: 0;
-    z-index: -1;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
 
-    .unfold {
+    .dj-code-unfold__wrapper {
       position: absolute;
       left: 0;
       bottom: 0;
       width: 100%;
       height: 40px;
       color: var(--t-text-color);
-      opacity: 1;
+      opacity: 0.6;
       transition: color 0.25s, opacity 0.25s;
 
       &:hover {
-        opacity: 0.6;
+        opacity: 1;
       }
 
-      i.bi {
-        font-size: 26px;
+      .icon {
+        width: 20px;
+        height: 20px;
       }
     }
   }
 
-  .copy {
+  .dj-copy {
     direction: ltr;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: rem(8px);
+    right: rem(8px);
     z-index: 3;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    width: 40px;
-    height: 40px;
-    color: var(--t-text-color);
-    background-color: var(--t-code-copy-bg);
+    display: flex;
     opacity: 0;
-    cursor: pointer;
-    transition: color 0.25s, border-color 0.25s, opacity 0.25s;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
 
-    &:hover {
+    .dj-copy__wrapper {
+      width: rem(32px);
+      height: rem(32px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: var(--dj-code-border-radius);
+      color: var(--t-text-color-3);
+      background-color: var(--t-code-copy-bg);
+      cursor: pointer;
+      transition: color 0.25s, border-color 0.25s;
+
+      &:hover {
+        color: var(--t-text-color);
+        border-color: var(--t-border-color);
+      }
+
+      .icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  .dj-copy.copied {
+    opacity: 1;
+    visibility: visible;
+
+    .dj-copy__wrapper {
+      color: var(--t-text-color);
       border-color: var(--t-border-color);
     }
-
-    i.bi {
-      font-size: 16px;
-    }
   }
 
-  .copy.copied {
-    border-radius: 0 4px 4px 0;
-    border-color: var(--t-border-color);
-
-    &:before {
-      position: absolute;
-      content: "Copied";
-      top: 50%;
-      left: -65px;
-      transform: translateY(-50%);
-      width: 65px;
-      height: 40px;
-      font-size: 12px;
-      color: var(--t-text-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--t-code-copy-bg);
-      border: 1px solid var(--t-border-color);
-      border-radius: 4px 0 0 4px;
-    }
-  }
-
-  .dj-pre-code {
+  .dj-code__wrapper {
     padding: 20px 24px;
     margin: 0;
     font-size: 0.875em;
     overflow: auto;
-    border-radius: 0.3em;
+    border-radius: var(--dj-code-border-radius);
     background-color: var(--t-code-bg);
   }
 
-  .dj-code__foldUp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .dj-code-foldUp {
     position: absolute;
-    right: 12px;
-    bottom: 12px;
-    width: 40px;
-    height: 40px;
-    color: var(--t-text-color);
-    background-color: var(--t-special-bg);
-    border: 1px solid transparent;
-    border-radius: var(--border-radius);
+    right: rem(8px);
+    bottom: rem(8px);
+    display: flex;
     opacity: 0;
-    cursor: pointer;
-    transition: opacity 0.25s, border-color 0.25s;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
 
-    &:hover {
-      border-color: var(--t-border-color);
-    }
+    .dj-code-foldUp__wrapper {
+      width: rem(32px);
+      height: rem(32px);
+      color: var(--t-text-color-3);
+      background-color: var(--t-special-bg);
+      border: 1px solid transparent;
+      border-radius: var(--dj-code-border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 0.25s, border-color 0.25s;
 
-    i.bi {
-      font-size: 16px;
+      &:hover {
+        color: var(--t-text-color);
+        border-color: var(--t-border-color);
+      }
+
+      .icon {
+        width: rem(18px);
+        height: rem(18px);
+      }
     }
   }
 }
@@ -146,17 +159,17 @@
   height: 340px;
   overflow-y: hidden;
 
-  .dj-code-dark {
+  .dj-code-unfold {
     opacity: 1;
-    z-index: 0;
+    visibility: visible;
   }
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
   color: var(--t-text-color-2);
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
+  font-family: inherit;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -185,7 +198,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  border-radius: 0.3em;
+  border-radius: var(--dj-code-border-radius);
 }
 
 .token.cdata,
