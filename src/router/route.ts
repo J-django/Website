@@ -56,50 +56,11 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Loading",
-        path: "/guide/loading",
-        component: () => import("@/pages/guide/guide-loading.vue"),
-        meta: <RouteMeta>{
-          title: "Loading 加载",
-          keepAlive: false,
-          hasCurtain: true,
-          hasFooter: false,
-          hasNav: true,
-          hasSidebar: true,
-        },
-      },
-      {
-        name: "Guide-Select",
-        path: "/guide/select",
-        component: () => import("@/pages/guide/guide-select.vue"),
-        meta: <RouteMeta>{
-          title: "Select 选择器",
-          keepAlive: false,
-          hasCurtain: true,
-          hasFooter: false,
-          hasNav: true,
-          hasSidebar: true,
-        },
-      },
-      {
         name: "Guide-Divider",
         path: "/guide/divider",
         component: () => import("@/pages/guide/guide-divider.vue"),
         meta: <RouteMeta>{
           title: "Divider 分割线",
-          keepAlive: false,
-          hasCurtain: true,
-          hasFooter: false,
-          hasNav: true,
-          hasSidebar: true,
-        },
-      },
-      {
-        name: "Guide-Draggable",
-        path: "/guide/draggable",
-        component: () => import("@/pages/guide/guide-draggable.vue"),
-        meta: <RouteMeta>{
-          title: "Draggable 拖放",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
@@ -220,19 +181,5 @@ export const routes: Array<RouteRecordRaw> = [
         },
       }, ...AsideBar
     ]
-  },
-  {
-    name: "ChatGPT",
-    path: "/chat",
-    component: () => import("@/pages/chatGPT/index.vue"),
-    meta: <RouteMeta>{
-      title: "ChatGPT",
-      keepAlive: false,
-      hasCurtain: false,
-      hasFooter: false,
-      hasNav: false,
-      hasSidebar: false,
-      icon: "openAi-dark.png"
-    },
   },
 ];

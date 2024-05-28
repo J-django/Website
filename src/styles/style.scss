@@ -1,4 +1,4 @@
-@import "./controls/index.scss";
+// @import "./controls/index.scss";
 
 @font-face {
   font-family: "Inter Var";
@@ -147,10 +147,10 @@ div {
   display: block;
 }
 
-::selection {
-  color           : var(--t-white);
-  background-color: var(--t-black);
-}
+// ::selection {
+//   color           : var(--t-white);
+//   background-color: var(--t-black);
+// }
 
 :root {
   // width

@@ -31,11 +31,11 @@
                         <td>分割线类型</td>
                         <td>
                             <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                                <Code text="solid" />/<Code text="dashed" />/<Code text="dotted" />
+                                <dj-badge text="solid" />/<dj-badge text="dashed" />/<dj-badge text="dotted" />
                             </div>
                         </td>
                         <td>
-                            <Code text="solid" />
+                            <dj-badge text="solid" />
                         </td>
                     </Tbody>
                 </template>
@@ -45,7 +45,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>插槽名<Code text="#" /></th>
+                        <th>插槽名<dj-badge text="#" /></th>
                         <th>说明</th>
                     </Thead>
                 </template>
@@ -66,5 +66,4 @@ import Title from '@/components/title.vue'
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
-import Code from '@/components/code.vue'
 </script>

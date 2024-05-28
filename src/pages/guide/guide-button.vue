@@ -124,14 +124,14 @@
                         <td>类型</td>
                         <td>
                             <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                                <Code text="primary" />/
-                                <Code text="success" />/
-                                <Code text="warning" />/
-                                <Code text="danger" />
+                                <dj-badge text="primary" />/
+                                <dj-badge text="success" />/
+                                <dj-badge text="warning" />/
+                                <dj-badge text="danger" />
                             </div>
                         </td>
                         <td>
-                            <Code text="default" />
+                            <dj-badge text="default" />
                         </td>
                     </Tbody>
                     <Tbody>
@@ -159,7 +159,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>插槽名<Code text="#" /></th>
+                        <th>插槽名<dj-badge text="#" /></th>
                         <th>说明</th>
                     </Thead>
                 </template>
@@ -184,5 +184,4 @@ import Title from "@/components/title.vue"
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-import Code from "@/components/code.vue"
 </script>

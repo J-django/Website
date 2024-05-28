@@ -56,11 +56,11 @@
                         <td>对齐方式</td>
                         <td>
                             <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                                <Code text="left" />/<Code text="center" />/<Code text="right" />
+                                <dj-badge text="left" />/<dj-badge text="center" />/<dj-badge text="right" />
                             </div>
                         </td>
                         <td>
-                            <Code text="left" />
+                            <dj-badge text="left" />
                         </td>
                     </Tbody>
                     <Tbody>
@@ -78,7 +78,7 @@
             <Table>
                 <template #thead>
                     <Thead>
-                        <th>插槽名<Code text="#" /></th>
+                        <th>插槽名<dj-badge text="#" /></th>
                         <th>说明</th>
                     </Thead>
                 </template>
@@ -107,5 +107,4 @@ import Title from '@/components/title.vue'
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
-import Code from '@/components/code.vue'
 </script>

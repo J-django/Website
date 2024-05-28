@@ -10,6 +10,7 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import { createHtmlPlugin } from 'vite-plugin-html'
+import postcssRem from 'postcss-rem'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname);
@@ -46,16 +47,14 @@ export default defineConfig(({ mode }) => {
         },
       }
     },
-    // ******css预处理器******
     css: {
-      preprocessorOptions: {
-        less: {
-          modifyVars: {
-            // 全局less变量存储路径(配置less的全局变量)
-            hack: `true; @import (reference) "${resolve('src/public/config.less')}";`,
-          },
-          javascriptEnabled: true,
-        }
+      postcss: {
+        plugins: [
+          postcssRem({
+            name: "rem",
+            precision: 6
+          }),
+        ]
       }
     },
     // ******项目构建配置******
