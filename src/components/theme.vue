@@ -42,12 +42,12 @@ const appStore = useAppStore();
     width: 40px;
     height: 22px;
     flex-shrink: 0;
-    border: 1px solid var(--light-gray);
-    transition: border-color .35s;
+    border: 1px solid var(--border-color);
+    transition: border-color .25s;
     cursor: pointer;
 
     &:hover {
-        border-color: var(--grey);
+        border-color: var(--t-text-color-2);
     }
 
     .check {

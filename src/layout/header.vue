@@ -50,7 +50,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a :href="item.path" class="link" :class="[route.path.includes(item.path) ? 'active' : '']"
+                                <a :href="item.path" class="link"
+                                    :class="[route.path.includes(item.path) ? 'active' : '']"
                                     @click.prevent="push(item.path)" v-else>
                                     {{ (item.meta as RouteMeta).title }}
                                 </a>
@@ -70,7 +71,7 @@
                                 <div class="menu-body">
                                     <div class="group">
                                         <div class="item">
-                                            <p class="label">深色模式</p>
+                                            <p class="label">Appearance</p>
                                             <ThemeSwitch />
                                         </div>
                                     </div>
@@ -82,7 +83,8 @@
                                 </div>
                             </div>
                         </div>
-                        <Hamburger class="hamburger" :checked="screenChecked" @toggleChange="(e) => screenChecked = e" />
+                        <Hamburger class="hamburger" :checked="screenChecked"
+                            @toggleChange="(e) => screenChecked = e" />
                     </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@
                         </template>
                     </nav>
                     <div class="screenAppearance appearance">
-                        <p class="text">深色模式</p>
+                        <p class="text">Appearance</p>
                         <ThemeSwitch :backgroundColor="'var(--t-background-color)'" />
                     </div>
                     <Outside />
@@ -730,7 +732,7 @@ onUnmounted(() => {
         justify-content: space-between;
         align-items: center;
         border-radius: 8px;
-        padding: 12px 14px 12px 16px;
+        padding: 10px 12px;
         background-color: var(--t-card-background-color);
     }
 
