@@ -139,7 +139,7 @@ import ThemeSwitch from '@/components/theme.vue'
 import Appearance from '@/components/appearance.vue'
 import Hamburger from '@/components/hamburger.vue'
 import Outside from '@/components/outside.vue'
-import Algolia from '@/components/algolia-button.vue'
+import Algolia from '@/components/algolia.vue'
 import { menuGroupActive } from '@/utils/interface/index'
 
 const env = import.meta.env;

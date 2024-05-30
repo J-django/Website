@@ -1,7 +1,15 @@
 import { createPinia } from 'pinia'
-import persistedstate from 'pinia-plugin-persistedstate'
+// 持久化处理
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-const pinia = createPinia();
-pinia.use(persistedstate);
+/**
+ * 创建pina
+ */
+const store = createPinia()
 
-export default pinia;
+/**
+ * 注册持久化
+ */
+store.use(piniaPluginPersistedstate)
+
+export default store;

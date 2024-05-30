@@ -280,69 +280,6 @@ html.dark {
   --t-label-background-color-rgba: 49, 49, 54; // 标签背景色rgba
 }
 
-// 引导页
-div#driver-highlighted-element-stage {
-  background-color: var(--t-background-color) !important;
-}
-
-div#driver-popover-item {
-  padding: 14px !important;
-  color: var(--t-text-color);
-  background-color: var(--t-background-color) !important;
-  border-radius: var(--border-radius) !important;
-
-  div.driver-popover-tip.top {
-    border-color: transparent transparent var(--t-background-color) transparent !important;
-  }
-
-  div.driver-popover-tip.right {
-    border-color: transparent transparent transparent var(--t-background-color) !important;
-  }
-
-  div.driver-popover-tip.left {
-    border-color: transparent var(--t-background-color) transparent transparent !important;
-  }
-
-  div.driver-popover-tip.bottom {
-    border-color: var(--t-background-color) transparent transparent transparent !important;
-  }
-
-  div.driver-popover-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--t-text-color-1);
-  }
-
-  div.driver-popover-description {
-    font-size: 14px;
-    color: var(--t-text-color-2);
-  }
-
-  div.driver-clearfix.driver-popover-footer {
-    margin-top: 8px;
-
-    button {
-      padding: 6px 12px;
-      color: var(--t-text-color-2);
-      font-size: 14px;
-      text-shadow: none;
-      border: none;
-      background-color: var(--t-card-background-color);
-      border-radius: var(--border-radius);
-    }
-
-    button.driver-close-btn {
-      display: none;
-    }
-
-    span.driver-btn-group.driver-navigation-btns {
-      button.driver-prev-btn.driver-disabled {
-        display: none !important;
-      }
-    }
-  }
-}
-
 // Algolia
 .DocSearch.DocSearch-Container {
   background: transparent;
@@ -544,6 +481,15 @@ div#driver-popover-item {
         .DocSearch-Label {
           font-size: 12px;
           color: inherit;
+        }
+
+        #Layer_1 {
+          width: 70px;
+          color: var(--blue);
+          .cls-1,
+          .cls-2 {
+            fill: currentColor;
+          }
         }
       }
     }

@@ -15,7 +15,7 @@ const gov = () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 footer.footer {
     width: 100%;
 

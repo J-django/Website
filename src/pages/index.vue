@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <dj-badge text="npm install django-ui" />
+        <dj-code style="width: 250px;" language="bash" :code="`npm install django-ui`" />
         <dj-button class="getStarted" @click="getStarted">
             Get Started
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -29,25 +29,17 @@ const getStarted = () => {
 
 <style lang="less" scoped>
 .home {
-    padding-top: 128px;
+    padding-top: rem(200px);
     width: 100%;
     color: var(--t-text-color);
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    .dj-badge {
-        padding: rem(8px) rem(16px);
-        height: rem(38px);
-        color: var(--green);
-        font-size: rem(16px);
-        font-weight: bold;
-    }
+    flex-direction: column;
 
     .getStarted {
-        margin-left: rem(8px);
+        margin-top: rem(8px);
         height: rem(38px);
-        color: var(--t-text-color-2);
+        color: var(--t-text-color);
         font-size: rem(16px);
         font-weight: bold;
 
@@ -57,9 +49,9 @@ const getStarted = () => {
         }
 
         .icon {
-            margin-left: rem(8px);
-            width: rem(20px);
-            height: rem(20px);
+            margin-left: rem(6px);
+            width: rem(18px);
+            height: rem(18px);
         }
     }
 }

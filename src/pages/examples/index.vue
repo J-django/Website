@@ -15,10 +15,8 @@ const content = ref();
         <div class="line">
             <dj-button>Default</dj-button>
             <dj-button disabled>Disabled Default</dj-button>
-            <dj-button color="#0d6efd">Custom Primary</dj-button>
-            <dj-button color="#0d6efd" disabled>Disabled Custom Primary</dj-button>
-            <dj-button color="#d63384">Custom Pink</dj-button>
-            <dj-button color="#d63384" disabled>Disabled Custom Pink</dj-button>
+            <dj-button color="#6610f2">Custom Pink</dj-button>
+            <dj-button color="#6610f2" disabled>Disabled Custom Pink</dj-button>
         </div>
         <div class="line">
             <dj-card align="center">
@@ -28,7 +26,9 @@ const content = ref();
         <div class="line">
             <dj-card align="center">
                 <template #header>
-                    Header
+                    <div>
+                        <dj-input placeholder="Please Input" />
+                    </div>
                 </template>
                 Content
             </dj-card>
@@ -37,18 +37,37 @@ const content = ref();
             <dj-card align="center">
                 Content
                 <template #footer>
-                    Footer
+                    <dj-input placeholder="Please Input" />
                 </template>
             </dj-card>
         </div>
         <div class="line">
             <dj-card align="center">
                 <template #header>
-                    Header
+                    <div class="flex-gap">
+                        <dj-input placeholder="Please Input" v-model="content">
+                            <template #prefix-icon>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 36 36">
+                                    <path fill="#DE2910"
+                                        d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
+                                    <path fill="#FFDE02"
+                                        d="M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z" />
+                                </svg>
+                            </template>
+                        </dj-input>
+                        <dj-button>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                    d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z" />
+                            </svg>
+                        </dj-button>
+                    </div>
                 </template>
                 Content
                 <template #footer>
-                    Footer
+                    <dj-input placeholder="Please Input" />
                 </template>
             </dj-card>
         </div>
@@ -122,6 +141,26 @@ const content = ref();
         padding-bottom: rem(8px);
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .flex-gap {
+        display: flex;
+        gap: 8px;
+    }
+
+    .dj-button {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        .dj-button-inner {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px
     }
 }
 </style>

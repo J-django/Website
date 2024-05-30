@@ -131,14 +131,15 @@ export const AsideBar: Array<RouteRecordRaw> = [
     path: "/examples",
     component: () => import("@/pages/examples/index.vue"),
     meta: <RouteMeta>{
-      title: "示例",
+      title: "示例模板",
       keepAlive: false,
       hasCurtain: false,
       hasFooter: true,
       hasNav: false,
       hasSidebar: false,
     },
-  }, {
+  },
+  {
     name: "Blog",
     path: "/blog",
     component: () => import("@/pages/blog/index.vue"),
@@ -150,19 +151,20 @@ export const AsideBar: Array<RouteRecordRaw> = [
       hasNav: false,
       hasSidebar: false,
     },
-  }, {
-    name: "Feedback",
-    path: "/feedback",
-    component: () => import("@/pages/feedback/index.vue"),
-    meta: <RouteMeta>{
-      title: "反馈",
-      keepAlive: false,
-      hasCurtain: false,
-      hasFooter: true,
-      hasNav: false,
-      hasSidebar: false,
-    }
-  }
+  },
+  // {
+  //   name: "Feedback",
+  //   path: "/feedback",
+  //   component: () => import("@/pages/feedback/index.vue"),
+  //   meta: <RouteMeta>{
+  //     title: "反馈",
+  //     keepAlive: false,
+  //     hasCurtain: false,
+  //     hasFooter: true,
+  //     hasNav: false,
+  //     hasSidebar: false,
+  //   }
+  // }
 ]
 
 

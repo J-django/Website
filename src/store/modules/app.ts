@@ -1,29 +1,22 @@
 import { defineStore } from 'pinia'
-import { WritableComputedRef } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 
 const isDark = useDark({
-    storageKey: 'useDarkKEY',
+    selector: "html",
+    storageKey: 'theme-appearance',
     valueDark: 'dark',
     valueLight: 'light',
-    emitAuto: false
+    emitAuto: false,
 })
-const toggle = useToggle(isDark);
+const toggleDark = useToggle(isDark);
 
 export const useAppStore = defineStore('useAppStore', {
     state: () => ({
-        mode: <boolean>false,
+        mode: isDark,
     }),
     getters: {},
     actions: {
-        getSystemMode() {
-            const isDark = useDark()
-            this.mode = isDark.value;
-        },
-        modeCheck() {
-            toggle();
-            this.mode = isDark.value;
-        }
+        toggleMode: () => toggleDark()
     },
     persist: true
 })

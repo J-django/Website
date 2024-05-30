@@ -1,4 +1,8 @@
 .dj-button {
   --dj-button-black-color: var(--t-text-color) !important;
   --dj-button-background-color: var(--t-card-background-color) !important;
+
+  ::v-deep &:disabled {
+    opacity: 0.1 !important;
+  }
 }

@@ -1,5 +1,6 @@
 <template>
-    <div id="docsearch"></div>
+    <div id="docsearch">
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -19,24 +20,27 @@ onMounted(() => {
 })
 </script>
 
-<style>
+<style type="less">
 #docsearch {
     display: flex;
     align-items: center;
     justify-content: center;
 
     .DocSearch.DocSearch-Button {
-        padding: 0 6px;
+        margin-left: 0;
+        padding: rem(2px) rem(8px);
+        height: rem(36px);
+        color: var(--t-text-color);
+        font-size: rem(14px);
+        border-radius: rem(6px);
         display: flex;
         align-items: center;
-        color: var(--t-text-color);
-        font-size: 14px;
-        border-radius: var(--border-radius);
         background: none;
         box-shadow: none;
         -webkit-user-select: none;
         user-select: none;
         transition: color .25s, box-shadow .25s;
+        box-sizing: border-box;
 
         .DocSearch-Button-Container {
             color: inherit;
@@ -45,8 +49,8 @@ onMounted(() => {
 
             .DocSearch-Search-Icon {
                 color: inherit;
-                width: 1.1rem;
-                height: 1.1rem;
+                width: rem(18px);
+                height: rem(18px);
             }
 
             .DocSearch-Button-Placeholder {

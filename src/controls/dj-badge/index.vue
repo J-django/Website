@@ -3,7 +3,7 @@
 import "./index.less"
 
 // script
-const props = defineProps({
+defineProps({
     text: {
         type: String,
         default: ""
@@ -12,5 +12,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <code class="dj-badge">{{ props.text }}</code>
+    <code class="dj-badge">
+        <slot>
+            {{ text }}
+        </slot>
+    </code>
 </template>
