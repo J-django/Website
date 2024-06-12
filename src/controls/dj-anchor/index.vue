@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import "./index.less"
+import { useDom } from "@/hooks";
 
 defineProps({
     id: {
@@ -16,23 +16,16 @@ defineProps({
     }
 })
 
-const goAnchor = (anchor: string | undefined) => {
-    if (!anchor) return;
-    const element: HTMLElement = document.querySelector("#" + anchor)!;
-    const width = window.innerWidth >= 960 ? -60 : 0;
-    if (element) {
-        window.scrollTo({
-            top: element.offsetTop + 80 + width,
-            behavior: "smooth"
-        })
-        history.pushState(null, '', `${anchor}`);
-    }
-}
+const { goAnchor } = useDom();
 </script>
 
 <template>
-    <component :is="'h'+level" :id="id">
+    <component :is="'h'+level" :id="id" tabindex="-1">
         {{ text }}
         <a :href="'#' + id" @click.prevent="goAnchor(id)" class="dj-anchor-icon" />
     </component>
 </template>
+
+<style lang="less" scoped>
+@import "./index.less";
+</style>

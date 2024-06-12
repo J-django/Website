@@ -20,6 +20,17 @@
         font-size: 14px;
         line-height: 1.5em;
 
+        ::v-deep th,
+        ::v-deep td {
+            white-space: nowrap;
+            border-top: 1px solid var(--t-border-color);
+            border-bottom: 1px solid var(--t-border-color);
+            padding: 0.6em 1em;
+            text-align: left;
+            max-width: 250px;
+            white-space: pre-wrap;
+        }
+
         ::v-deep thead {
             tr {
                 &:first-child {
@@ -30,15 +41,14 @@
             }
         }
 
-        ::v-deep th,
-        ::v-deep td {
-            white-space: nowrap;
-            border-top: 1px solid var(--t-border-color);
-            border-bottom: 1px solid var(--t-border-color);
-            padding: 0.6em 1em;
-            text-align: left;
-            max-width: 250px;
-            white-space: pre-wrap;
+        ::v-deep tbody {
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: none;
+                    }
+                }
+            }
         }
     }
 }

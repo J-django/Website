@@ -22,7 +22,9 @@
             </button>
             <Transition name="scale" mode="out-in">
                 <div class="items" v-if="thisPageChecked">
-                    <a href="#" class="top-link" @click.prevent="backTop">Return to top</a>
+                    <div class="header">
+                        <a href="#" class="top-link" @click.prevent="backTop">Return to top</a>
+                    </div>
                 </div>
             </Transition>
         </div>
@@ -67,14 +69,15 @@ const backTop = () => {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: var(--localNav-z-index);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--t-color-gutter);
+    right: 0;
     padding-top: var(--vp-layout-top-height, 0px);
     width: 100%;
     background-color: var(--t-background-color);
+    border-bottom: 1px solid var(--t-color-gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: var(--localNav-z-index);
 
     .menu {
         display: flex;

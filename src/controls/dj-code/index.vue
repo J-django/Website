@@ -1,10 +1,11 @@
 <script lang="ts" setup name="dj-code">
 // plugins
-import "./index.less"
-import { ref, reactive, nextTick, onMounted } from 'vue'
+import { ref, reactive, computed, nextTick, onMounted } from 'vue'
 import * as  _ from 'lodash'
 import Prism from "prismjs"
+import 'prismjs/components/prism-bash.js';
 import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript.js';
 import { nanoid } from 'nanoid'
 
 // script
@@ -13,7 +14,7 @@ const prop = defineProps({
         type: String,
         default: ""
     },
-    languages: {
+    language: {
         type: String,
         default: "vue",
     },
@@ -34,12 +35,12 @@ const copyRes = ref<Boolean>(false);
 
 const copy = _.throttle(() => {
     try {
-        var input = document.createElement("input"); // 创建input对象
-        input.value = prop.code; // 设置复制内容
-        document.body.appendChild(input); // 添加临时实例
-        input.select(); // 选择实例内容
-        document.execCommand("Copy"); // 执行复制
-        document.body.removeChild(input); // 删除临时实例
+        const input = document.createElement("textarea");
+        document.body.appendChild(input);
+        input.value = prop.code;
+        input.select();
+        document.execCommand("Copy");
+        document.body.removeChild(input);
         copyRes.value = true;
         reset();
     } catch {
@@ -70,14 +71,29 @@ const loadPreCodeHeight = () => {
 }
 
 onMounted(() => {
-    preCode.value = Prism.highlight(prop.code, Prism.languages.html, prop.title);
+    switch (prop.language) {
+        case "vue":
+            preCode.value = Prism.highlight(prop.code, Prism.languages.html, prop.title);
+            break;
+        case "js":
+        case "javascript":
+            preCode.value = Prism.highlight(prop.code, Prism.languages.javascript, prop.title);
+            break;
+        case "ts":
+        case "typescript":
+            preCode.value = Prism.highlight(prop.code, Prism.languages.typescript, prop.title);
+            break;
+        case "bash":
+            preCode.value = Prism.highlight(prop.code, Prism.languages.bash, prop.title);
+            break;
+    }
     Prism.highlightAll();
     loadPreCodeHeight();
 })
 </script>
 
 <template>
-    <div class="dj-code" :class="[overstepParams.overstep]" :language="languages">
+    <div class="dj-code" :class="[overstepParams.overstep]" :language="prop.language">
         <div class="dj-copy" :class="[copyRes ? 'copied' : '']">
             <button class="dj-copy__wrapper" title="复制" @click.prevent="copy">
                 <svg v-if="!copyRes" class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -95,7 +111,8 @@ onMounted(() => {
                 </svg>
             </button>
         </div>
-        <pre class="language-html dj-code__wrapper" :id="proCodeId"><code v-html="preCode" /></pre>
+        <pre class="dj-code__wrapper" :class="[`language-${prop.language}`]"
+            :id="proCodeId"><code v-html="preCode" /></pre>
         <div class="dj-code-foldUp"
             v-if="!overstepParams.overstep && overstepParams.height > overstepParams.superior_limit" @click="folded"
             title="折叠">
@@ -117,3 +134,7 @@ onMounted(() => {
         </div>
     </div>
 </template>
+
+<style lang="less">
+@import "./index.less";
+</style>

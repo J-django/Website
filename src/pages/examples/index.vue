@@ -1,13 +1,35 @@
 <script lang="ts" setup>
 // plugins
 import { ref } from "vue";
-import AudioSrc from '@/assets/audio/Uu - 自卑感.flac'
-import VideoSrc from '@/assets/video/20600550-uhd_3840_2160_30fps.mp4'
-
+import File from '@/components/file.vue'
 
 // script
+const audioSrc = ref();
+const audioRef = ref();
+
+const videoSrc = ref();
+const videoRef = ref();
+
 const accordion = ref(false);
 const content = ref();
+
+const switchValue = ref("apple");
+const switchArray = ref(["apple", "banana", "cherry", "date", "elderberry"])
+
+const audioFileChange = (fileUrl: string) => {
+    audioSrc.value = fileUrl;
+    audioRef.value.load()
+}
+
+const videoFileChange = (fileUrl: string) => {
+    videoSrc.value = fileUrl;
+    videoRef.value.load()
+}
+
+const switchChange = () => {
+    const index = Math.floor(Math.random() * switchArray.value.length);
+    switchValue.value = switchArray.value[index];
+}
 </script>
 
 <template>
@@ -121,10 +143,17 @@ const content = ref();
             <dj-textarea placeholder="Please Input" v-model="content" />
         </div>
         <div class="line">
-            <dj-audio :src="AudioSrc" />
+            <File accept="audio/mp3, audio/wav, audio/ogg, audio/aac, audio/flac, audio/aiff"
+                @change="audioFileChange" />
+            <dj-audio :src="audioSrc" ref="audioRef" />
         </div>
         <div class="line">
-            <dj-video :src="VideoSrc" width="100%" min-height="400px" />
+            <File accept="video/*" @change="videoFileChange" />
+            <dj-video :src="videoSrc" ref="videoRef" width="100%" min-height="400px" />
+        </div>
+        <div class="line">
+            <dj-button style="margin-bottom: 8px;" @click="switchChange">Change</dj-button>
+            <dj-switch :data="switchArray" v-model="switchValue" />
         </div>
     </div>
 </template>

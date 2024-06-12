@@ -42,6 +42,7 @@
     background: linear-gradient(transparent 30%, @background-color);
     opacity: 0;
     visibility: hidden;
+    z-index: 2;
     transition: opacity 0.25s, visibility 0.25s;
 
     .dj-code-unfold__wrapper {
@@ -70,10 +71,10 @@
     position: absolute;
     top: rem(8px);
     right: rem(8px);
-    z-index: 3;
     display: flex;
     opacity: 0;
     visibility: hidden;
+    z-index: 2;
     transition: opacity 0.25s, visibility 0.25s;
 
     .dj-copy__wrapper {
@@ -118,6 +119,7 @@
     overflow: auto;
     border-radius: var(--dj-code-border-radius);
     background-color: var(--t-code-bg);
+    z-index: 1;
   }
 
   .dj-code-foldUp {
@@ -127,6 +129,7 @@
     display: flex;
     opacity: 0;
     visibility: hidden;
+    z-index: 2;
     transition: opacity 0.25s, visibility 0.25s;
 
     .dj-code-foldUp__wrapper {
@@ -206,6 +209,7 @@ pre[class*="language-"] {
 .token.doctype,
 .token.prolog {
   color: #93a1a1;
+  color: gray !important;
 }
 
 .token.punctuation {
@@ -249,7 +253,7 @@ pre[class*="language-"] {
 
 .token.class-name,
 .token.function {
-  color: #b58900;
+  color: #ce6700;
 }
 
 .token.important,

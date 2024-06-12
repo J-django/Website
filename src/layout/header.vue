@@ -65,7 +65,12 @@
                         </Appearance>
                         <div class="extra">
                             <button class="button">
-                                <i class="bi bi-three-dots"></i>
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M2 12a2 2 0 1 1 4 0a2 2 0 0 1-4 0m8 0a2 2 0 1 1 4 0a2 2 0 0 1-4 0m8 0a2 2 0 1 1 4 0a2 2 0 0 1-4 0"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </button>
                             <div class="menu">
                                 <div class="menu-body">
@@ -100,7 +105,11 @@
                                     <span class="button-text">
                                         {{ (item.meta as RouteMeta).title }}
                                     </span>
-                                    <i class="bi bi-plus"></i>
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M11 13H6q-.425 0-.712-.288T5 12t.288-.712T6 11h5V6q0-.425.288-.712T12 5t.713.288T13 6v5h5q.425 0 .713.288T19 12t-.288.713T18 13h-5v5q0 .425-.288.713T12 19t-.712-.288T11 18z" />
+                                    </svg>
                                 </button>
                                 <div class="items">
                                     <div class="group">
@@ -142,7 +151,11 @@ import Appearance from '@/components/appearance.vue'
 import Hamburger from '@/components/hamburger.vue'
 import Outside from '@/components/outside.vue'
 import Algolia from '@/components/algolia.vue'
-import { menuGroupActive } from '@/utils/interface/index'
+
+interface menuGroupActive {
+    path: String,
+    checked: Boolean
+}
 
 const env = import.meta.env;
 
@@ -452,10 +465,6 @@ onUnmounted(() => {
                             &:hover {
                                 color: var(--t-text-color);
                             }
-
-                            i.bi {
-                                font-size: 20px;
-                            }
                         }
                     }
 
@@ -480,12 +489,9 @@ onUnmounted(() => {
                             color: var(--t-text-color);
                             transition: color .25s, opacity .25s;
 
-                            &:hover {
-                                opacity: .6;
-                            }
-
-                            i.bi {
-                                font-size: 16px;
+                            .icon {
+                                width: 20px;
+                                height: 20px;
                             }
                         }
 
@@ -596,8 +602,9 @@ onUnmounted(() => {
                             color: var(--green);
                         }
 
-                        i.bi {
-                            font-size: 18px;
+                        .icon {
+                            width: 18px;
+                            height: 18px;
                             color: var(--t-text-color-2);
                             transition: color .25s, transform .25s;
                         }
@@ -653,7 +660,7 @@ onUnmounted(() => {
                         padding-bottom: 6px;
                         color: var(--green);
 
-                        i.bi {
+                        .icon {
                             transform: rotate(45deg);
                         }
                     }
@@ -704,10 +711,6 @@ onUnmounted(() => {
 
                     &:hover {
                         color: var(--t-text-color);
-                    }
-
-                    i.bi {
-                        font-size: 20px;
                     }
                 }
             }

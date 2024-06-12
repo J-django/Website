@@ -42,7 +42,7 @@ const appStore = useAppStore();
     width: 40px;
     height: 22px;
     flex-shrink: 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--t-border-color);
     transition: border-color .25s;
     cursor: pointer;
 
@@ -81,12 +81,6 @@ const appStore = useAppStore();
 }
 
 .dj-switch.dark {
-    border-color: var(--grey);
-
-    &:hover {
-        border-color: var(--light-gray);
-    }
-
     .check {
         transform: translateX(18px);
     }

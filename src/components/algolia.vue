@@ -12,10 +12,10 @@ import '@docsearch/css';
 onMounted(() => {
     docsearch({
         container: '#docsearch',
-        appId: '41VQCFDI5L',
-        apiKey: '52537ec0321c82228a0094698355d117',
-        indexName: 'dialin',
-        maxResultsPerGroup: 5,
+        appId: '8CEDQX2VWF',
+        indexName: 'dialin_tmp',
+        apiKey: '1ee70e9214d3ea21cc33afa934e4e57f',
+        insights: true,
     });
 })
 </script>
@@ -29,7 +29,7 @@ onMounted(() => {
     .DocSearch.DocSearch-Button {
         margin-left: 0;
         padding: rem(2px) rem(8px);
-        height: rem(36px);
+        height: rem(34px);
         color: var(--t-text-color);
         font-size: rem(14px);
         border-radius: rem(6px);
@@ -49,35 +49,36 @@ onMounted(() => {
 
             .DocSearch-Search-Icon {
                 color: inherit;
-                width: rem(18px);
-                height: rem(18px);
+                width: 16px;
+                height: 16px;
             }
 
             .DocSearch-Button-Placeholder {
                 padding: 0;
+                font-size: rem(14px);
             }
         }
 
         .DocSearch-Button-Keys {
             min-width: auto;
             border-radius: 4px;
-            box-shadow: inset 0 0 0 1px var(--t-text-color-3);
+            background-color: var(--t-background-color);
 
             .DocSearch-Button-Key {
                 top: 0;
                 margin: 0;
-                padding: 4px 5px;
-                padding-top: 5px;
-                font-size: 12px;
+                padding: 4px;
+                transform: translate(0);
                 width: auto;
-                height: 22px;
+                height: 20px;
                 color: inherit;
+                font-size: 12px;
+                font-family: inherit;
                 background: none;
                 box-shadow: none;
 
-                &:first-child {
-                    font-size: 18px;
-                    padding-right: 0;
+                svg {
+                    border: 1px solid
                 }
             }
         }

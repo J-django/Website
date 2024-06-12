@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   '@docsearch/css':
-    specifier: ^3.5.1
+    specifier: '3'
     version: 3.6.0
   '@docsearch/js':
-    specifier: ^3.5.1
+    specifier: '3'
     version: 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.13.0)
   '@popperjs/core':
     specifier: ^2.11.8
@@ -24,8 +24,8 @@ dependencies:
     specifier: ^1.10.3
     version: 1.11.3
   django-ui:
-    specifier: 1.0.8-beta
-    version: 1.0.8-beta
+    specifier: 1.0.11
+    version: 1.0.11
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -1165,8 +1165,8 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
-  /django-ui@1.0.8-beta:
-    resolution: {integrity: sha512-9pHYLWn7fJ1Adsy+tndwIDdXlfBS/hNsuvQs/FAuyb67RxpBbjJ26n+O8yJcXFJk3SfE+fzFV/2GEqkaWvyxUA==}
+  /django-ui@1.0.11:
+    resolution: {integrity: sha512-J5B0mW+gEXwu/W5/LBoAu+7WEIK6vn2Yiv3XLWu83yLpTDnOX2CT7MERwwIf+k/nv0dtcZycdM8DgzyTeT8Wcg==}
     dev: false
 
   /dom-serializer@1.4.1:

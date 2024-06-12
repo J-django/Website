@@ -1,7 +1,7 @@
 <template>
     <div class="Layout">
         <Header />
-        <Transition name="scale" mode="out-in">
+        <Transition name="fade" mode="out-in">
             <Backdrop v-if="asideChecked" @backDropClose="backDropCloseChange" />
         </Transition>
         <LocalNav v-if="navChecked" :asideCheck="asideChecked" @asideOpen="asideOpenChange" />
@@ -67,20 +67,14 @@ const backDropCloseChange = () => {
     flex-direction: column;
     min-height: 100vh;
 
-    .scale-enter-active,
-    .scale-leave-active {
-        transition: all 0.35s;
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.35s;
     }
 
-    .scale-enter-from {
+    .fade-enter,
+    .fade-leave-to {
         opacity: 0;
-        transform: scale(1) translateY(0px);
-    }
-
-    .scale-leave-to {
-        opacity: 0;
-        z-index: -1;
-        transform: scale(1) translateY(0);
     }
 }
 

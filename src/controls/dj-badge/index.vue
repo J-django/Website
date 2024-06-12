@@ -1,7 +1,4 @@
 <script lang="ts" setup name="dj-badge">
-// plugins
-import "./index.less"
-
 // script
 defineProps({
     text: {
@@ -18,3 +15,7 @@ defineProps({
         </slot>
     </code>
 </template>
+
+<style lang="less" scoped>
+@import "./index.less";
+</style>

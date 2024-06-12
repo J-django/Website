@@ -1,6 +1,5 @@
 <script lang="ts" setup name="dj-link">
 // plugins
-import "./index.less"
 import { useRouter } from 'vue-router'
 
 // script
@@ -37,3 +36,7 @@ const push = (url: string) => {
         <slot />
     </a>
 </template>
+
+<style lang="less">
+@import "./index.less";
+</style>

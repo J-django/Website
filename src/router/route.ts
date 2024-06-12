@@ -1,14 +1,14 @@
 import type { RouteRecordRaw, RouteMeta } from "vue-router";
 const Layout = () => import("@/layout/index.vue")
 
-export const Guide: Array<RouteRecordRaw> = [
+export const Component: Array<RouteRecordRaw> = [
   {
-    name: "Guide",
-    path: "/guide",
-    component: () => import("@/pages/guide/view.vue"),
-    redirect: "/guide/button",
+    name: "Component",
+    path: "/component",
+    component: () => import("@/layout/document.vue"),
+    redirect: "/component/button",
     meta: <RouteMeta>{
-      title: "文档",
+      title: "组件",
       keepAlive: false,
       hasCurtain: true,
       hasFooter: false,
@@ -17,9 +17,9 @@ export const Guide: Array<RouteRecordRaw> = [
     },
     children: [
       {
-        name: "Guide-Button",
-        path: "/guide/button",
-        component: () => import("@/pages/guide/guide-button.vue"),
+        name: "Component-Button",
+        path: "/component/button",
+        component: () => import("@/pages/component/dj-button.vue"),
         meta: <RouteMeta>{
           title: "Button 按钮",
           keepAlive: false,
@@ -30,9 +30,9 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Input",
-        path: "/guide/input",
-        component: () => import("@/pages/guide/guide-input.vue"),
+        name: "Component-Input",
+        path: "/component/input",
+        component: () => import("@/pages/component/dj-input.vue"),
         meta: <RouteMeta>{
           title: "Input 输入框",
           keepAlive: false,
@@ -43,9 +43,9 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Textarea",
-        path: "/guide/Textarea",
-        component: () => import("@/pages/guide/guide-textarea.vue"),
+        name: "Component-Textarea",
+        path: "/component/Textarea",
+        component: () => import("@/pages/component/dj-textarea.vue"),
         meta: <RouteMeta>{
           title: "Textarea 文本域",
           keepAlive: false,
@@ -56,9 +56,9 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Card",
-        path: "/guide/card",
-        component: () => import("@/pages/guide/guide-card.vue"),
+        name: "Component-Card",
+        path: "/component/card",
+        component: () => import("@/pages/component/dj-card.vue"),
         meta: <RouteMeta>{
           title: "Card 卡片",
           keepAlive: false,
@@ -69,9 +69,9 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Divider",
-        path: "/guide/divider",
-        component: () => import("@/pages/guide/guide-divider.vue"),
+        name: "Component-Divider",
+        path: "/component/divider",
+        component: () => import("@/pages/component/dj-divider.vue"),
         meta: <RouteMeta>{
           title: "Divider 分割线",
           keepAlive: false,
@@ -82,9 +82,9 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Accordion",
-        path: "/guide/accordion",
-        component: () => import("@/pages/guide/guide-accordion.vue"),
+        name: "Component-Accordion",
+        path: "/component/accordion",
+        component: () => import("@/pages/component/dj-accordion.vue"),
         meta: <RouteMeta>{
           title: "Accordion 手风琴",
           keepAlive: false,
@@ -95,9 +95,22 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Video",
-        path: "/guide/video",
-        component: () => import("@/pages/guide/guide-video.vue"),
+        name: "Component-Audio",
+        path: "/component/audio",
+        component: () => import("@/pages/component/dj-audio.vue"),
+        meta: <RouteMeta>{
+          title: "Audio 音频播放器",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
+        name: "Component-Video",
+        path: "/component/video",
+        component: () => import("@/pages/component/dj-video.vue"),
         meta: <RouteMeta>{
           title: "Video 视频播放器",
           keepAlive: false,
@@ -108,11 +121,11 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Guide-Audio",
-        path: "/guide/audio",
-        component: () => import("@/pages/guide/guide-audio.vue"),
+        name: "Component-Switch",
+        path: "/component/switch",
+        component: () => import("@/pages/component/dj-switch.vue"),
         meta: <RouteMeta>{
-          title: "Audio 音频播放器",
+          title: "Switch 转换",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
@@ -121,11 +134,57 @@ export const Guide: Array<RouteRecordRaw> = [
         },
       },
     ],
+  },
+];
+
+const Guide: Array<RouteRecordRaw> = [
+  {
+    name: "Guide",
+    path: "/guide",
+    component: () => import("@/layout/document.vue"),
+    redirect: "/guide/installation",
+    meta: <RouteMeta>{
+      title: "指南",
+      keepAlive: false,
+      hasCurtain: true,
+      hasFooter: false,
+      hasNav: true,
+      hasSidebar: true,
+    },
+    children: [
+      {
+        name: "Installation",
+        path: "/guide/installation",
+        component: () => import("@/pages/guide/installation.vue"),
+        meta: <RouteMeta>{
+          title: "安装",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
+        name: "Quickstart",
+        path: "/guide/quickstart",
+        component: () => import("@/pages/guide/quickstart.vue"),
+        meta: <RouteMeta>{
+          title: "快速上手",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+    ]
   }
 ];
 
 export const AsideBar: Array<RouteRecordRaw> = [
   ...Guide,
+  ...Component,
   {
     name: "Examples",
     path: "/examples",
@@ -152,19 +211,6 @@ export const AsideBar: Array<RouteRecordRaw> = [
       hasSidebar: false,
     },
   },
-  // {
-  //   name: "Feedback",
-  //   path: "/feedback",
-  //   component: () => import("@/pages/feedback/index.vue"),
-  //   meta: <RouteMeta>{
-  //     title: "反馈",
-  //     keepAlive: false,
-  //     hasCurtain: false,
-  //     hasFooter: true,
-  //     hasNav: false,
-  //     hasSidebar: false,
-  //   }
-  // }
 ]
 
 

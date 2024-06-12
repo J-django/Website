@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Guide, AsideBar } from '@/router/route'
+import { AsideBar } from '@/router/route'
 import { RouteMeta, useRoute, useRouter } from 'vue-router'
 
 const prop = defineProps({
@@ -97,6 +97,15 @@ const Push = (path: string) => {
             clip-path: inset(50%);
             overflow: hidden;
         }
+
+        .group {
+            border-top: 1px solid var(--t-border-color);
+            padding-top: 10px;
+
+            &:first-of-type {
+                border: none;
+            }
+        }
     }
 }
 
@@ -110,6 +119,8 @@ const Push = (path: string) => {
 }
 
 .sidebarItem.level-1 {
+    padding-bottom: 8px;
+
     .text {
         font-weight: 500;
         color: var(--t-text-color-2);
