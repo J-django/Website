@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
+import { useDJSwitch } from "@/hooks"
+
+const { FoundationCode, DisabledCode } = useDJSwitch();
 
 const switchValue = ref("apple");
 const switchDisabled = ref("apple");
@@ -24,33 +27,14 @@ const toggleDisabled = () => {
     <dj-anchor level="2" text="基础 Foundation" id="Id_Switch_Foundation" />
     <dj-example>
         <dj-switch :data="switchArray" v-model="switchValue" />
-        <dj-code :code="`<template>
-    <dj-switch :data=\x22switchArray\x22 v-model=\x22switchValue\x22 />
-</template>
-
-<script lang=\x22ts\x22 setup>
-import { ref } from \x22vue\x22;
-const switchValue = ref(\x22apple\x22);
-const switchArray = ref([\x22apple\x22, \x22banana\x22, \x22cherry\x22, \x22date\x22, \x22elderberry\x22])
-</script>
-`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Switch_Disabled" />
     <dj-example>
         <dj-button style="margin-bottom: 8px;" @click="toggleSwitch">toggle switch</dj-button>
         <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
         <dj-switch :data="switchArray" v-model="switchDisabled" :disabled="disabled" />
-        <dj-code :code="`<template>
-    <dj-switch :data=\x22switchArray\x22 v-model=\x22switchValue\x22 :disabled=\x22disabled\x22 />
-</template>
-
-<script lang=\x22ts\x22 setup>
-import { ref } from \x22vue\x22;
-const switchValue = ref(\x22apple\x22);
-const disabled = ref(true);
-const switchArray = ref([\x22apple\x22, \x22banana\x22, \x22cherry\x22, \x22date\x22, \x22elderberry\x22])
-</script>
-`" />
+        <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="Switch API" id="Id_Switch_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Switch_Attributes" />

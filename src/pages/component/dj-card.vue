@@ -2,6 +2,9 @@
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
+import { useDJCardCode } from '@/hooks'
+
+const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode } = useDJCardCode();
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import Tbody from '@/components/table-tbody.vue'
         <dj-card align="center">
             Content
         </dj-card>
-        <dj-code :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\tContent\n\t</dj-card>\n</template>`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="页眉 Header" id="Id_Card_Header" />
     <dj-example>
@@ -21,8 +24,7 @@ import Tbody from '@/components/table-tbody.vue'
             </template>
             Content
         </dj-card>
-        <dj-code
-            :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t</dj-card>\n</template>`" />
+        <dj-code :code="HeaderCode" />
     </dj-example>
     <dj-anchor level="2" text="页脚 Footer" id="Id_Card_Footer" />
     <dj-example>
@@ -32,8 +34,7 @@ import Tbody from '@/components/table-tbody.vue'
                 Footer
             </template>
         </dj-card>
-        <dj-code
-            :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</dj-card>\n</template>`" />
+        <dj-code :code="FooterCode" />
     </dj-example>
     <dj-anchor level="2" text="页眉&页脚 Header&Footer" id="Id_Card_HeaderFooter" />
     <dj-example>
@@ -46,8 +47,7 @@ import Tbody from '@/components/table-tbody.vue'
                 Footer
             </template>
         </dj-card>
-        <dj-code
-            :code="`<template>\n\t<dj-card align=\x22center\x22>\n\t\t<template #header>\n\t\t\tHeader\n\t\t</template>\n\t\tContent\n\t\t<template #footer>\n\t\t\tFooter\n\t\t</template>\n\t</dj-card>\n</template>`" />
+        <dj-code :code="HeaderAndFooterCode" />
     </dj-example>
     <dj-anchor level="2" text="Card API" id="Id_Card_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Card_Attributes" />

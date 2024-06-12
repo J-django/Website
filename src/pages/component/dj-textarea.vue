@@ -3,6 +3,9 @@ import { ref } from "vue";
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
+import { useDJTextarea } from "@/hooks"
+
+const { FoundationCode, DisabledCode } = useDJTextarea();
 
 const inputFoundation = ref<string>("");
 const inputDisabled = ref<string>("");
@@ -13,21 +16,12 @@ const inputDisabled = ref<string>("");
     <dj-anchor level="2" text="基础 Foundation" id="Id_Textarea_Foundation" />
     <dj-example>
         <dj-textarea placeholder="Please Input" v-model="inputFoundation" />
-        <dj-code :code="`<template>
-    <dj-textarea placeholder=\x22Please Input\x22 v-model=\x22input\x22 />
-</template>
-
-<script lang=\x22ts\x22 setup>
-import { ref } from \x22vue\x22;
-
-const input = ref<string>(\x22\x22);
-</script>`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Textarea_Disabled" />
     <dj-example>
         <dj-textarea placeholder="Please Input" v-model="inputDisabled" disabled />
-        <dj-code
-            :code="`<template>\n\t<dj-input placeholder=\x22Please Input\x22 v-model=\x22input\x22 disabled />\n</template>\n\n<script lang=\x22ts\x22 setup>\nimport { ref } from \x22vue\x22;\nconst input = ref<string>(\x22\x22);\n</script>`" />
+        <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="Textarea API" id="Id_Textarea_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Textarea_Attributes" />

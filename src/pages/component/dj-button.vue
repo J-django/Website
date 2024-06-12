@@ -2,6 +2,9 @@
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
+import { useDJButtonCode } from '@/hooks'
+
+const { FoundationCode, DisabledCode, CustomColorCode } = useDJButtonCode();
 </script>
 
 <template>
@@ -9,19 +12,18 @@ import Tbody from "@/components/table-tbody.vue"
     <dj-anchor level="2" text="基础 Foundation" id="Id_Button_Foundation" />
     <dj-example>
         <dj-button>Default</dj-button>
-        <dj-code :code="`<template>\n\t<dj-button>Default</dj-button>\n</template>`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Button_Disabled" />
     <dj-example>
         <dj-button disabled>Default</dj-button>
-        <dj-code :code="`<template>\n\t<dj-button disabled>Default</dj-button>\n</template>`" />
+        <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="自定义颜色 Custom Color" id="Id_Button_Custom_Color" />
     <dj-example>
         <dj-button color="#6610f2">Custom Pink</dj-button>
         <dj-button color="#6610f2" disabled>Disabled Custom Pink</dj-button>
-        <dj-code
-            :code="`<template>\n\t<dj-button color=\x22#6610f2\x22>Custom Pink</dj-button>\n\t<dj-button color=\x22#6610f2\x22 disabled>Custom Pink</dj-button>\n</template>`" />
+        <dj-code :code="CustomColorCode" />
     </dj-example>
     <dj-anchor level="2" text="Button API" id="Id_Button_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Button_Attributes" />

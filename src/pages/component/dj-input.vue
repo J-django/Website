@@ -3,12 +3,15 @@ import { ref } from "vue";
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
+import { useDJInput } from '@/hooks'
 
-const inputFoundation = ref<string>("");
-const inputDisabled = ref<string>("");
-const inputClear = ref<string>("");
-const inputPrefixIcon = ref<string>("");
-const inputSuffixIcon = ref<string>("");
+const { FoundationCode, DisabledCode, ClearCode, IconCode } = useDJInput();
+
+const inputFoundation = ref("");
+const inputDisabled = ref("");
+const inputClear = ref("");
+const inputPrefixIcon = ref("");
+const inputSuffixIcon = ref("");
 </script>
 
 <template>
@@ -16,20 +19,17 @@ const inputSuffixIcon = ref<string>("");
     <dj-anchor level="2" text="基础 Foundation" id="Id_Input_Foundation" />
     <dj-example>
         <dj-input placeholder="Please Input" v-model="inputFoundation" />
-        <dj-code :code="`<template>\n\t<dj-input placeholder=\x22Please Input\x22 v-model=\x22input\x22 />\n</template>\n
-<script lang=\x22ts\x22 setup>\nimport { ref } from \x22vue\x22;\nconst input = ref<string>(\x22\x22);\n</script>`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Input_Disabled" />
     <dj-example>
         <dj-input placeholder="Please Input" v-model="inputDisabled" disabled />
-        <dj-code
-            :code="`<template>\n\t<dj-input placeholder=\x22Please Input\x22 v-model=\x22input\x22 disabled />\n</template>\n\n<script lang=\x22ts\x22 setup>\nimport { ref } from \x22vue\x22;\nconst input = ref<string>(\x22\x22);\n</script>`" />
+        <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="清空 Clear" id="Id_Input_Clear" />
     <dj-example>
         <dj-input placeholder="Please Input Clear" v-model="inputClear" clear />
-        <dj-code
-            :code="`<template>\n\t<dj-input placeholder=\x22Please Input Clear\x22 v-model=\x22input\x22 clear />\n</template>\n\n<script lang=\x22ts\x22 setup>\nimport { ref } from \x22vue\x22;\nconst input = ref<string>(\x22\x22);\n</script>`" />
+        <dj-code :code="ClearCode" />
     </dj-example>
     <dj-anchor level="2" text="图标 Icon" id="Id_Input_Icon" />
     <dj-example>
@@ -53,31 +53,7 @@ const inputSuffixIcon = ref<string>("");
                 </svg>
             </template>
         </dj-input>
-        <dj-code
-            :code="`<template>
-    <dj-input placeholder=\x22Please Input\x22 v-model=\x22input1\x22>
-        <template #prefix-icon>
-            <svg class=\x22icon\x22 xmlns=\x22http://www.w3.org/2000/svg\x22 width=\x2232\x22 height=\x2232\x22 viewBox=\x220 0 36 36\x22>
-                <path fill=\x22#DE2910\x22
-                    d=\x22M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z\x22 />
-                <path fill=\x22#FFDE02\x22
-                    d=\x22M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z\x22 />
-            </svg>
-        </template>
-    </dj-input>
-    <dj-input placeholder=\x22Please Input\x22 v-model=\x22input2\x22>
-        <template #suffix-icon>
-            <svg class=\x22icon\x22 xmlns=\x22http://www.w3.org/2000/svg\x22 width=\x2232\x22 height=\x2232\x22 viewBox=\x220 0 36 36\x22>
-                <path fill=\x22#DE2910\x22
-                    d=\x22M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z\x22 />
-                <path fill=\x22#FFDE02\x22
-                    d=\x22M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z\x22 />
-            </svg>
-        </template>
-    </dj-input>
-</template>
-
-<script lang=\x22ts\x22 setup>\nimport { ref } from \x22vue\x22;\nconst input1 = ref<string>(\x22\x22);\nconst input2 = ref<string>(\x22\x22);\n</script>`" />
+        <dj-code :code="IconCode" />
     </dj-example>
     <dj-anchor level="2" text="Input API" id="Id_Input_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Input_Attributes" />

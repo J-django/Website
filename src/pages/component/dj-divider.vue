@@ -2,6 +2,9 @@
 import Table from '@/components/table.vue'
 import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
+import { useDJDividerCode } from '@/hooks'
+
+const { FoundationCode, StyleCode } = useDJDividerCode();
 </script>
 
 <template>
@@ -9,12 +12,12 @@ import Tbody from '@/components/table-tbody.vue'
     <dj-anchor level="2" text="基础 Foundation" id="Id_Divider_Foundation" />
     <dj-example>
         <dj-divider :text="'New Divider'" />
-        <dj-code :code="`<template>\n\t<dj-divider text=\x22New Divider\x22 />\n</template>`" />
+        <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="风格 Style" id="Id_Divider_Style" />
     <dj-example>
         <dj-divider text="New Divider" type="dashed" />
-        <dj-code :code="`<template>\n\t<dj-divider text=\x22New Divider\x22 type=\x22dashed\x22 />\n</template>`" />
+        <dj-code :code="StyleCode" />
     </dj-example>
     <dj-anchor level="2" text="Divider API" id="Id_Divider_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Divider_Attributes" />
