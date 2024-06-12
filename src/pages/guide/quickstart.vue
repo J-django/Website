@@ -1,19 +1,18 @@
-<template>
-    <dj-anchor level="1" text="快速上手" id="Id_Installation" />
-    <dj-anchor level="2" text="全局引入" id="Id_MainTs_Usage" />
-    <dj-code language="ts" :code="`# main.ts
-import { createApp } from \x22vue\x22;
-import App from \x22./App.vue\x22;
-# 引入组件库
-import DjangoUI from \x22django-ui\x22;
-# 引入组件库样式
-import \x22django-ui/style.css\x22;
+<script lang="ts" setup>
+import { useQuickstart } from '@/hooks'
 
-const app = createApp(App);
-app.use(DjangoUI);
-app.mount(\x22#app\x22);`" />
-    <dj-anchor level="2" text="使用组件" id="Id_Apply_Component" />
-    <dj-code :code="`<template>
-    <dj-button>test</dj-button>
-</template>`" />
+const { GlobalImportCode, UseComponentCode, importProblemCode } = useQuickstart();
+</script>
+
+<template>
+    <dj-anchor level="1" text="Quickstart 快速上手" id="Id_Installation" />
+    <dj-anchor level="2" text="全局引入 Global Import" id="Id_MainTs_Usage" />
+    <dj-code language="js" :code="GlobalImportCode" />
+    <p style="margin: 16px 0;">
+        如typescript项目引用提示
+        <dj-mark class="dj-mark" text="无法找到模块“django-ui”的声明文件" />
+    </p>
+    <dj-code language="ts" :code="importProblemCode" />
+    <dj-anchor level="2" text="使用组件 Use Component" id="Id_Apply_Component" />
+    <dj-code :code="UseComponentCode" />
 </template>

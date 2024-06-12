@@ -157,7 +157,7 @@ const Guide: Array<RouteRecordRaw> = [
         path: "/guide/installation",
         component: () => import("@/pages/guide/installation.vue"),
         meta: <RouteMeta>{
-          title: "安装",
+          title: "Installation 安装",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
@@ -170,7 +170,7 @@ const Guide: Array<RouteRecordRaw> = [
         path: "/guide/quickstart",
         component: () => import("@/pages/guide/quickstart.vue"),
         meta: <RouteMeta>{
-          title: "快速上手",
+          title: "Quickstart 快速上手",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,
