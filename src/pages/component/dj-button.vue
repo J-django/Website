@@ -1,20 +1,7 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-
-const FoundationCode = ref("");
-
-const load = async () => {
-    const response = await fetch("../component/dj-button/foundation.md");
-  const text = await response.text();
-}
-
-onMounted(() => {
-    load();
-})
 </script>
 
 <template>
