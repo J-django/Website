@@ -94,13 +94,13 @@ const switchChange = () => {
             </dj-card>
         </div>
         <div class="line">
-            <dj-divider text="New Divider" />
+            <dj-divider label="New Divider" />
         </div>
         <div class="line">
-            <dj-divider text="New Divider" type="dashed" />
+            <dj-divider label="New Divider" type="dashed" />
         </div>
         <div class="line">
-            <dj-divider text="New Divider" type="dotted" />
+            <dj-divider label="New Divider" type="dotted" />
         </div>
         <div class="line">
             <dj-accordion v-model="accordion" title="发现更美好的自己，追寻内心的光芒"
@@ -153,7 +153,7 @@ const switchChange = () => {
         </div>
         <div class="line">
             <dj-button style="margin-bottom: 8px;" @click="switchChange">Change</dj-button>
-            <dj-switch :data="switchArray" v-model="switchValue" />
+            <dj-segmented :data="switchArray" v-model="switchValue" />
         </div>
     </div>
 </template>

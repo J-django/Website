@@ -3,18 +3,27 @@ import { ref } from 'vue'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-import { useDJSwitch } from "@/hooks"
+import { useDJSegmented } from "@/hooks"
 
-const { FoundationCode, DisabledCode } = useDJSwitch();
+const { FoundationCode, DisabledCode, AloneDisabledCode } = useDJSegmented();
 
-const switchValue = ref("apple");
-const switchDisabled = ref("apple");
+const segmentedValue = ref("apple");
+const segmentedDisabled = ref("apple");
 const disabled = ref(true);
-const switchArray = ref(["apple", "banana", "cherry", "date", "elderberry"])
+const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"])
 
-const toggleSwitch = () => {
-    const index = Math.floor(Math.random() * switchArray.value.length);
-    switchDisabled.value = switchArray.value[index];
+const segmentedAloneDisabledValue = ref("apple");
+const segmentedAloneDisabledArray = ref([
+    "apple",
+    { label: "banana", value: "banana", disabled: true },
+    "cherry",
+    { label: "grape", value: "grape", disabled: true },
+    "honeydew"
+]);
+
+const toggleSegmented = () => {
+    const index = Math.floor(Math.random() * segmentedArray.value.length);
+    segmentedDisabled.value = segmentedArray.value[index];
 }
 
 const toggleDisabled = () => {
@@ -23,21 +32,26 @@ const toggleDisabled = () => {
 </script>
 
 <template>
-    <dj-anchor level="1" text="Switch 转换" id="Id_Switch" />
-    <dj-anchor level="2" text="基础 Foundation" id="Id_Switch_Foundation" />
+    <dj-anchor level="1" text="Segmented 分段器" id="Id_Segmented" />
+    <dj-anchor level="2" text="基础 Foundation" id="Id_Segmented_Foundation" />
     <dj-example>
-        <dj-switch :data="switchArray" v-model="switchValue" />
+        <dj-segmented :data="segmentedArray" v-model="segmentedValue" />
         <dj-code :code="FoundationCode" />
     </dj-example>
-    <dj-anchor level="2" text="禁用 Disabled" id="Id_Switch_Disabled" />
+    <dj-anchor level="2" text="禁用 Disabled" id="Id_Segmented_Disabled" />
     <dj-example>
-        <dj-button style="margin-bottom: 8px;" @click="toggleSwitch">toggle switch</dj-button>
+        <dj-button style="margin-bottom: 8px;" @click="toggleSegmented">toggle switch</dj-button>
         <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
-        <dj-switch :data="switchArray" v-model="switchDisabled" :disabled="disabled" />
+        <dj-segmented :data="segmentedArray" v-model="segmentedDisabled" :disabled="disabled" />
         <dj-code :code="DisabledCode" />
     </dj-example>
-    <dj-anchor level="2" text="Switch API" id="Id_Switch_API" />
-    <dj-anchor level="3" text="属性 Attributes" id="Id_Switch_Attributes" />
+    <dj-anchor level="2" text="单独禁用 Alone Disabled" id="Id_Segmented_AloneDisabled" />
+    <dj-example>
+        <dj-segmented :data="segmentedAloneDisabledArray" v-model="segmentedAloneDisabledValue" />
+        <dj-code :code="AloneDisabledCode" />
+    </dj-example>
+    <dj-anchor level="2" text="Segmented API" id="Id_Segmented_API" />
+    <dj-anchor level="3" text="属性 Attributes" id="Id_Segmented_Attributes" />
     <dj-example>
         <Table>
             <template #thead>
@@ -53,28 +67,30 @@ const toggleDisabled = () => {
                     <td>model-value</td>
                     <td>值</td>
                     <td>
-                        <dj-badge text="string" />/
-                        <dj-badge text="number" />/
-                        <dj-badge text="boolean" />
+                        <dj-badge text="string" />
                     </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>data</td>
                     <td>数据</td>
-                    <td><dj-badge text="array<string | number | boolean>" /></td>
-                    <td>-</td>
+                    <td>
+                        <dj-badge text="array" />
+                    </td>
+                    <td>[]</td>
                 </Tbody>
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
             </template>
         </Table>
     </dj-example>
-    <dj-anchor level="3" text="事件 Events" id="Id_Switch_Events" />
+    <dj-anchor level="3" text="事件 Events" id="Id_Segmented_Events" />
     <dj-example>
         <Table>
             <template #thead>

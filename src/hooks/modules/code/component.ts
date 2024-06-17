@@ -161,9 +161,33 @@ export const useDJDividerCode = () => {
     <dj-divider text="New Divider" type="dashed" />
 </template>`.trim();
 
+    const AlignLeftCode = `
+<template>
+    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" />
+</template>`.trim();
+
+    const AlignRightCode = `
+<template>
+    <dj-segmented align="right" :data="segmentedArray" v-model="segmentedValue" />
+</template>`.trim();
+
+    const OffsetCode = `
+<template>
+    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" :offset="150" />
+</template>`.trim();
+
+    const EmptyCode = `
+<template>
+    <dj-segmented />
+</template>`.trim();
+
     return {
         FoundationCode,
-        StyleCode
+        StyleCode,
+        AlignLeftCode,
+        AlignRightCode,
+        OffsetCode,
+        EmptyCode
     }
 }
 
@@ -244,37 +268,55 @@ const input2 = ref("");
 }
 
 /**
- * dj-switch
- * Switch 转换
+ * dj-segmented
+ * Segmented 转换
  * @returns DisabledCode, DisabledCode
  */
-export const useDJSwitch = () => {
+export const useDJSegmented = () => {
     const FoundationCode = `
 <template>
-    <dj-switch :data="switchArray" v-model="switchValue" />
+    <dj-segmented :data="segmentedArray" v-model="segmentedValue" />
 </template>
 
 <script setup>
 import { ref } from "vue";
-const switchValue = ref("apple");
-const switchArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
+const segmentedValue = ref("apple");
+const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
 </script>`.trim();
 
     const DisabledCode = `
 <template>
-    <dj-switch :data="switchArray" v-model="switchValue" :disabled="disabled" />
+    <dj-segmented :data="segmentedArray" v-model="segmentedValue" :disabled="disabled" />
 </template>
 
 <script setup>
 import { ref } from "vue";
-const switchValue = ref("apple");
+const segmentedValue = ref("apple");
 const disabled = ref(true);
-const switchArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
+const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
+</script>`.trim();
+
+    const AloneDisabledCode = `
+<template>
+    <dj-segmented :data="segmentedArray" v-model="segmentedValue" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const segmentedValue = ref("apple");
+const segmentedArray = ref([
+    "apple",
+    { label: "banana", value: "banana", disabled: true },
+    "cherry",
+    { label: "grape", value: "grape", disabled: true },
+    "honeydew"
+]);
 </script>`.trim();
 
     return {
         FoundationCode,
-        DisabledCode
+        DisabledCode,
+        AloneDisabledCode
     }
 }
 

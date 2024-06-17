@@ -13,6 +13,9 @@
 
 <style lang="scss" scoped>
 .jy-table {
+    width: 100%;
+    overflow-x: auto;
+
     table {
         border-collapse: collapse;
         width: 100%;

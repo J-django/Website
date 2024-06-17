@@ -121,11 +121,11 @@ export const Component: Array<RouteRecordRaw> = [
         },
       },
       {
-        name: "Component-Switch",
-        path: "/component/switch",
-        component: () => import("@/pages/component/dj-switch.vue"),
+        name: "Component-Segmented",
+        path: "/component/segmented",
+        component: () => import("@/pages/component/dj-segmented.vue"),
         meta: <RouteMeta>{
-          title: "Switch 转换",
+          title: "Segmented 分段器",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,

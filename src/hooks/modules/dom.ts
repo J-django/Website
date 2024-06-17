@@ -1,11 +1,6 @@
 import { useRoute } from 'vue-router'
 
-
 export const useDom = () => {
-    const { path } = useRoute();
-
-    const selector = () => { }
-
     const goAnchor = (anchor: string | undefined) => {
         if (!anchor) return;
         const element: HTMLElement = document.querySelector("#" + anchor)!;
@@ -24,7 +19,6 @@ export const useDom = () => {
     }
 
     return {
-        selector,
         goAnchor,
         getElementsByTagName,
     }

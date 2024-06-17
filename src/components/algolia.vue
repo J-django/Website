@@ -76,10 +76,6 @@ onMounted(() => {
                 font-family: inherit;
                 background: none;
                 box-shadow: none;
-
-                svg {
-                    border: 1px solid
-                }
             }
         }
     }

@@ -50,25 +50,33 @@ const toggleDisabled = () => {
                 <Tbody>
                     <td>model-value</td>
                     <td>值</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>title</td>
                     <td>标题</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>content</td>
                     <td>内容</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
             </template>

@@ -41,26 +41,42 @@ const fileChange = (fileUrl: string) => {
                 <Tbody>
                     <td>src</td>
                     <td>规定音频文件的 URL</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>autoplay</td>
                     <td>返回是否在就绪（加载完成）后随即播放音频</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
                 <Tbody>
                     <td>loop</td>
                     <td>返回音频是否应在结束时再次播放</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
                 <Tbody>
                     <td>muted</td>
                     <td>返回是否关闭声音</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>transition</td>
+                    <td>是否启用动画</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>true</td>
                 </Tbody>
             </template>
         </Table>

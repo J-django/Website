@@ -9,9 +9,14 @@ const { FoundationCode, DisabledCode, ClearCode, IconCode } = useDJInput();
 
 const inputFoundation = ref("");
 const inputDisabled = ref("");
+const disabled = ref(true);
 const inputClear = ref("");
 const inputPrefixIcon = ref("");
 const inputSuffixIcon = ref("");
+
+const toggleDisabled = () => {
+    disabled.value = !disabled.value;
+}
 </script>
 
 <template>
@@ -23,7 +28,8 @@ const inputSuffixIcon = ref("");
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Input_Disabled" />
     <dj-example>
-        <dj-input placeholder="Please Input" v-model="inputDisabled" disabled />
+        <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
+        <dj-input placeholder="Please Input" v-model="inputDisabled" :disabled="disabled" />
         <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="清空 Clear" id="Id_Input_Clear" />
@@ -71,42 +77,54 @@ const inputSuffixIcon = ref("");
                 <Tbody>
                     <td>model-value</td>
                     <td>值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>id</td>
                     <td>编号</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>placeholder</td>
                     <td>提示</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
                 <Tbody>
                     <td>clear</td>
                     <td>清空</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
                 <Tbody>
                     <td>enterkeyhint</td>
                     <td>Enter键类型</td>
                     <td>
-                        <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                            <dj-badge text="enter" />/<dj-badge text="done" />/<dj-badge text="go" />/<dj-badge
-                                text="next" />/<dj-badge text="previous" />/<dj-badge text="search" />/<dj-badge
-                                text="send" />
-                        </div>
+                        <dj-badge text="enter" />/
+                        <dj-badge text="done" />/
+                        <dj-badge text="go" />/
+                        <dj-badge text="next" />/
+                        <dj-badge text="previous" />/
+                        <dj-badge text="search" />/
+                        <dj-badge text="send" />
                     </td>
                     <td>-</td>
                 </Tbody>

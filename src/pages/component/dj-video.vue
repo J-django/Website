@@ -43,32 +43,50 @@ const fileChange = (fileUrl: string) => {
                 <Tbody>
                     <td>src</td>
                     <td>规定视频文件的 URL</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>width</td>
                     <td>返回视频的 width 属性的值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>100%</td>
                 </Tbody>
                 <Tbody>
                     <td>minWidth</td>
                     <td>返回视频的 min-width 属性的值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>height</td>
                     <td>返回视频的 height 属性的值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>100%</td>
                 </Tbody>
                 <Tbody>
                     <td>minHeight</td>
                     <td>返回视频的 min-height 属性的值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
+                </Tbody>
+                <Tbody>
+                    <td>transition</td>
+                    <td>是否启用动画</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>true</td>
                 </Tbody>
             </template>
         </Table>

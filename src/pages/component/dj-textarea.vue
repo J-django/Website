@@ -9,6 +9,11 @@ const { FoundationCode, DisabledCode } = useDJTextarea();
 
 const inputFoundation = ref<string>("");
 const inputDisabled = ref<string>("");
+const disabled = ref(true);
+
+const toggleDisabled = () => {
+    disabled.value = !disabled.value;
+}
 </script>
 
 <template>
@@ -20,7 +25,8 @@ const inputDisabled = ref<string>("");
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Textarea_Disabled" />
     <dj-example>
-        <dj-textarea placeholder="Please Input" v-model="inputDisabled" disabled />
+        <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
+        <dj-textarea placeholder="Please Input" v-model="inputDisabled" :disabled="disabled" />
         <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="Textarea API" id="Id_Textarea_API" />
@@ -39,37 +45,49 @@ const inputDisabled = ref<string>("");
                 <Tbody>
                     <td>model-value</td>
                     <td>值</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>id</td>
                     <td>编号</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>placeholder</td>
                     <td>提示</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
                 <Tbody>
                     <td>rows</td>
                     <td>规定文本区域的高度</td>
-                    <td><dj-badge text="number" /></td>
+                    <td>
+                        <dj-badge text="number" />
+                    </td>
                     <td>2</td>
                 </Tbody>
                 <Tbody>
                     <td>cols</td>
                     <td>规定文本区域的宽度</td>
-                    <td><dj-badge text="number" /></td>
+                    <td>
+                        <dj-badge text="number" />
+                    </td>
                     <td>20</td>
                 </Tbody>
             </template>

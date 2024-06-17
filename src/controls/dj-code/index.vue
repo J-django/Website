@@ -35,12 +35,7 @@ const copyRes = ref<Boolean>(false);
 
 const copy = _.throttle(() => {
     try {
-        const input = document.createElement("textarea");
-        document.body.appendChild(input);
-        input.value = prop.code;
-        input.select();
-        document.execCommand("Copy");
-        document.body.removeChild(input);
+        navigator.clipboard.writeText(prop.code);
         copyRes.value = true;
         reset();
     } catch {

@@ -24,8 +24,8 @@ dependencies:
     specifier: ^1.10.3
     version: 1.11.3
   django-ui:
-    specifier: 1.0.11
-    version: 1.0.11
+    specifier: 1.0.12
+    version: 1.0.12
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -1165,8 +1165,8 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
-  /django-ui@1.0.11:
-    resolution: {integrity: sha512-J5B0mW+gEXwu/W5/LBoAu+7WEIK6vn2Yiv3XLWu83yLpTDnOX2CT7MERwwIf+k/nv0dtcZycdM8DgzyTeT8Wcg==}
+  /django-ui@1.0.12:
+    resolution: {integrity: sha512-p/3m375roDUImq1lnp2AlaMiTjKDOz+Wgtqzy3jVeQGaBajeO6+LSf6cCQ3cIuBaUSlyFxRoxVOR/NBpErr2IA==}
     dev: false
 
   /dom-serializer@1.4.1:

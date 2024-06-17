@@ -39,21 +39,27 @@ const { FoundationCode, DisabledCode, CustomColorCode } = useDJButtonCode();
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>text</td>
+                    <td>label</td>
                     <td>文本内容</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>color</td>
                     <td>自定义颜色</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
-                    <td><dj-badge text="boolean" /></td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
                     <td>false</td>
                 </Tbody>
             </template>

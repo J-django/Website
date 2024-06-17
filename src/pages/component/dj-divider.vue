@@ -4,20 +4,40 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJDividerCode } from '@/hooks'
 
-const { FoundationCode, StyleCode } = useDJDividerCode();
+const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, EmptyCode } = useDJDividerCode();
 </script>
 
 <template>
     <dj-anchor level="1" text="Divider 分割线" id="Id_Divider" />
     <dj-anchor level="2" text="基础 Foundation" id="Id_Divider_Foundation" />
     <dj-example>
-        <dj-divider :text="'New Divider'" />
+        <dj-divider :label="'New Divider'" />
         <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="风格 Style" id="Id_Divider_Style" />
     <dj-example>
-        <dj-divider text="New Divider" type="dashed" />
+        <dj-divider label="Type Dashed" type="dashed" />
         <dj-code :code="StyleCode" />
+    </dj-example>
+    <dj-anchor level="2" text="左对齐 Left" id="Id_Divider_Left" />
+    <dj-example>
+        <dj-divider align="left" label="Align Left" />
+        <dj-code :code="AlignLeftCode" />
+    </dj-example>
+    <dj-anchor level="2" text="右对齐 Right" id="Id_Divider_Right" />
+    <dj-example>
+        <dj-divider align="right" label="Align Right" />
+        <dj-code :code="AlignRightCode" />
+    </dj-example>
+    <dj-anchor level="2" text="偏移 Offset" id="Id_Divider_Offset" />
+    <dj-example>
+        <dj-divider align="left" label="Align Left" :offset="150" />
+        <dj-code :code="OffsetCode" />
+    </dj-example>
+    <dj-anchor level="2" text="空内容 Empty" id="Id_Divider_Empty" />
+    <dj-example>
+        <dj-divider />
+        <dj-code :code="EmptyCode" />
     </dj-example>
     <dj-anchor level="2" text="Divider API" id="Id_Divider_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Divider_Attributes" />
@@ -33,20 +53,51 @@ const { FoundationCode, StyleCode } = useDJDividerCode();
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>text</td>
-                    <td>内容</td>
-                    <td><dj-badge text="string" /></td>
+                    <td>label</td>
+                    <td>文本</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
                     <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>type</td>
                     <td>分割线类型</td>
                     <td>
-                        <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                            <dj-badge text="solid" />/<dj-badge text="dashed" />/<dj-badge text="dotted" />
-                        </div>
+                        <dj-badge text="solid" />/
+                        <dj-badge text="dashed" />/
+                        <dj-badge text="dotted" />/
+                        <dj-badge text="double" />
                     </td>
                     <td>solid</td>
+                </Tbody>
+                <Tbody>
+                    <td>align</td>
+                    <td>对齐方式</td>
+                    <td>
+                        <dj-badge text="left" />/
+                        <dj-badge text="center" />/
+                        <dj-badge text="right" />
+                    </td>
+                    <td>center</td>
+                </Tbody>
+                <Tbody>
+                    <td>margin</td>
+                    <td>内容距离分割线距离</td>
+                    <td>
+                        <dj-badge text="number" />/
+                        <dj-badge text="string" />
+                    </td>
+                    <td>10</td>
+                </Tbody>
+                <Tbody>
+                    <td>offset</td>
+                    <td>偏移量</td>
+                    <td>
+                        <dj-badge text="number" />/
+                        <dj-badge text="string" />
+                    </td>
+                    <td>10</td>
                 </Tbody>
             </template>
         </Table>

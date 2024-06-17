@@ -66,9 +66,9 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode } = useDJCar
                     <td>align</td>
                     <td>对齐方式</td>
                     <td>
-                        <div style="display: flex;flex-wrap: wrap;gap: 4px;">
-                            <dj-badge text="left" />/<dj-badge text="center" />/<dj-badge text="right" />
-                        </div>
+                        <dj-badge text="left" />/
+                        <dj-badge text="center" />/
+                        <dj-badge text="right" />
                     </td>
                     <td>
                         <dj-badge text="left" />
@@ -77,10 +77,10 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode } = useDJCar
                 <Tbody>
                     <td>title</td>
                     <td>标题，仅在头部存在时生效</td>
-                    <td><dj-badge text="string" /></td>
                     <td>
-                        -
+                        <dj-badge text="string" />
                     </td>
+                    <td>-</td>
                 </Tbody>
             </template>
         </Table>
