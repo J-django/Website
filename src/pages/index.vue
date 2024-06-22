@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <!-- <dj-code style="width: 250px;" language="bash" :code="`npm install django-ui`" />
+        <dj-code style="width: 250px;" language="bash" :code="`npm install django-ui`" />
         <dj-button class="getStarted" @click="getStarted">
             Get Started
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -11,11 +11,7 @@
                         d="m15.06 5.283l5.657 5.657a1.5 1.5 0 0 1 0 2.12l-5.656 5.658a1.5 1.5 0 0 1-2.122-2.122l3.096-3.096H4.5a1.5 1.5 0 0 1 0-3h11.535L12.94 7.404a1.5 1.5 0 0 1 2.122-2.121Z" />
                 </g>
             </svg>
-        </dj-button> -->
-
-        <div class="test-container">
-
-        </div>
+        </dj-button>
     </div>
 </template>
 
@@ -32,44 +28,6 @@ const getStarted = () => {
 </script>
 
 <style lang="less" scoped>
-.test-container {
-    position: relative;
-    width: 500px;
-    height: 200px;
-    background-color: var(--t-card-background-color);
-    border: 1px solid var(--t-border-color);
-    border-radius: 12px;
-
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-        border: 1px solid var(--t-border-color);
-        z-index: -1;
-    }
-
-    &::before {
-        transform: translateX(-50%) translateY(-11px) scale(.96);
-        opacity: .8;
-    }
-
-    &::after {
-        transform: translateX(-50%) translateY(-21px) scale(.91);
-        opacity: .4;
-    }
-}
-
-
-
-
-
-
 .home {
     padding-top: rem(200px);
     width: 100%;
