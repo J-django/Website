@@ -5,7 +5,7 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJInput } from '@/hooks'
 
-const { FoundationCode, DisabledCode, ClearCode, IconCode } = useDJInput();
+const { FoundationCode, DisabledCode, ClearCode, RecombinationCode } = useDJInput();
 
 const inputFoundation = ref("");
 const inputDisabled = ref("");
@@ -37,29 +37,28 @@ const toggleDisabled = () => {
         <dj-input placeholder="Please Input Clear" v-model="inputClear" clear />
         <dj-code :code="ClearCode" />
     </dj-example>
-    <dj-anchor level="2" text="图标 Icon" id="Id_Input_Icon" />
+    <dj-anchor level="2" text="复合 Recombination" id="Id_Input_Recombination" />
     <dj-example>
         <dj-input placeholder="Please Input" v-model="inputPrefixIcon">
-            <template #prefix-icon>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
-                    <path fill="#DE2910"
-                        d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
-                    <path fill="#FFDE02"
-                        d="M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z" />
+            <template #prefix>
+                <svg class="icon" style="color: var(--t-text-color-2);" xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32" viewBox="0 0 16 16">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M11.5 7a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m-.82 4.74a6 6 0 1 1 1.06-1.06l2.79 2.79a.75.75 0 1 1-1.06 1.06z"
+                        clip-rule="evenodd" />
                 </svg>
             </template>
         </dj-input>
         <dj-input placeholder="Please Input" v-model="inputSuffixIcon">
-            <template #suffix-icon>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
-                    <path fill="#DE2910"
-                        d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
-                    <path fill="#FFDE02"
-                        d="M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z" />
+            <template #suffix>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M11.5 7a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m-.82 4.74a6 6 0 1 1 1.06-1.06l2.79 2.79a.75.75 0 1 1-1.06 1.06z"
+                        clip-rule="evenodd" />
                 </svg>
             </template>
         </dj-input>
-        <dj-code :code="IconCode" />
+        <dj-code :code="RecombinationCode" />
     </dj-example>
     <dj-anchor level="2" text="Input API" id="Id_Input_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Input_Attributes" />
@@ -200,11 +199,17 @@ const toggleDisabled = () => {
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>prefix-icon</td>
+                    <td>
+                        prefix
+                        <dj-badge text="1.0.13版本更名" />
+                    </td>
                     <td>前缀</td>
                 </Tbody>
                 <Tbody>
-                    <td>suffix-icon</td>
+                    <td>
+                        suffix
+                        <dj-badge text="1.0.13版本更名" />
+                    </td>
                     <td>后缀</td>
                 </Tbody>
             </template>

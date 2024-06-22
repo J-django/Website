@@ -77,10 +77,23 @@ export const useDJButtonCode = () => {
 
     const CustomColorCode = `
 <template>
-    <dj-button color="#6610f2">Custom Pink</dj-button>
-    <dj-button color="#6610f2" :disabled="disabled">Custom Pink</dj-button>
+    <dj-button color="#6610f2">Custom Color</dj-button>
+    <dj-button color="#6610f2" :disabled="disabled">Custom Color</dj-button>
 </template>
     
+<script setup>
+import { ref } from 'vue';
+const disabled = ref(true);
+</script>`.trim();
+
+    const PlainCode = `
+<template>
+    <dj-button plain>Plain</dj-button>
+    <dj-button plain :disabled="disabled">Disabled Plain</dj-button>
+    <dj-button color="#6610f2" plain>Custom Color Plain</dj-button>
+    <dj-button color="#6610f2" plain :disabled="disabled">Disabled Custom Color Plain</dj-button>
+</template>
+
 <script setup>
 import { ref } from 'vue';
 const disabled = ref(true);
@@ -89,7 +102,8 @@ const disabled = ref(true);
     return {
         FoundationCode,
         DisabledCode,
-        CustomColorCode
+        CustomColorCode,
+        PlainCode
     }
 }
 
@@ -137,11 +151,24 @@ export const useDJCardCode = () => {
     </dj-card>
 </template>`.trim();
 
+    const GhostingCode = `    
+<template>
+    <dj-card align="center" :ghosting="ghosting">
+        Content
+    </dj-card>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+const ghosting = ref(true);
+</script>`.trim();
+
     return {
         FoundationCode,
         HeaderCode,
         FooterCode,
-        HeaderAndFooterCode
+        HeaderAndFooterCode,
+        GhostingCode
     }
 }
 
@@ -173,7 +200,7 @@ export const useDJDividerCode = () => {
 
     const OffsetCode = `
 <template>
-    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" :offset="150" />
+    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" :offset="100" />
 </template>`.trim();
 
     const EmptyCode = `
@@ -229,10 +256,10 @@ const input = ref("");
 const clear = ref(true);
 </script>`.trim();
 
-    const IconCode = `
+    const RecombinationCode = `
 <template>
     <dj-input placeholder="Please Input" v-model="input1">
-        <template #prefix-icon>
+        <template #prefix>
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
                 <path fill="#DE2910"
                     d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
@@ -242,7 +269,7 @@ const clear = ref(true);
         </template>
     </dj-input>
     <dj-input placeholder="Please Input" v-model="input2">
-        <template #suffix-icon>
+        <template #suffix>
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
                 <path fill="#DE2910"
                     d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
@@ -263,7 +290,7 @@ const input2 = ref("");
         FoundationCode,
         DisabledCode,
         ClearCode,
-        IconCode
+        RecombinationCode
     }
 }
 

@@ -19,19 +19,19 @@ const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, Em
         <dj-divider label="Type Dashed" type="dashed" />
         <dj-code :code="StyleCode" />
     </dj-example>
-    <dj-anchor level="2" text="左对齐 Left" id="Id_Divider_Left" />
+    <dj-anchor level="2" text="左对齐 Align Left" id="Id_Divider_Align_Left" />
     <dj-example>
         <dj-divider align="left" label="Align Left" />
         <dj-code :code="AlignLeftCode" />
     </dj-example>
-    <dj-anchor level="2" text="右对齐 Right" id="Id_Divider_Right" />
+    <dj-anchor level="2" text="右对齐 Align Right" id="Id_Divider_Align_Right" />
     <dj-example>
         <dj-divider align="right" label="Align Right" />
         <dj-code :code="AlignRightCode" />
     </dj-example>
     <dj-anchor level="2" text="偏移 Offset" id="Id_Divider_Offset" />
     <dj-example>
-        <dj-divider align="left" label="Align Left" :offset="150" />
+        <dj-divider align="left" label="Align Left" :offset="100" />
         <dj-code :code="OffsetCode" />
     </dj-example>
     <dj-anchor level="2" text="空内容 Empty" id="Id_Divider_Empty" />

@@ -4,7 +4,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJButtonCode } from '@/hooks'
 
-const { FoundationCode, DisabledCode, CustomColorCode } = useDJButtonCode();
+const { FoundationCode, DisabledCode, CustomColorCode, PlainCode } = useDJButtonCode();
 </script>
 
 <template>
@@ -21,9 +21,17 @@ const { FoundationCode, DisabledCode, CustomColorCode } = useDJButtonCode();
     </dj-example>
     <dj-anchor level="2" text="自定义颜色 Custom Color" id="Id_Button_Custom_Color" />
     <dj-example>
-        <dj-button color="#6610f2">Custom Pink</dj-button>
-        <dj-button color="#6610f2" disabled>Disabled Custom Pink</dj-button>
+        <dj-button color="#6610f2">Custom Color</dj-button>
+        <dj-button color="#6610f2" disabled>Disabled Custom Color</dj-button>
         <dj-code :code="CustomColorCode" />
+    </dj-example>
+    <dj-anchor level="2" text="朴素 Plain" id="Id_Button_Plain" />
+    <dj-example>
+        <dj-button plain>Plain</dj-button>
+        <dj-button plain disabled>Disabled Plain</dj-button>
+        <dj-button color="#6610f2" plain>Plain Custom Color</dj-button>
+        <dj-button color="#6610f2" plain disabled>Disabled Plain Custom Color </dj-button>
+        <dj-code :code="PlainCode" />
     </dj-example>
     <dj-anchor level="2" text="Button API" id="Id_Button_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Button_Attributes" />
@@ -57,6 +65,14 @@ const { FoundationCode, DisabledCode, CustomColorCode } = useDJButtonCode();
                 <Tbody>
                     <td>disabled</td>
                     <td>禁用</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>plain</td>
+                    <td>朴素模式</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>

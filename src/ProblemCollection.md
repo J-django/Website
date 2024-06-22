@@ -22,6 +22,31 @@
 ## 2024-06-17
 
 - dj-textarea
-  - transition 没有设置 opacity
+  - transition 没有设置 opacity ✅︎
 - dj-accordion
-  - 禁用没有动画效果
+  - 禁用没有动画效果 ✅︎
+  - flex 布局下，默认不能全屏
+- dj-card
+  - flex 布局下，默认不能全屏
+
+## 2024-06-21
+
+- dj-input
+  - icon 图标颜色不对 ✅︎
+- dj-segmented
+  - 要能够全铺 ✅︎
+- dj-card
+  - 加入重像属性，可设置是否显示 ✅︎
+- dj-button
+  - 新增 plain 属性，设置边框镂空样式 ✅︎
+
+## 2024-06-23
+
+- dj-segmented
+  - 还原 padding 样式为 padding: rem(4px);
+  - 移除 dj-segmented-indicator 样式 left: rem(-.5px);
+  - dj-segmented\_\_wrapeer 样式设置 100%
+- dj-card
+- 重像属性 ghosting 失效，需再进行优化
+
+# 以后每个版本先发测试，测试完成没问题后再发正式版！！！！！

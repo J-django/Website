@@ -42,7 +42,9 @@ const toggleDisabled = () => {
     <dj-example>
         <dj-button style="margin-bottom: 8px;" @click="toggleSegmented">toggle switch</dj-button>
         <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
-        <dj-segmented :data="segmentedArray" v-model="segmentedDisabled" :disabled="disabled" />
+        <div>
+            <dj-segmented :data="segmentedArray" v-model="segmentedDisabled" :disabled="disabled" />
+        </div>
         <dj-code :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="单独禁用 Alone Disabled" id="Id_Segmented_AloneDisabled" />
