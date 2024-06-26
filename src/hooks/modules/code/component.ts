@@ -180,32 +180,32 @@ const ghosting = ref(true);
 export const useDJDividerCode = () => {
     const FoundationCode = `
 <template>
-    <dj-divider text="New Divider" />
+    <dj-divider label="New Divider" />
 </template>`.trim();
 
     const StyleCode = `
 <template>
-    <dj-divider text="New Divider" type="dashed" />
+    <dj-divider label="Type Dashed" type="dashed" />
 </template>`.trim();
 
     const AlignLeftCode = `
 <template>
-    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" />
+    <dj-divider align="left" label="Align Left" />
 </template>`.trim();
 
     const AlignRightCode = `
 <template>
-    <dj-segmented align="right" :data="segmentedArray" v-model="segmentedValue" />
+    <dj-divider align="right" label="Align Right" />
 </template>`.trim();
 
     const OffsetCode = `
 <template>
-    <dj-segmented align="left" :data="segmentedArray" v-model="segmentedValue" :offset="100" />
+    <dj-divider align="left" label="Align Left" :offset="100" />
 </template>`.trim();
 
     const EmptyCode = `
 <template>
-    <dj-segmented />
+    <dj-divider />
 </template>`.trim();
 
     return {

@@ -11,7 +11,7 @@ const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, Em
     <dj-anchor level="1" text="Divider 分割线" id="Id_Divider" />
     <dj-anchor level="2" text="基础 Foundation" id="Id_Divider_Foundation" />
     <dj-example>
-        <dj-divider :label="'New Divider'" />
+        <dj-divider label="New Divider" />
         <dj-code :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="风格 Style" id="Id_Divider_Style" />
