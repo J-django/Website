@@ -49,13 +49,6 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
         </dj-card>
         <dj-code :code="HeaderAndFooterCode" />
     </dj-example>
-    <dj-anchor level="2" text="重像 Ghosting" id="Id_Card_Ghosting" />
-    <dj-example>
-        <dj-card align="center" ghosting>
-            Content
-        </dj-card>
-        <dj-code :code="GhostingCode" />
-    </dj-example>
     <dj-anchor level="2" text="Card API" id="Id_Card_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Card_Attributes" />
     <dj-example>
@@ -88,14 +81,6 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
                         <dj-badge text="string" />
                     </td>
                     <td>-</td>
-                </Tbody>
-                <Tbody>
-                    <td>ghosting</td>
-                    <td>重像</td>
-                    <td>
-                        <dj-badge text="boolean" />
-                    </td>
-                    <td>false</td>
                 </Tbody>
             </template>
         </Table>
