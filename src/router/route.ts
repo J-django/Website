@@ -133,6 +133,19 @@ export const Component: Array<RouteRecordRaw> = [
           hasSidebar: true,
         },
       },
+      {
+        name: "Component-Switch",
+        path: "/component/switch",
+        component: () => import("@/pages/component/dj-switch.vue"),
+        meta: <RouteMeta>{
+          title: "Switch 切换",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
     ],
   },
 ];

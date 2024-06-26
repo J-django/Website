@@ -399,3 +399,83 @@ import VideoSrc from "video.mp4";
         FoundationCode
     }
 }
+
+/**
+ * dj-switch
+ * Switch 切换
+ * @returns FoundationCode, DisabledCode, LabelCode, CustomCode
+ */
+export const useDJSwitch = () => {
+    const FoundationCode = `
+<template>
+    <dj-switch v-model="switchValue" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const switchValue = ref(false);
+</script>`.trim();
+
+    const DisabledCode = `
+<template>
+    <dj-switch v-model="switchValue" :disabled="disabled" />
+    <dj-switch v-model="switchValue" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const switchValue = ref(false);
+const disabled = ref(true);
+</script>`.trim();
+
+    const LabelCode = `
+<template>
+    <div class="flex-box">
+        <dj-switch v-model="switchValue" unChecked-label="UnChecked" checked-label="checked" />
+    </div>
+    <div class="flex-box">
+        <dj-switch v-model="switchValue" :disabled="disabled" unChecked-label="UnChecked" checked-label="checked" />
+    </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const switchValue = ref(false);
+const disabled = ref(true);
+</script>
+
+<style>
+.flex-box {
+    display: flex;
+}
+</style>`.trim();
+
+    const CustomCode = `
+<template>
+    <div class="flex-box">
+        <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked" unChecked-color="#a8a8a8" checked-color="#6610f2" unChecked-background-color="#a8a8a8" checked-background-color="#6610f2" />
+    </div>
+    <div class="flex-box">
+        <dj-switch v-model="switchValue" unChecked-background-color="#a8a8a8" checked-background-color="#6610f2" />
+        <dj-switch v-model="switchValue" unChecked-background-color="#a8a8a8" checked-background-color="#00ad7c" />
+    </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const switchValue = ref(false);
+</script>
+
+<style>
+.flex-box {
+    display: flex;
+}
+</style>`.trim();
+
+    return {
+        FoundationCode,
+        DisabledCode,
+        LabelCode,
+        CustomCode
+    }
+}
