@@ -50,3 +50,12 @@
 - 重像属性 ghosting 失效，需再进行优化
 
 # 以后每个版本先发测试，测试完成没问题后再发正式版！！！！！
+
+## 2024-06-26
+
+- dj-switch
+  - 禁用 opacity 过渡动画没有
+  - 多个 dj-switch 设置 margin-left
+  - 插槽名 UnChecked 改为小写开头 unChecked
+- dj-card
+  - 去除 ghosting 属性及其样式
