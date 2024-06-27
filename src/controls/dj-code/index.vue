@@ -1,41 +1,34 @@
-<script lang="ts" setup name="dj-code">
-// plugins
-import { ref, reactive, computed, nextTick, onMounted } from 'vue'
+<script lang="ts" setup>
+import { ref, reactive, nextTick, onMounted } from 'vue'
 import * as  _ from 'lodash'
-import Prism from "prismjs"
-import 'prismjs/components/prism-bash.js';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-typescript.js';
 import { nanoid } from 'nanoid'
 
-// script
-const prop = defineProps({
+const props = defineProps({
+    lang: {
+        type: String,
+        default: ""
+    },
     code: {
         type: String,
         default: ""
     },
-    language: {
-        type: String,
-        default: "vue",
-    },
     title: {
         type: String,
-        default: "javascript"
+        default: ""
     }
 })
 
-const proCodeId = nanoid();
 const overstepParams = reactive({
     height: <number>0,
     overstep: "",
     superior_limit: 500
 })
-const preCode = ref<String>("");
+const proCodeId = nanoid();
 const copyRes = ref<Boolean>(false);
 
 const copy = _.throttle(() => {
     try {
-        navigator.clipboard.writeText(prop.code);
+        navigator.clipboard.writeText(props.code);
         copyRes.value = true;
         reset();
     } catch {
@@ -66,29 +59,12 @@ const loadPreCodeHeight = () => {
 }
 
 onMounted(() => {
-    switch (prop.language) {
-        case "vue":
-            preCode.value = Prism.highlight(prop.code, Prism.languages.html, prop.title);
-            break;
-        case "js":
-        case "javascript":
-            preCode.value = Prism.highlight(prop.code, Prism.languages.javascript, prop.title);
-            break;
-        case "ts":
-        case "typescript":
-            preCode.value = Prism.highlight(prop.code, Prism.languages.typescript, prop.title);
-            break;
-        case "bash":
-            preCode.value = Prism.highlight(prop.code, Prism.languages.bash, prop.title);
-            break;
-    }
-    Prism.highlightAll();
     loadPreCodeHeight();
 })
 </script>
 
 <template>
-    <div class="dj-code" :class="[overstepParams.overstep]" :language="prop.language">
+    <div class="dj-code" :class="[overstepParams.overstep]" :language="props.title">
         <div class="dj-copy" :class="[copyRes ? 'copied' : '']">
             <button class="dj-copy__wrapper" title="复制" @click.prevent="copy">
                 <svg v-if="!copyRes" class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -106,8 +82,7 @@ onMounted(() => {
                 </svg>
             </button>
         </div>
-        <pre class="dj-code__wrapper" :class="[`language-${prop.language}`]"
-            :id="proCodeId"><code v-html="preCode" /></pre>
+        <highlightjs class="dj-code__wrapper" :id="proCodeId" :language="lang" :autodetect="false" :code="code" />
         <div class="dj-code-foldUp"
             v-if="!overstepParams.overstep && overstepParams.height > overstepParams.superior_limit" @click="folded"
             title="折叠">
