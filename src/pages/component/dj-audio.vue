@@ -6,7 +6,7 @@ import Tbody from "@/components/table-tbody.vue"
 import File from '@/components/file.vue'
 import { useDJAudioCode } from '@/hooks'
 
-const { FoundationCode } = useDJAudioCode();
+const { FoundationCode, CssVariablesCode } = useDJAudioCode();
 
 const audioSrc = ref();
 const audioRef = ref();
@@ -23,7 +23,7 @@ const fileChange = (fileUrl: string) => {
     <dj-example>
         <File accept="audio/mp3, audio/wav, audio/ogg, audio/aac, audio/flac, audio/aiff" @change="fileChange" />
         <dj-audio :src="audioSrc" ref="audioRef" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="Audio API" id="Id_Audio_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Audio_Attributes" />
@@ -243,5 +243,9 @@ const fileChange = (fileUrl: string) => {
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Audio_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

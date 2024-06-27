@@ -6,7 +6,7 @@ import Tbody from "@/components/table-tbody.vue"
 import File from '@/components/file.vue'
 import { useDJVideo } from "@/hooks"
 
-const { FoundationCode } = useDJVideo();
+const { FoundationCode, CssVariablesCode } = useDJVideo();
 
 const videoSrc = ref();
 const videoRef = ref();
@@ -25,7 +25,7 @@ const fileChange = (fileUrl: string) => {
             accept="video/mp4, video/webm, video/ogg, video/x-msvideo, video/x-matroska, video/quicktime, video/x-ms-wmv"
             @change="fileChange" />
         <dj-video :src="videoSrc" ref="videoRef" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="Video API" id="Id_Video_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Video_Attributes" />
@@ -408,5 +408,9 @@ const fileChange = (fileUrl: string) => {
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Video_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

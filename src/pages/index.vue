@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <dj-code style="width: 250px;" language="bash" :code="`npm install django-ui`" />
+        <dj-code title="bash" lang="bash" :code="'npm install django-ui'" />
         <dj-button class="getStarted" @click="getStarted">
             Get Started
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">

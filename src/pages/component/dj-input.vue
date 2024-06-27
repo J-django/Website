@@ -5,7 +5,7 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJInput } from '@/hooks'
 
-const { FoundationCode, DisabledCode, ClearCode, RecombinationCode } = useDJInput();
+const { FoundationCode, DisabledCode, ClearCode, RecombinationCode, CssVariablesCode } = useDJInput();
 
 const inputFoundation = ref("");
 const inputDisabled = ref("");
@@ -24,18 +24,18 @@ const toggleDisabled = () => {
     <dj-anchor level="2" text="基础 Foundation" id="Id_Input_Foundation" />
     <dj-example>
         <dj-input placeholder="Please Input" v-model="inputFoundation" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Input_Disabled" />
     <dj-example>
         <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
         <dj-input placeholder="Please Input" v-model="inputDisabled" :disabled="disabled" />
-        <dj-code :code="DisabledCode" />
+        <dj-code title="vue" lang="html" :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="清空 Clear" id="Id_Input_Clear" />
     <dj-example>
         <dj-input placeholder="Please Input Clear" v-model="inputClear" clear />
-        <dj-code :code="ClearCode" />
+        <dj-code title="vue" lang="html" :code="ClearCode" />
     </dj-example>
     <dj-anchor level="2" text="复合 Recombination" id="Id_Input_Recombination" />
     <dj-example>
@@ -58,7 +58,7 @@ const toggleDisabled = () => {
                 </svg>
             </template>
         </dj-input>
-        <dj-code :code="RecombinationCode" />
+        <dj-code title="vue" lang="html" :code="RecombinationCode" />
     </dj-example>
     <dj-anchor level="2" text="Input API" id="Id_Input_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Input_Attributes" />
@@ -243,5 +243,9 @@ const toggleDisabled = () => {
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Input_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

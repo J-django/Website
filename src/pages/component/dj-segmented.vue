@@ -5,7 +5,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJSegmented } from "@/hooks"
 
-const { FoundationCode, DisabledCode, AloneDisabledCode } = useDJSegmented();
+const { FoundationCode, DisabledCode, AloneDisabledCode, CssVariablesCode } = useDJSegmented();
 
 const segmentedValue = ref("apple");
 const segmentedDisabled = ref("apple");
@@ -36,7 +36,7 @@ const toggleDisabled = () => {
     <dj-anchor level="2" text="基础 Foundation" id="Id_Segmented_Foundation" />
     <dj-example>
         <dj-segmented :data="segmentedArray" v-model="segmentedValue" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Segmented_Disabled" />
     <dj-example>
@@ -45,12 +45,12 @@ const toggleDisabled = () => {
         <div>
             <dj-segmented :data="segmentedArray" v-model="segmentedDisabled" :disabled="disabled" />
         </div>
-        <dj-code :code="DisabledCode" />
+        <dj-code title="vue" lang="html" :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="单独禁用 Alone Disabled" id="Id_Segmented_AloneDisabled" />
     <dj-example>
         <dj-segmented :data="segmentedAloneDisabledArray" v-model="segmentedAloneDisabledValue" />
-        <dj-code :code="AloneDisabledCode" />
+        <dj-code title="vue" lang="html" :code="AloneDisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="Segmented API" id="Id_Segmented_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Segmented_Attributes" />
@@ -112,5 +112,9 @@ const toggleDisabled = () => {
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Segmented_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

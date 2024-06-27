@@ -11,6 +11,9 @@ dependencies:
   '@docsearch/js':
     specifier: '3'
     version: 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.13.0)
+  '@highlightjs/vue-plugin':
+    specifier: ^2.1.0
+    version: 2.1.0(highlight.js@11.9.0)(vue@3.4.27)
   '@popperjs/core':
     specifier: ^2.11.8
     version: 2.11.8
@@ -26,6 +29,9 @@ dependencies:
   django-ui:
     specifier: 1.0.15
     version: 1.0.15
+  highlight.js:
+    specifier: ^11.9.0
+    version: 11.9.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -41,9 +47,6 @@ dependencies:
   pinia-plugin-persistedstate:
     specifier: ^3.0.2
     version: 3.2.1(pinia@2.1.7)
-  prismjs:
-    specifier: ^1.29.0
-    version: 1.29.0
   vconsole:
     specifier: ^3.15.1
     version: 3.15.1
@@ -520,6 +523,16 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@highlightjs/vue-plugin@2.1.0(highlight.js@11.9.0)(vue@3.4.27):
+    resolution: {integrity: sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ==}
+    peerDependencies:
+      highlight.js: ^11.0.1
+      vue: ^3
+    dependencies:
+      highlight.js: 11.9.0
+      vue: 3.4.27(typescript@4.9.5)
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.5:
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -1419,6 +1432,11 @@ packages:
     hasBin: true
     dev: true
 
+  /highlight.js@11.9.0:
+    resolution: {integrity: sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
   /html-minifier-terser@6.1.0:
     resolution: {integrity: sha512-YXxSlJBZTP7RS3tWnQw74ooKa6L9b9i9QYXY21eUEvhZ3u9XLfv6OnFsQq6RxkhHygsaUMvYsZRV5rU/OVNZxw==}
     engines: {node: '>=12'}
@@ -1790,11 +1808,6 @@ packages:
 
   /preact@10.21.0:
     resolution: {integrity: sha512-aQAIxtzWEwH8ou+OovWVSVNlFImL7xUCwJX3YMqA3U8iKCNC34999fFOnWjYNsylgfPgMexpbk7WYOLtKr/mxg==}
-    dev: false
-
-  /prismjs@1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
-    engines: {node: '>=6'}
     dev: false
 
   /proxy-from-env@1.1.0:

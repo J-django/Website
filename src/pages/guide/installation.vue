@@ -7,7 +7,7 @@ const { NodeJsInstallationCode, CdnInstallationCode } = useInstallation();
 <template>
     <dj-anchor level="1" text="Installation 安装" id="Id_Installation" />
     <dj-anchor level="2" text="Node.js 安装" id="Id_NodeJs_Installation" />
-    <dj-code language="bash" :code="NodeJsInstallationCode" />
+    <dj-code title="bash" lang="bash" :code="NodeJsInstallationCode" />
     <dj-anchor level="2" text="CDN 安装" id="Id_Cdn_Installation" />
-    <dj-code language="vue" :code="CdnInstallationCode" />
+    <dj-code title="vue" lang="html" :code="CdnInstallationCode" />
 </template>

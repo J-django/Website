@@ -211,7 +211,7 @@ defineExpose({ getSource, init, clearAll })
                                     line-height: 32px;
                                     font-size: 14px;
                                     font-weight: 500;
-                                    color: var(--grey);
+                                    color: var(--t-text-color-3);
                                     white-space: nowrap;
                                     overflow: hidden;
                                     text-overflow: ellipsis;

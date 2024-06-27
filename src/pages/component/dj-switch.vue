@@ -5,7 +5,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJSwitch } from '@/hooks'
 
-const { FoundationCode, DisabledCode, LabelCode, CustomCode } = useDJSwitch();
+const { FoundationCode, DisabledCode, LabelCode, CustomCode, CssVariablesCode } = useDJSwitch();
 
 const switchValue = ref(false);
 const switchDisabledValue = ref(false);
@@ -20,13 +20,13 @@ const switchCustom = ref(true);
     <dj-anchor level="2" text="基础 Foundation" id="Id_Switch_Foundation" />
     <dj-example>
         <dj-switch v-model="switchValue" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Switch_Disabled" />
     <dj-example>
         <dj-switch v-model="switchDisabledValue" :disabled="switchDisabled" />
         <dj-switch v-model="switchDisabledValue" />
-        <dj-code :code="DisabledCode" />
+        <dj-code title="vue" lang="html" :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="标签 Label" id="Id_Switch_Label" />
     <dj-example>
@@ -37,20 +37,20 @@ const switchCustom = ref(true);
             <dj-switch v-model="switchLabel" :disabled="switchLabelDisabled" unChecked-label="UnChecked"
                 checked-label="checked" />
         </div>
-        <dj-code :code="LabelCode" />
+        <dj-code title="vue" lang="html" :code="LabelCode" />
     </dj-example>
     <dj-anchor level="2" text="自定义颜色 Custom" id="Id_Switch_Custom" />
     <dj-example>
         <div class="flex-box">
             <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked"
-                unChecked-color="#a8a8a8" checked-color="#6610f2" unChecked-background-color="#a8a8a8"
+                unChecked-color="#d7d6d7" checked-color="#6610f2" unChecked-background-color="#d7d6d7"
                 checked-background-color="#6610f2" />
         </div>
         <div class="flex-box">
-            <dj-switch v-model="switchCustom" unChecked-background-color="#a8a8a8" checked-background-color="#6610f2" />
-            <dj-switch v-model="switchCustom" unChecked-background-color="#a8a8a8" checked-background-color="#00ad7c" />
+            <dj-switch v-model="switchCustom" unChecked-background-color="#d7d6d7" checked-background-color="#6610f2" />
+            <dj-switch v-model="switchCustom" unChecked-background-color="#d7d6d7" checked-background-color="#00ad7c" />
         </div>
-        <dj-code :code="CustomCode" />
+        <dj-code title="vue" lang="html" :code="CustomCode" />
     </dj-example>
     <dj-anchor level="2" text="Switch API" id="Id_Switch_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Switch_Attributes" />
@@ -164,7 +164,7 @@ const switchCustom = ref(true);
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>UnChecked</td>
+                    <td>unChecked</td>
                     <td>未选中标签内容</td>
                 </Tbody>
                 <Tbody>
@@ -192,6 +192,10 @@ const switchCustom = ref(true);
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Switch_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>
 

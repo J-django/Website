@@ -33,11 +33,26 @@ const title = ref("发现更美好的自己，追寻内心的光芒");
 const content = ref("在喧嚣的世界中，我们常常迷失了自己，远离了内心的声音。然而，每个人都有一颗闪耀的星，它蕴藏着无限的潜力和独特的魅力。现在，是时候发现更美好的自己，追寻内心的光芒了。每个人都有自己的故事，每个人都有自己的梦想。不要害怕展示真实的自我，敢于追求内心的渴望。不论是小小的爱好还是大胆的目标，都值得我们用心去追寻。让自己的内在力量得到释放，成为引领自己命运的明灯。时光匆匆，岁月如梭，我们不应停滞不前。在这个瞬息万变的世界，保持学习和成长的态度是关键。与其追逐瞬时的浮华，不如从内心汲取力量，拥抱真实的自己。唯有不断地挑战自我，我们才能真正发现自己的潜能和价值。生活中，我们常常受到外界的评判和期待，这让我们迷失了自我。然而，真正的力量来源于内心。当我们坚定地追随内心的声音，才能找到真正属于自己的道路。不要害怕追求与众不同，与众不同才是独特的标志，是引领自己脱颖而出的钥匙。让我们勇敢地面对内心的声音，追寻内心的光芒。发现更美好的自己，踏上属于自己的璀璨之路。相信自己的梦想，坚持自己的信念，无论前路如何曲折，我们都能够闪耀出属于自己的光芒。因为，内心的力量是永恒不变的，它将引领我们走向更美好的未来。");
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-accordion-header-padding
+--dj-accordion-content-padding
+--dj-accordion-header-color
+--dj-accordion-header-min-height
+--dj-accordion-header-font-size
+--dj-accordion-header-font-weight
+--dj-accordion-background-color
+--dj-accordion-border-color
+--dj-accordion-border-focus-color
+--dj-accordion-border-radius
+--dj-accordion-header-transition
+--dj-accordion-transition`.trim();
+
     return {
         title,
         content,
         FoundationCode,
-        DisabledCode
+        DisabledCode,
+        CssVariablesCode
     }
 }
 
@@ -56,7 +71,23 @@ export const useDJAudioCode = () => {
 import AudioSrc from "audio.mp3";
 </script>`.trim();
 
-    return { FoundationCode }
+    const CssVariablesCode = `
+--dj-audio-height
+--dj-aduio-color
+--dj-audio-time-color
+--dj-audio-background-color
+--dj-audio-progress-color
+--dj-audio-current-progress-color
+--dj-audio-buffer-color
+--dj-audio-border-color
+--dj-audio-border-radius
+--dj-audio-border-focus-color
+--dj-audio-transition-duration`.trim();
+
+    return {
+        FoundationCode,
+        CssVariablesCode
+    }
 }
 
 /**
@@ -82,7 +113,7 @@ export const useDJButtonCode = () => {
 </template>
     
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 const disabled = ref(true);
 </script>`.trim();
 
@@ -95,15 +126,26 @@ const disabled = ref(true);
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 const disabled = ref(true);
 </script>`.trim();
+
+    const CssVariablesCode = `
+--dj-button-white-color
+--dj-button-black-color
+--dj-button-padding
+--dj-button-height
+--dj-button-font-size
+--dj-button-background-color
+--dj-button-border-radius
+--dj-button-transition`.trim();
 
     return {
         FoundationCode,
         DisabledCode,
         CustomColorCode,
-        PlainCode
+        PlainCode,
+        CssVariablesCode
     }
 }
 
@@ -151,24 +193,23 @@ export const useDJCardCode = () => {
     </dj-card>
 </template>`.trim();
 
-    const GhostingCode = `    
-<template>
-    <dj-card align="center" :ghosting="ghosting">
-        Content
-    </dj-card>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-const ghosting = ref(true);
-</script>`.trim();
+    const CssVariablesCode = `
+--dj-card-header-padding
+--dj-card-content-padding
+--dj-card-footer-padding
+--dj-card-color
+--dj-card-header-background-color
+--dj-card-background-color
+--dj-card-border-color
+--dj-card-border-radius
+--dj-card-fotter-background-color`.trim();
 
     return {
         FoundationCode,
         HeaderCode,
         FooterCode,
         HeaderAndFooterCode,
-        GhostingCode
+        CssVariablesCode
     }
 }
 
@@ -208,13 +249,21 @@ export const useDJDividerCode = () => {
     <dj-divider />
 </template>`.trim();
 
+    const CssVariablesCode = `
+--dj-divider-color
+--dj-divider-font-size
+--dj-divider-font-weight
+--dj-divider-border-width
+--dj-divider-border-color`.trim();
+
     return {
         FoundationCode,
         StyleCode,
         AlignLeftCode,
         AlignRightCode,
         OffsetCode,
-        EmptyCode
+        EmptyCode,
+        CssVariablesCode
     }
 }
 
@@ -286,11 +335,25 @@ const input1 = ref("");
 const input2 = ref("");
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-input-height
+--dj-input-padding
+--dj-input-color
+--dj-input-icon-color
+--dj-input-placeholder-color
+--dj-input-clear-color
+--dj-input-background-color
+--dj-input-border-color
+--dj-input-focus-border-color
+--dj-input-border-radius
+--dj-input-transition`.trim();
+
     return {
         FoundationCode,
         DisabledCode,
         ClearCode,
-        RecombinationCode
+        RecombinationCode,
+        CssVariablesCode
     }
 }
 
@@ -340,10 +403,27 @@ const segmentedArray = ref([
 ]);
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-segmented-option-height
+--dj-segmented-padding
+--dj-segmented-option-padding
+--dj-segmented-color
+--dj-segmented-font-size
+--dj-segmented-font-weight
+--dj-segmented-background-color
+--dj-segmented-indicator-background-color
+--dj-swicth-box-shadow
+--dj-segmented-border-radius
+--dj-segmented-option-border-radius
+--dj-segmented-transition
+--dj-segmented-indicator-transition
+--dj-segmented-option-transition`.trim();
+
     return {
         FoundationCode,
         DisabledCode,
-        AloneDisabledCode
+        AloneDisabledCode,
+        CssVariablesCode
     }
 }
 
@@ -374,9 +454,21 @@ const textarea = ref("");
 const disabled = ref(true);
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-textarea-min-height
+--dj-textarea-padding
+--dj-textarea-background-color
+--dj-textarea-color
+--dj-textarea-placeholder-color
+--dj-textarea-border-color
+--dj-textarea-border-focus-color
+--dj-textarea-border-radius
+--dj-textarea-transition`.trim();
+
     return {
         FoundationCode,
-        DisabledCode
+        DisabledCode,
+        CssVariablesCode
     }
 }
 
@@ -395,8 +487,19 @@ export const useDJVideo = () => {
 import VideoSrc from "video.mp4";
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-video-color
+--dj-video-background-color
+--dj-video-progress-color
+--dj-video-volume-progress-color
+--dj-video-current-progress-color
+--dj-video-buffer-color
+--dj-video-border-radius
+--dj-video-transition-duration`.trim();
+
     return {
-        FoundationCode
+        FoundationCode,
+        CssVariablesCode
     }
 }
 
@@ -453,11 +556,11 @@ const disabled = ref(true);
     const CustomCode = `
 <template>
     <div class="flex-box">
-        <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked" unChecked-color="#a8a8a8" checked-color="#6610f2" unChecked-background-color="#a8a8a8" checked-background-color="#6610f2" />
+        <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked" unChecked-color="#d7d6d7" checked-color="#6610f2" unChecked-background-color="#d7d6d7" checked-background-color="#6610f2" />
     </div>
     <div class="flex-box">
-        <dj-switch v-model="switchValue" unChecked-background-color="#a8a8a8" checked-background-color="#6610f2" />
-        <dj-switch v-model="switchValue" unChecked-background-color="#a8a8a8" checked-background-color="#00ad7c" />
+        <dj-switch v-model="switchValue" unChecked-background-color="#d7d6d7" checked-background-color="#6610f2" />
+        <dj-switch v-model="switchValue" unChecked-background-color="#d7d6d7" checked-background-color="#00ad7c" />
     </div>
 </template>
 
@@ -472,10 +575,30 @@ const switchValue = ref(false);
 }
 </style>`.trim();
 
+    const CssVariablesCode = `
+--dj-switch-padding
+--dj-switch-width
+--dj-switch-height
+--dj-switch-thumb-width
+--dj-switch-thumb-height
+--dj-switch-color
+--dj-switch-checked-color
+--dj-switch-font-size
+--dj-switch-font-weight
+--dj-switch-background-color
+--dj-switch-checked-background-color
+--dj-switch-thumb-background-color
+--dj-switch-border-color
+--dj-switch-transition
+--dj-switch-inner-transition
+--dj-switch-label-transition
+--dj-switch-thumb-transition`.trim();
+
     return {
         FoundationCode,
         DisabledCode,
         LabelCode,
-        CustomCode
+        CustomCode,
+        CssVariablesCode
     }
 }

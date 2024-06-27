@@ -4,7 +4,7 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJDividerCode } from '@/hooks'
 
-const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, EmptyCode } = useDJDividerCode();
+const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, EmptyCode, CssVariablesCode } = useDJDividerCode();
 </script>
 
 <template>
@@ -12,32 +12,32 @@ const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, Em
     <dj-anchor level="2" text="基础 Foundation" id="Id_Divider_Foundation" />
     <dj-example>
         <dj-divider label="New Divider" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="风格 Style" id="Id_Divider_Style" />
     <dj-example>
         <dj-divider label="Type Dashed" type="dashed" />
-        <dj-code :code="StyleCode" />
+        <dj-code title="vue" lang="html" :code="StyleCode" />
     </dj-example>
     <dj-anchor level="2" text="左对齐 Align Left" id="Id_Divider_Align_Left" />
     <dj-example>
         <dj-divider align="left" label="Align Left" />
-        <dj-code :code="AlignLeftCode" />
+        <dj-code title="vue" lang="html" :code="AlignLeftCode" />
     </dj-example>
     <dj-anchor level="2" text="右对齐 Align Right" id="Id_Divider_Align_Right" />
     <dj-example>
         <dj-divider align="right" label="Align Right" />
-        <dj-code :code="AlignRightCode" />
+        <dj-code title="vue" lang="html" :code="AlignRightCode" />
     </dj-example>
     <dj-anchor level="2" text="偏移 Offset" id="Id_Divider_Offset" />
     <dj-example>
         <dj-divider align="left" label="Align Left" :offset="100" />
-        <dj-code :code="OffsetCode" />
+        <dj-code title="vue" lang="html" :code="OffsetCode" />
     </dj-example>
     <dj-anchor level="2" text="空内容 Empty" id="Id_Divider_Empty" />
     <dj-example>
         <dj-divider />
-        <dj-code :code="EmptyCode" />
+        <dj-code title="vue" lang="html" :code="EmptyCode" />
     </dj-example>
     <dj-anchor level="2" text="Divider API" id="Id_Divider_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Divider_Attributes" />
@@ -118,5 +118,9 @@ const { FoundationCode, StyleCode, AlignLeftCode, AlignRightCode, OffsetCode, Em
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Divider_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

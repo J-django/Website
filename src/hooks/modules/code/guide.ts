@@ -4,14 +4,13 @@
  */
 export const useInstallation = () => {
     const NodeJsInstallationCode = `
-# npm
+// npm
 npm install django-ui
-# pnpm
+// pnpm
 pnpm add django-ui`.trim();
 
     const CdnInstallationCode = `
 <script src="https://unpkg.com/django-ui"></script>
-
 <script src="https://unpkg.com/django-ui/style.css"></script>`.trim();
 
     return {
@@ -29,9 +28,9 @@ export const useQuickstart = () => {
 // main.js
 import { createApp } from "vue";
 import App from "./App.vue";
-# 引入组件库
+// 引入组件库
 import DjangoUI from "django-ui";
-# 引入组件库样式
+// 引入组件库样式
 import "django-ui/style.css";
 
 const app = createApp(App);
@@ -45,7 +44,7 @@ app.mount("#app");`.trim();
 
     const importProblemCode = `
 // django-ui.d.ts
-declare module 'django-ui';`.trim();
+declare module "django-ui";`.trim();
 
     return {
         GlobalImportCode,

@@ -5,7 +5,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJAccordionCode } from '@/hooks'
 
-const { title, content, FoundationCode, DisabledCode } = useDJAccordionCode();
+const { title, content, FoundationCode, DisabledCode, CssVariablesCode } = useDJAccordionCode();
 
 const accordionFoundation = ref(false);
 const accordionDisabled = ref(false);
@@ -25,14 +25,14 @@ const toggleDisabled = () => {
     <dj-anchor level="2" text="基础 Foundation" id="Id_Accordion_Foundation" />
     <dj-example>
         <dj-accordion v-model="accordionFoundation" :title="title" :content="content" />
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="禁用 Disabled" id="Id_Accordion_Disabled" />
     <dj-example>
         <dj-button style="margin-bottom: 8px;" @click="toggleAccordion">toggle accordion</dj-button>
         <dj-button style="margin-bottom: 8px;" @click="toggleDisabled">toggle disabled</dj-button>
         <dj-accordion v-model="accordionDisabled" :title="title" :content="content" :disabled="disabled" />
-        <dj-code :code="DisabledCode" />
+        <dj-code title="vue" lang="html" :code="DisabledCode" />
     </dj-example>
     <dj-anchor level="2" text="Accordion API" id="Id_Accordion_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Accordion_Attributes" />
@@ -123,5 +123,9 @@ const toggleDisabled = () => {
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Accordion_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

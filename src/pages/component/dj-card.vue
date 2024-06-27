@@ -4,7 +4,7 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJCardCode } from '@/hooks'
 
-const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCode } = useDJCardCode();
+const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, CssVariablesCode } = useDJCardCode();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
         <dj-card align="center">
             Content
         </dj-card>
-        <dj-code :code="FoundationCode" />
+        <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="页眉 Header" id="Id_Card_Header" />
     <dj-example>
@@ -24,7 +24,7 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
             </template>
             Content
         </dj-card>
-        <dj-code :code="HeaderCode" />
+        <dj-code title="vue" lang="html" :code="HeaderCode" />
     </dj-example>
     <dj-anchor level="2" text="页脚 Footer" id="Id_Card_Footer" />
     <dj-example>
@@ -34,7 +34,7 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
                 Footer
             </template>
         </dj-card>
-        <dj-code :code="FooterCode" />
+        <dj-code title="vue" lang="html" :code="FooterCode" />
     </dj-example>
     <dj-anchor level="2" text="页眉&页脚 Header&Footer" id="Id_Card_HeaderFooter" />
     <dj-example>
@@ -47,7 +47,7 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
                 Footer
             </template>
         </dj-card>
-        <dj-code :code="HeaderAndFooterCode" />
+        <dj-code title="vue" lang="html" :code="HeaderAndFooterCode" />
     </dj-example>
     <dj-anchor level="2" text="Card API" id="Id_Card_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Card_Attributes" />
@@ -109,5 +109,9 @@ const { FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, GhostingCod
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Card_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>
