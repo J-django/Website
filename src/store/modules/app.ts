@@ -1,5 +1,8 @@
 import { defineStore } from 'pinia'
 import { useDark, useToggle } from '@vueuse/core'
+import { Aside } from '@/store/type'
+
+const storeId = "useApp";
 
 const isDark = useDark({
     selector: "html",
@@ -10,13 +13,24 @@ const isDark = useDark({
 })
 const toggleDark = useToggle(isDark);
 
-export const useAppStore = defineStore('useAppStore', {
+export const useAppStore = defineStore(storeId, {
     state: () => ({
         mode: isDark,
+        aside: <Aside[]>[]
     }),
     getters: {},
     actions: {
-        toggleMode: () => toggleDark()
+        toggleMode: () => toggleDark(),
+        clearAside() {
+            this.aside = [];
+        },
+        addRangeAside(aside: Aside[]) {
+            this.aside = aside;
+        }
     },
-    persist: true
+    persist: {
+        key: storeId,
+        storage: localStorage,
+        paths: ['mode']
+    }
 })

@@ -4,7 +4,7 @@
         <Transition name="fade" mode="out-in">
             <Backdrop v-if="asideChecked" @backDropClose="backDropCloseChange" />
         </Transition>
-        <LocalNav v-if="navChecked" :asideCheck="asideChecked" @asideOpen="asideOpenChange" />
+        <LocalNav v-if="navChecked" :checked="asideChecked" @change="localNavChange" />
         <Main class="main" :class="[addClass]" />
         <Footer v-if="footerChecked" />
         <Sidebar v-if="sidebarChecked" :asideCheck="asideChecked" />
@@ -52,7 +52,7 @@ watch(() => asideChecked.value, (val: boolean) => {
     }
 })
 
-const asideOpenChange = (checked: boolean) => {
+const localNavChange = (checked: boolean) => {
     asideChecked.value = checked;
 }
 

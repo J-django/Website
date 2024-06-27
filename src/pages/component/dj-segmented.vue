@@ -10,15 +10,14 @@ const { FoundationCode, DisabledCode, AloneDisabledCode, CssVariablesCode } = us
 const segmentedValue = ref("apple");
 const segmentedDisabled = ref("apple");
 const disabled = ref(true);
-const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"])
+const segmentedArray = ref(["apple", "banana", "cherry", "date"])
 
 const segmentedAloneDisabledValue = ref("apple");
 const segmentedAloneDisabledArray = ref([
     "apple",
     { label: "banana", value: "banana", disabled: true },
     "cherry",
-    { label: "grape", value: "grape", disabled: true },
-    "honeydew"
+    { label: "grape", value: "grape", disabled: true }
 ]);
 
 const toggleSegmented = () => {

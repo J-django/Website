@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { ref, unref, onMounted, onUnmounted, Ref } from 'vue';
+import { ref, unref, onMounted, onUnmounted } from 'vue';
 import { useDom } from '@/hooks'
+import { Aside } from '@/store/type'
+import { useAppStore } from '@/store/modules'
 
-interface Aside {
-    id: string;
-    text: string | null
-}
+const { clearAside, addRangeAside } = useAppStore();
 
 const rootRef = ref();
 const outlineTitleRef = ref();
@@ -30,14 +29,18 @@ const getSource = (element: HTMLElement) => {
  * 加载锚点列表
  */
 const init = () => {
-    clearAll();
-    Array.from(HTMLElement.value!).forEach((heading) => {
-        unref(asideConfig).push({
-            id: heading.id,
-            text: heading.textContent
+    try {
+        clearAll();
+        Array.from(unref(HTMLElement)!).forEach((heading) => {
+            unref(asideConfig).push({
+                id: heading.id,
+                text: heading.textContent as string | undefined
+            })
         })
-    })
-    getClosestHeading();
+        clearAside();
+        addRangeAside(unref(asideConfig));
+        getClosestHeading();
+    } catch { }
 }
 
 /**
@@ -72,11 +75,11 @@ const getClosestHeading = () => {
  * 计算当前选中锚点位置
  */
 const findLinkPositionById = () => {
-    const Ul = rootRef.value.getElementsByTagName("li") as HTMLCollectionOf<HTMLLIElement>;
+    const Ul = unref(rootRef).getElementsByTagName("li") as HTMLCollectionOf<HTMLLIElement>;
     for (let li of Array.from(Ul)) {
         const id = li.querySelector("a")?.getAttribute("href");
         if (id && id == `#${unref(closestHeading)?.id}`) {
-            markerTop.value = li.offsetTop + outlineTitleRef.value.offsetHeight + 8;
+            markerTop.value = li.offsetTop + unref(outlineTitleRef).offsetHeight + 8;
         }
     }
 }

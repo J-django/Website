@@ -37,9 +37,9 @@ const content = ref("在喧嚣的世界中，我们常常迷失了自己，远�
 --dj-accordion-header-padding
 --dj-accordion-content-padding
 --dj-accordion-header-color
---dj-accordion-header-min-height
 --dj-accordion-header-font-size
 --dj-accordion-header-font-weight
+--dj-accordion-header-min-height
 --dj-accordion-background-color
 --dj-accordion-border-color
 --dj-accordion-border-focus-color
@@ -72,9 +72,9 @@ import AudioSrc from "audio.mp3";
 </script>`.trim();
 
     const CssVariablesCode = `
---dj-audio-height
 --dj-aduio-color
 --dj-audio-time-color
+--dj-audio-height
 --dj-audio-background-color
 --dj-audio-progress-color
 --dj-audio-current-progress-color
@@ -119,23 +119,37 @@ const disabled = ref(true);
 
     const PlainCode = `
 <template>
-    <dj-button plain>Plain</dj-button>
-    <dj-button plain :disabled="disabled">Disabled Plain</dj-button>
-    <dj-button color="#6610f2" plain>Custom Color Plain</dj-button>
-    <dj-button color="#6610f2" plain :disabled="disabled">Disabled Custom Color Plain</dj-button>
+    <div class="flex-box">
+        <dj-button plain>Plain</dj-button>
+        <dj-button plain disabled>Disabled Plain</dj-button>
+    </div>
+    <div class="flex-box">
+        <dj-button color="#6610f2" plain>Plain</dj-button>
+        <dj-button color="#6610f2" plain disabled>Disabled Plain</dj-button>
+    </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 const disabled = ref(true);
-</script>`.trim();
+</script>
+
+<style>
+.flex-box {
+    display: flex;
+}
+
+.flex-box + .flex-box {
+  margin-top: 8px;
+}
+</style>`.trim();
 
     const CssVariablesCode = `
+--dj-button-padding
 --dj-button-white-color
 --dj-button-black-color
---dj-button-padding
---dj-button-height
 --dj-button-font-size
+--dj-button-height
 --dj-button-background-color
 --dj-button-border-radius
 --dj-button-transition`.trim();
@@ -336,12 +350,12 @@ const input2 = ref("");
 </script>`.trim();
 
     const CssVariablesCode = `
---dj-input-height
 --dj-input-padding
 --dj-input-color
 --dj-input-icon-color
 --dj-input-placeholder-color
 --dj-input-clear-color
+--dj-input-height
 --dj-input-background-color
 --dj-input-border-color
 --dj-input-focus-border-color
@@ -371,7 +385,7 @@ export const useDJSegmented = () => {
 <script setup>
 import { ref } from "vue";
 const segmentedValue = ref("apple");
-const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
+const segmentedArray = ref(["apple", "banana", "cherry", "date"]);
 </script>`.trim();
 
     const DisabledCode = `
@@ -383,7 +397,7 @@ const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
 import { ref } from "vue";
 const segmentedValue = ref("apple");
 const disabled = ref(true);
-const segmentedArray = ref(["apple", "banana", "cherry", "date", "elderberry"]);
+const segmentedArray = ref(["apple", "banana", "cherry", "date"]);
 </script>`.trim();
 
     const AloneDisabledCode = `
@@ -398,23 +412,22 @@ const segmentedArray = ref([
     "apple",
     { label: "banana", value: "banana", disabled: true },
     "cherry",
-    { label: "grape", value: "grape", disabled: true },
-    "honeydew"
+    { label: "grape", value: "grape", disabled: true }
 ]);
 </script>`.trim();
 
     const CssVariablesCode = `
---dj-segmented-option-height
 --dj-segmented-padding
 --dj-segmented-option-padding
 --dj-segmented-color
 --dj-segmented-font-size
 --dj-segmented-font-weight
+--dj-segmented-option-height
 --dj-segmented-background-color
 --dj-segmented-indicator-background-color
---dj-swicth-box-shadow
 --dj-segmented-border-radius
 --dj-segmented-option-border-radius
+--dj-swicth-box-shadow
 --dj-segmented-transition
 --dj-segmented-indicator-transition
 --dj-segmented-option-transition`.trim();
@@ -455,11 +468,11 @@ const disabled = ref(true);
 </script>`.trim();
 
     const CssVariablesCode = `
---dj-textarea-min-height
 --dj-textarea-padding
---dj-textarea-background-color
 --dj-textarea-color
 --dj-textarea-placeholder-color
+--dj-textarea-min-height
+--dj-textarea-background-color
 --dj-textarea-border-color
 --dj-textarea-border-focus-color
 --dj-textarea-border-radius
@@ -577,14 +590,14 @@ const switchValue = ref(false);
 
     const CssVariablesCode = `
 --dj-switch-padding
---dj-switch-width
---dj-switch-height
---dj-switch-thumb-width
---dj-switch-thumb-height
 --dj-switch-color
 --dj-switch-checked-color
 --dj-switch-font-size
 --dj-switch-font-weight
+--dj-switch-width
+--dj-switch-height
+--dj-switch-thumb-width
+--dj-switch-thumb-height
 --dj-switch-background-color
 --dj-switch-checked-background-color
 --dj-switch-thumb-background-color

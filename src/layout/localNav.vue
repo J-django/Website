@@ -1,6 +1,71 @@
+<script lang="ts" setup>
+// plugin
+import { ref, watch } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { useAppStore } from '@/store/modules'
+import { useDom } from '@/hooks'
+
+// script
+const props = defineProps({
+    checked: {
+        type: Boolean,
+        default: false
+    }
+})
+
+const emits = defineEmits(['change'])
+
+const { goAnchor } = useDom();
+const appstore = useAppStore();
+
+const thisPageChecked = ref<Boolean>(false)
+const asideChecked = ref<Boolean>(false)
+
+const onThisPageRef = ref();
+onClickOutside(onThisPageRef, () => {
+    thisPageChecked.value = false;
+})
+
+watch(() => props.checked, (val: Boolean) => {
+    asideChecked.value = val;
+})
+
+/**
+ * 切换状态
+ */
+const asideToggle = () => {
+    asideChecked.value = !asideChecked.value;
+    emits('change', asideChecked.value);
+}
+
+/**
+ * 回到顶部
+ */
+const backTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+    thisPageChecked.value = false;
+}
+
+/**
+ * 定位文章位置
+ * @param id 编号
+ */
+const goAnchorAside = (id: string) => {
+    try {
+        goAnchor(id)
+        thisPageChecked.value = false;
+    } catch {
+        thisPageChecked.value = false;
+    }
+}
+</script>
+
 <template>
     <div class="localNav">
-        <button class="menu" @click="openAside">
+        <button class="menu" @click="asideToggle">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
                 class="menu-icon">
                 <path d="M17,11H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,11,17,11z"></path>
@@ -10,7 +75,7 @@
             </svg>
             <span class="menu-text">Menu</span>
         </button>
-        <div class="LocalNavOutlineDropdown">
+        <div class="LocalNavOutlineDropdown" ref="onThisPageRef">
             <button :class="[thisPageChecked ? 'open' : '']" @click="thisPageChecked = !thisPageChecked">
                 On this page
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
@@ -25,44 +90,21 @@
                     <div class="header">
                         <a href="#" class="top-link" @click.prevent="backTop">Return to top</a>
                     </div>
+                    <div class="outline">
+                        <ul class="nested">
+                            <li v-for="(item, index) of appstore.aside" :key="index">
+                                <a :href="item.id" :title="item.text" @click.prevent="goAnchorAside(item.id)"
+                                    class="outline-link">
+                                    {{ item.text }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </Transition>
         </div>
     </div>
 </template>
-
-<script lang="ts" setup>
-import { ref, watch } from 'vue'
-
-const prop = defineProps({
-    asideCheck: {
-        type: Boolean,
-        default: false
-    }
-})
-
-const thisPageChecked = ref<Boolean>(false)
-
-watch(() => prop.asideCheck, (val: Boolean) => {
-    checked.value = val;
-})
-
-const emit = defineEmits(['asideOpen'])
-
-const checked = ref<Boolean>(false)
-const openAside = () => {
-    checked.value = !checked.value;
-    emit('asideOpen', checked.value);
-}
-
-const backTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
-    thisPageChecked.value = false;
-}
-</script>
 
 <style lang="scss" scoped>
 .localNav {
@@ -140,25 +182,51 @@ const backTop = () => {
 
         .items {
             position: absolute;
-            left: 20px;
-            right: 20px;
-            top: 64px;
-            background-color: var(--t-background-color);
-            padding: 4px 10px 16px;
+            top: 40px;
+            right: 16px;
+            left: 16px;
+            display: grid;
+            gap: 1px;
             border: 1px solid var(--t-border-color);
             border-radius: 8px;
-            max-height: calc(var(--vp-vh, 100vh) - 86px);
-            overflow: auto;
+            background-color: var(--t-background-color);
+            max-height: calc(100vh - 86px);
+            overflow: hidden auto;
             box-shadow: var(--box-shadow);
+
+            .outline {
+                padding: 8px 0;
+
+                .nested {
+                    padding-right: 16px;
+                    padding-left: 16px;
+
+                    .outline-link {
+                        display: block;
+                        line-height: 32px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: var(--t-text-color-2);
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        transition: color 250ms;
+
+                        &:hover {
+                            color: var(--t-text-color);
+                        }
+                    }
+                }
+            }
         }
 
         .top-link {
             display: block;
-            color: var(--green);
-            font-size: 13px;
+            padding: 0 16px;
+            line-height: 36px;
+            font-size: 14px;
             font-weight: 500;
-            padding: 6px 0;
-            margin: 0 13px 10px;
+            color: var(--green);
             border-bottom: 1px solid var(--t-border-color);
         }
 

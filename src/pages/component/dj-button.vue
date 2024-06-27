@@ -27,10 +27,14 @@ const { FoundationCode, DisabledCode, CustomColorCode, PlainCode, CssVariablesCo
     </dj-example>
     <dj-anchor level="2" text="朴素 Plain" id="Id_Button_Plain" />
     <dj-example>
-        <dj-button plain>Plain</dj-button>
-        <dj-button plain disabled>Disabled Plain</dj-button>
-        <dj-button color="#6610f2" plain>Plain Custom Color</dj-button>
-        <dj-button color="#6610f2" plain disabled>Disabled Plain Custom Color </dj-button>
+        <div class="flex-box">
+            <dj-button plain>Plain</dj-button>
+            <dj-button plain disabled>Disabled Plain</dj-button>
+        </div>
+        <div class="flex-box">
+            <dj-button color="#6610f2" plain>Plain</dj-button>
+            <dj-button color="#6610f2" plain disabled>Disabled Plain</dj-button>
+        </div>
         <dj-code title="vue" lang="html" :code="PlainCode" />
     </dj-example>
     <dj-anchor level="2" text="Button API" id="Id_Button_API" />

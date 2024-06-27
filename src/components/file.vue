@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { EventFilter } from '@vueuse/core';
-import { ref } from 'vue'
+import { ref, unref } from 'vue'
 
 defineProps({
     accept: {
@@ -14,7 +13,7 @@ const emits = defineEmits(["change"])
 const fileRef = ref();
 
 const getFile = () => {
-    fileRef.value.click();
+    unref(fileRef).click();
 }
 
 const fileChange = (event: Event) => {
