@@ -1,6 +1,5 @@
 <template>
-    <div id="docsearch">
-    </div>
+    <div id="docsearch"></div>
 </template>
 
 <script lang="ts" setup>
@@ -11,10 +10,10 @@ import '@docsearch/css';
 
 onMounted(() => {
     docsearch({
+        apiKey: '1ee70e9214d3ea21cc33afa934e4e57f',
+        indexName: 'dialin_tmp',
         container: '#docsearch',
         appId: '8CEDQX2VWF',
-        indexName: 'dialin_tmp',
-        apiKey: '1ee70e9214d3ea21cc33afa934e4e57f',
         insights: true,
     });
 })

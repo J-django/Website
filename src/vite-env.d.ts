@@ -8,3 +8,10 @@ declare module '*.vue' {
     const component: DefineComponent<{}, {}, any>
     export default component
 }
+
+interface Array<T> {
+    findLastIndex(
+        predicate: (value: T, index: number, obj: T[]) => boolean,
+        thisArg?: any
+    ): number;
+}

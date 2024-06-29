@@ -1,14 +1,14 @@
 import type { RouteRecordRaw, RouteMeta } from "vue-router";
 const Layout = () => import("@/layout/index.vue")
 
-export const Component: Array<RouteRecordRaw> = [
+const Component: Array<RouteRecordRaw> = [
   {
     name: "Component",
     path: "/component",
     component: () => import("@/layout/document.vue"),
     redirect: "/component/button",
     meta: <RouteMeta>{
-      title: "组件",
+      title: "Components",
       keepAlive: false,
       hasCurtain: true,
       hasFooter: false,
@@ -157,7 +157,7 @@ const Guide: Array<RouteRecordRaw> = [
     component: () => import("@/layout/document.vue"),
     redirect: "/guide/installation",
     meta: <RouteMeta>{
-      title: "指南",
+      title: "Guide",
       keepAlive: false,
       hasCurtain: true,
       hasFooter: false,
@@ -203,7 +203,7 @@ export const AsideBar: Array<RouteRecordRaw> = [
     path: "/examples",
     component: () => import("@/pages/examples/index.vue"),
     meta: <RouteMeta>{
-      title: "示例模板",
+      title: "Examples",
       keepAlive: false,
       hasCurtain: false,
       hasFooter: true,
@@ -216,7 +216,7 @@ export const AsideBar: Array<RouteRecordRaw> = [
     path: "/blog",
     component: () => import("@/pages/blog/index.vue"),
     meta: <RouteMeta>{
-      title: "博客",
+      title: "Blog",
       keepAlive: false,
       hasCurtain: false,
       hasFooter: true,
@@ -225,7 +225,6 @@ export const AsideBar: Array<RouteRecordRaw> = [
     },
   },
 ]
-
 
 export const routes: Array<RouteRecordRaw> = [
   {

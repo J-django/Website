@@ -59,3 +59,12 @@
   - 插槽名 UnChecked 改为小写开头 unChecked
 - dj-card
   - 去除 ghosting 属性及其样式
+
+## 2024-06-29
+
+- dj-switch
+  - 切换时动画使用 js 控制，避免 css 设置的 transition 后切换会出现动画过渡
+- di-code
+  - safari 手机浏览器访问时，language 无法展示出现异常，展开后才出现
+- dj-anchor
+  - 锚点定位时，h3 标签会出现定位异常
