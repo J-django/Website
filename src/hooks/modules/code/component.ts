@@ -733,8 +733,8 @@ const openDialog = () => {
     <dj-dialog title="Dialog Title" v-model="dialogValue">
         This is Dialog!
         <template #footer>
-            <dj-button color="#6c757d" @click="dialogValue = false">Closed</dj-button>
-            <dj-button color="#0d6efd" @click="dialogValue = false">Save Changes</dj-button>
+            <dj-button color="#6c757d" plain @click="dialogValue = false">Closed</dj-button>
+            <dj-button color="#0d6efd" plain @click="dialogValue = false">Save Changes</dj-button>
         </template>
     </dj-dialog>
 </template>
