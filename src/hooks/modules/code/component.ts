@@ -1,7 +1,7 @@
 /**
  * dj-accordion
  * Accordion 手风琴
- * @returns title, content, FoundationCode, DisabledCode
+ * @returns title, content, FoundationCode, DisabledCode, CssVariablesCode
  */
 export const useDJAccordionCode = () => {
     const title = "发现更美好的自己，追寻内心的光芒";
@@ -42,7 +42,7 @@ const content = ref("在喧嚣的世界中，我们常常迷失了自己，远�
 --dj-accordion-header-min-height
 --dj-accordion-background-color
 --dj-accordion-border-color
---dj-accordion-border-focus-color
+--dj-accordion-focus-border-color
 --dj-accordion-border-radius
 --dj-accordion-header-transition
 --dj-accordion-transition`.trim();
@@ -59,7 +59,7 @@ const content = ref("在喧嚣的世界中，我们常常迷失了自己，远�
 /**
  * dj-audio
  * Audio 音频播放器
- * @returns FoundationCode
+ * @returns FoundationCode, CssVariablesCode
  */
 export const useDJAudioCode = () => {
     const FoundationCode = `
@@ -81,7 +81,7 @@ import AudioSrc from "audio.mp3";
 --dj-audio-buffer-color
 --dj-audio-border-color
 --dj-audio-border-radius
---dj-audio-border-focus-color
+--dj-audio-focus-border-color
 --dj-audio-transition-duration`.trim();
 
     return {
@@ -93,7 +93,7 @@ import AudioSrc from "audio.mp3";
 /**
  * dj-button
  * Button 按钮
- * @returns FoundationCode, DisabledCode, CustomColorCode
+ * @returns FoundationCode, DisabledCode, CustomColorCode, CssVariablesCode
  */
 export const useDJButtonCode = () => {
     const FoundationCode = `
@@ -166,7 +166,7 @@ const disabled = ref(true);
 /**
  * dj-card
  * Card 卡片
- * @returns FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode
+ * @returns FoundationCode, HeaderCode, FooterCode, HeaderAndFooterCode, CssVariablesCode
  */
 export const useDJCardCode = () => {
     const FoundationCode = `
@@ -230,7 +230,7 @@ export const useDJCardCode = () => {
 /**
  * dj-divider
  * Divider 分割线
- * @returns FoundationCode, StyleCode
+ * @returns FoundationCode, StyleCode, CssVariablesCode
  */
 export const useDJDividerCode = () => {
     const FoundationCode = `
@@ -284,7 +284,7 @@ export const useDJDividerCode = () => {
 /**
  * <dj-input
  * Input 输入框
- * @returns FoundationCode, DisabledCode, ClearCode, IconCode
+ * @returns FoundationCode, DisabledCode, ClearCode, IconCode, CssVariablesCode
  */
 export const useDJInput = () => {
     const FoundationCode = `
@@ -374,7 +374,7 @@ const input2 = ref("");
 /**
  * dj-segmented
  * Segmented 转换
- * @returns DisabledCode, DisabledCode
+ * @returns DisabledCode, DisabledCode, CssVariablesCode
  */
 export const useDJSegmented = () => {
     const FoundationCode = `
@@ -443,7 +443,7 @@ const segmentedArray = ref([
 /**
  * dj-textarea
  * Textarea 文本域
- * @returns FoundationCode, DisabledCode
+ * @returns FoundationCode, DisabledCode, CssVariablesCode
  */
 export const useDJTextarea = () => {
     const FoundationCode = `
@@ -474,7 +474,7 @@ const disabled = ref(true);
 --dj-textarea-min-height
 --dj-textarea-background-color
 --dj-textarea-border-color
---dj-textarea-border-focus-color
+--dj-textarea-focus-border-color
 --dj-textarea-border-radius
 --dj-textarea-transition`.trim();
 
@@ -488,7 +488,7 @@ const disabled = ref(true);
 /**
  * dj-video
  * Video 视频播放器
- * @returns FoundationCode
+ * @returns FoundationCode, CssVariablesCode
  */
 export const useDJVideo = () => {
     const FoundationCode = `
@@ -519,7 +519,7 @@ import VideoSrc from "video.mp4";
 /**
  * dj-switch
  * Switch 切换
- * @returns FoundationCode, DisabledCode, LabelCode, CustomCode
+ * @returns FoundationCode, DisabledCode, LabelCode, CustomColorCode, CustomThumbCode, CssVariablesCode
  */
 export const useDJSwitch = () => {
     const FoundationCode = `
@@ -566,7 +566,7 @@ const disabled = ref(true);
 }
 </style>`.trim();
 
-    const CustomCode = `
+    const CustomColorCode = `
 <template>
     <div class="flex-box">
         <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked" unChecked-color="#d7d6d7" checked-color="#6610f2" unChecked-background-color="#d7d6d7" checked-background-color="#6610f2" />
@@ -588,6 +588,73 @@ const switchValue = ref(false);
 }
 </style>`.trim();
 
+    const CustomThumbCode = `
+<template>
+    <div class="flex-box">
+        <dj-switch v-model="switchValue" unChecked-label="UnChecked" checked-label="checked">
+            <template #checked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                    <path fill="currentColor"
+                        d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                </svg>
+            </template>
+            <template #unChecked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                </svg>
+            </template>
+        </dj-switch>
+    </div>
+    <div class="flex-box">
+        <dj-switch v-model="switchValue">
+            <template #checked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                    <path fill="currentColor"
+                        d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                </svg>
+            </template>
+            <template #unChecked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                </svg>
+            </template>
+        </dj-switch>
+        <dj-switch v-model="switchValue" :disabled="disabled">
+            <template #checked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                    <path fill="currentColor"
+                        d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                </svg>
+            </template>
+            <template #unChecked-thumb>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                </svg>
+            </template>
+        </dj-switch>
+    </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const switchValue = ref(false);
+const disabled = ref(true);
+</script>
+
+<style>
+.flex-box {
+    display: flex;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+</style>`.trim();
+
     const CssVariablesCode = `
 --dj-switch-padding
 --dj-switch-color
@@ -603,7 +670,6 @@ const switchValue = ref(false);
 --dj-switch-thumb-background-color
 --dj-switch-border-color
 --dj-switch-transition
---dj-switch-inner-transition
 --dj-switch-label-transition
 --dj-switch-thumb-transition`.trim();
 
@@ -611,7 +677,119 @@ const switchValue = ref(false);
         FoundationCode,
         DisabledCode,
         LabelCode,
-        CustomCode,
+        CustomColorCode,
+        CustomThumbCode,
+        CssVariablesCode,
+    }
+}
+
+/**
+ * dj-dialog
+ * Dialog 对话框
+ * @returns FoundationCode, CustomHeaderCode, FooterCode, VerticalCenterCode, CssVariablesCode
+ */
+export const useDJDialog = () => {
+    const FoundationCode = `
+<template>
+    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-dialog title="Dialog Title" v-model="dialogValue">
+        This is Dialog!
+    </dj-dialog>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dialogValue = ref(false);
+
+const openDialog = () => {
+    modalValue.value = true;
+}
+</script>`.trim();
+
+    const CustomHeaderCode = `
+<template>
+    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-dialog v-model="dialogValue">
+        <template #header>
+            <dj-button color="#6c757d" plain @click="dialogValue = false">Closed</dj-button>
+            <dj-button color="#0d6efd" plain @click="dialogValue = false">Save Changes</dj-button>
+        </template>
+        This is Dialog!
+    </dj-dialog>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dialogValue = ref(false);
+
+const openDialog = () => {
+    modalValue.value = true;
+}
+</script>`.trim();
+
+    const FooterCode = `
+<template>
+    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-dialog title="Dialog Title" v-model="dialogValue">
+        This is Dialog!
+        <template #footer>
+            <dj-button color="#6c757d" @click="dialogValue = false">Closed</dj-button>
+            <dj-button color="#0d6efd" @click="dialogValue = false">Save Changes</dj-button>
+        </template>
+    </dj-dialog>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dialogValue = ref(false);
+
+const openDialog = () => {
+    modalValue.value = true;
+}
+</script>`.trim();
+
+    const VerticalCenterCode = `
+<template>
+    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-dialog title="Dialog Title" v-model="dialogValue" :vertical-center="true">
+        This is Dialog!
+    </dj-dialog>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dialogValue = ref(false);
+
+const openDialog = () => {
+    modalValue.value = true;
+}
+</script>`.trim();
+
+    const CssVariablesCode = `
+--dj-dialog-header-padding
+--dj-dialog-body-padding
+--dj-dialog-footer-padding
+--dj-dialog-margin
+--dj-dialog-max-width
+--dj-dialog-color
+--dj-dialog-font-size
+--dj-dialog-font-weight
+--dj-dialog-backdrop-background-color
+--dj-dialog-header-background-color
+--dj-dialog-background-color
+--dj-dialog-footer-background-color
+--dj-dialog-border-color
+--dj-dialog-border-radius
+--dj-dialog-header-border-radius
+--dj-dialog-footer-border-radius
+--dj-dialog-box-shadow
+--dj-dialog-z-index`.trim();
+
+    return {
+        FoundationCode,
+        FooterCode,
+        CustomHeaderCode,
+        VerticalCenterCode,
         CssVariablesCode
     }
 }

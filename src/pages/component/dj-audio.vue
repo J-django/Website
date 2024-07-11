@@ -4,7 +4,9 @@ import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import File from '@/components/file.vue'
-import { useDJAudioCode } from '@/hooks'
+import { useRoutePlugin, useDJAudioCode } from '@/hooks'
+
+const { routeTitle } = useRoutePlugin();
 
 const { FoundationCode, CssVariablesCode } = useDJAudioCode();
 
@@ -18,7 +20,7 @@ const fileChange = (fileUrl: string) => {
 </script>
 
 <template>
-    <dj-anchor level="1" text="Audio 音频播放器" id="Id_Audio" />
+    <dj-anchor level="1" :text="routeTitle" id="Id_Audio" />
     <dj-anchor level="2" text="基础 Foundation" id="Id_Audio_Foundation" />
     <dj-example>
         <File accept="audio/mp3, audio/wav, audio/ogg, audio/aac, audio/flac, audio/aiff" @change="fileChange" />
@@ -227,6 +229,11 @@ const fileChange = (fileUrl: string) => {
                     <td><dj-badge text="Function" /></td>
                 </Tbody>
                 <Tbody>
+                    <td>load</td>
+                    <td>重新加载音频文件</td>
+                    <td><dj-badge text="Function" /></td>
+                </Tbody>
+                <Tbody>
                     <td>play</td>
                     <td>开始播放音频</td>
                     <td><dj-badge text="Function" /></td>
@@ -234,11 +241,6 @@ const fileChange = (fileUrl: string) => {
                 <Tbody>
                     <td>pause</td>
                     <td>暂停当前播放的音频</td>
-                    <td><dj-badge text="Function" /></td>
-                </Tbody>
-                <Tbody>
-                    <td>load</td>
-                    <td>重新加载音频文件</td>
                     <td><dj-badge text="Function" /></td>
                 </Tbody>
             </template>

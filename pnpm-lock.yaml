@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.10.3
     version: 1.11.3
   django-ui:
-    specifier: 1.0.15
-    version: 1.0.15
+    specifier: 1.0.17
+    version: 1.0.17
   highlight.js:
     specifier: ^11.9.0
     version: 11.9.0
@@ -1178,8 +1178,8 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
 
-  /django-ui@1.0.15:
-    resolution: {integrity: sha512-5zCqwTksgTmt7TcCkku4mb1lCAoGucdBe9lUlMEi1JoPMKwLB5Oe3qSE80VAzIpeav+Z5yaxOWhdERuEvFRE3A==}
+  /django-ui@1.0.17:
+    resolution: {integrity: sha512-fWisa6MqrvHc95MyScMvTFgFgBrAPGzTTuOJ0uGzjqAD2Dugt9MphsuNCU85stv2oK38Rj/IDjr2n2y6BBanQA==}
     dev: false
 
   /dom-serializer@1.4.1:

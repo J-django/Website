@@ -49,6 +49,30 @@ const fileChange = (fileUrl: string) => {
                     <td>-</td>
                 </Tbody>
                 <Tbody>
+                    <td>autoplay</td>
+                    <td>返回是否在就绪（加载完成）后随即播放视频</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>loop</td>
+                    <td>返回视频是否应在结束时再次播放</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>muted</td>
+                    <td>返回是否关闭声音</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
                     <td>width</td>
                     <td>返回视频的 width 属性的值</td>
                     <td>
@@ -104,14 +128,14 @@ const fileChange = (fileUrl: string) => {
             <template #tbody>
                 <Tbody>
                     <td>abort</td>
-                    <td>当音频/视频的加载已放弃时触发</td>
+                    <td>当视频的加载已放弃时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>canplay</td>
-                    <td>当浏览器可以开始播放音频/视频时触发</td>
+                    <td>当浏览器可以开始播放视频时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
@@ -125,7 +149,7 @@ const fileChange = (fileUrl: string) => {
                 </Tbody>
                 <Tbody>
                     <td>durationchange</td>
-                    <td>当音频/视频的时长已更改时触发</td>
+                    <td>当视频的时长已更改时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
@@ -146,77 +170,77 @@ const fileChange = (fileUrl: string) => {
                 </Tbody>
                 <Tbody>
                     <td>error</td>
-                    <td>当在音频/视频加载期间发生错误时触发</td>
+                    <td>当在视频加载期间发生错误时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>loadeddata</td>
-                    <td>当浏览器已加载音频/视频的当前帧时触发</td>
+                    <td>当浏览器已加载视频的当前帧时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>loadedmetadata</td>
-                    <td>当浏览器已加载音频/视频的元数据时触发</td>
+                    <td>当浏览器已加载视频的元数据时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>loadstart</td>
-                    <td>当浏览器开始查找音频/视频时触发</td>
+                    <td>当浏览器开始查找视频时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>pause</td>
-                    <td>当音频/视频已暂停时触发</td>
+                    <td>当视频已暂停时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>play</td>
-                    <td>当音频/视频已开始或不再暂停时触发</td>
+                    <td>当视频已开始或不再暂停时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>playing</td>
-                    <td>当音频/视频在因缓冲而暂停或停止后已就绪时触发</td>
+                    <td>当视频在因缓冲而暂停或停止后已就绪时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>progress</td>
-                    <td>当浏览器正在下载音频/视频时触发</td>
+                    <td>当浏览器正在下载视频时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>ratechange</td>
-                    <td>当音频/视频的播放速度已更改时触发</td>
+                    <td>当视频的播放速度已更改时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>seeked</td>
-                    <td>当用户已移动/跳跃到音频/视频中的新位置时触发</td>
+                    <td>当用户已移动/跳跃到视频中的新位置时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
                 </Tbody>
                 <Tbody>
                     <td>seeking</td>
-                    <td>当用户开始移动/跳跃到音频/视频中的新位置时触发</td>
+                    <td>当用户开始移动/跳跃到视频中的新位置时触发</td>
                     <td>
                         <dj-badge text="Function" />
                     </td>
@@ -392,6 +416,11 @@ const fileChange = (fileUrl: string) => {
                     <td><dj-badge text="Function" /></td>
                 </Tbody>
                 <Tbody>
+                    <td>load</td>
+                    <td>重新加载视频元素</td>
+                    <td><dj-badge text="Function" /></td>
+                </Tbody>
+                <Tbody>
                     <td>play</td>
                     <td>开始播放视频</td>
                     <td><dj-badge text="Function" /></td>
@@ -399,11 +428,6 @@ const fileChange = (fileUrl: string) => {
                 <Tbody>
                     <td>pause</td>
                     <td>暂停当前播放的视频</td>
-                    <td><dj-badge text="Function" /></td>
-                </Tbody>
-                <Tbody>
-                    <td>load</td>
-                    <td>重新加载视频元素</td>
                     <td><dj-badge text="Function" /></td>
                 </Tbody>
             </template>

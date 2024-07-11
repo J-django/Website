@@ -338,8 +338,11 @@ html {
 
                     .card {
                         margin-top: 8px;
-                        background-color: var(--t-example-one-card-background-color);
-                        box-shadow: var(--box-shadow-2);
+
+                        .dj-card__wrapper {
+                            background-color: var(--t-example-one-card-background-color);
+                            box-shadow: var(--box-shadow-2);
+                        }
 
                         .dj-card-body {
                             padding: 8px;

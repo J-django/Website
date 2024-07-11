@@ -3,7 +3,9 @@ import { ref } from 'vue'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-import { useDJAccordionCode } from '@/hooks'
+import { useRoutePlugin, useDJAccordionCode } from '@/hooks'
+
+const { routeTitle } = useRoutePlugin();
 
 const { title, content, FoundationCode, DisabledCode, CssVariablesCode } = useDJAccordionCode();
 
@@ -21,7 +23,7 @@ const toggleDisabled = () => {
 </script>
 
 <template>
-    <dj-anchor level="1" text="Accordion 手风琴" id="Id_Accordion" />
+    <dj-anchor level="1" :text="routeTitle" id="Id_Accordion" />
     <dj-anchor level="2" text="基础 Foundation" id="Id_Accordion_Foundation" />
     <dj-example>
         <dj-accordion v-model="accordionFoundation" :title="title" :content="content" />
@@ -120,6 +122,25 @@ const toggleDisabled = () => {
                 <Tbody>
                     <td>title</td>
                     <td>标题</td>
+                </Tbody>
+            </template>
+        </Table>
+    </dj-example>
+    <dj-anchor level="3" text="暴露 Exposes" id="Id_Accordion_Exposes" />
+    <dj-example>
+        <Table>
+            <template #thead>
+                <Thead>
+                    <th>名称</th>
+                    <th>描述</th>
+                    <th>类型</th>
+                </Thead>
+            </template>
+            <template #tbody>
+                <Tbody>
+                    <td>toggle</td>
+                    <td>切换</td>
+                    <td><dj-badge text="Function" /></td>
                 </Tbody>
             </template>
         </Table>

@@ -146,6 +146,19 @@ const Component: Array<RouteRecordRaw> = [
           hasSidebar: true,
         },
       },
+      {
+        name: "Component-Dialog",
+        path: "/component/Dialog",
+        component: () => import("@/pages/component/dj-dialog.vue"),
+        meta: <RouteMeta>{
+          title: "Dialog 对话框",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
     ],
   },
 ];

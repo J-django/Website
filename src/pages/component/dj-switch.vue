@@ -5,7 +5,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJSwitch } from '@/hooks'
 
-const { FoundationCode, DisabledCode, LabelCode, CustomCode, CssVariablesCode } = useDJSwitch();
+const { FoundationCode, DisabledCode, LabelCode, CustomColorCode, CssVariablesCode, CustomThumbCode } = useDJSwitch();
 
 const switchValue = ref(false);
 const switchDisabledValue = ref(false);
@@ -13,6 +13,8 @@ const switchDisabled = ref(true);
 const switchLabel = ref(false);
 const switchLabelDisabled = ref(true);
 const switchCustom = ref(true);
+const switchCustomThumb = ref(false);
+const switchCustomThumbDisabled = ref(true);
 </script>
 
 <template>
@@ -39,7 +41,7 @@ const switchCustom = ref(true);
         </div>
         <dj-code title="vue" lang="html" :code="LabelCode" />
     </dj-example>
-    <dj-anchor level="2" text="自定义颜色 Custom" id="Id_Switch_Custom" />
+    <dj-anchor level="2" text="自定义颜色 Custom Color" id="Id_Switch_Custom_Color" />
     <dj-example>
         <div class="flex-box">
             <dj-switch v-model="switchCustom" unChecked-label="UnChecked" checked-label="checked"
@@ -50,7 +52,57 @@ const switchCustom = ref(true);
             <dj-switch v-model="switchCustom" unChecked-background-color="#d7d6d7" checked-background-color="#6610f2" />
             <dj-switch v-model="switchCustom" unChecked-background-color="#d7d6d7" checked-background-color="#00ad7c" />
         </div>
-        <dj-code title="vue" lang="html" :code="CustomCode" />
+        <dj-code title="vue" lang="html" :code="CustomColorCode" />
+    </dj-example>
+    <dj-anchor level="2" text="自定义拇指内容 Custom Thumb" id="Id_Switch_Custom_Thumb" />
+    <dj-example>
+        <div class="flex-box">
+            <dj-switch v-model="switchCustomThumb" unChecked-label="UnChecked" checked-label="checked">
+                <template #checked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                    </svg>
+                </template>
+                <template #unChecked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                    </svg>
+                </template>
+            </dj-switch>
+        </div>
+        <div class="flex-box">
+            <dj-switch v-model="switchCustomThumb">
+                <template #checked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                    </svg>
+                </template>
+                <template #unChecked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                    </svg>
+                </template>
+            </dj-switch>
+            <dj-switch v-model="switchCustomThumb" :disabled="switchCustomThumbDisabled">
+                <template #checked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14l.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                    </svg>
+                </template>
+                <template #unChecked-thumb>
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z" />
+                    </svg>
+                </template>
+            </dj-switch>
+        </div>
+        <dj-code :code="CustomThumbCode" />
     </dj-example>
     <dj-anchor level="2" text="Switch API" id="Id_Switch_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Switch_Attributes" />
@@ -164,12 +216,20 @@ const switchCustom = ref(true);
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>unChecked</td>
+                    <td>unChecked-label</td>
                     <td>未选中标签内容</td>
                 </Tbody>
                 <Tbody>
-                    <td>checked</td>
+                    <td>checked-label</td>
                     <td>选中标签内容</td>
+                </Tbody>
+                <Tbody>
+                    <td>unChecked-thumb</td>
+                    <td>未选中拇指内容</td>
+                </Tbody>
+                <Tbody>
+                    <td>checked-thumb</td>
+                    <td>选中拇指内容</td>
                 </Tbody>
             </template>
         </Table>
@@ -186,8 +246,8 @@ const switchCustom = ref(true);
             </template>
             <template #tbody>
                 <Tbody>
-                    <td>switchToggle</td>
-                    <td>切换状态</td>
+                    <td>toggle</td>
+                    <td>切换</td>
                     <td><dj-badge text="Function" /></td>
                 </Tbody>
             </template>
@@ -200,7 +260,8 @@ const switchCustom = ref(true);
 </template>
 
 <style>
-.flex-box {
-    display: flex;
+.icon {
+    width: 18px;
+    height: 18px;
 }
 </style>
