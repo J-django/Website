@@ -686,12 +686,12 @@ const disabled = ref(true);
 /**
  * dj-dialog
  * Dialog 对话框
- * @returns FoundationCode, CustomHeaderCode, FooterCode, VerticalCenterCode, CssVariablesCode
+ * @returns FoundationCode, CustomHeaderCode, FooterCode, VerticalCenterCode, OverspreadCode, CssVariablesCode
  */
 export const useDJDialog = () => {
     const FoundationCode = `
 <template>
-    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-button @click="dialogValue = true">Open Dialog</dj-button>
     <dj-dialog title="Dialog Title" v-model="dialogValue">
         This is Dialog!
     </dj-dialog>
@@ -700,15 +700,11 @@ export const useDJDialog = () => {
 <script setup>
 import { ref } from "vue";
 const dialogValue = ref(false);
-
-const openDialog = () => {
-    modalValue.value = true;
-}
 </script>`.trim();
 
     const CustomHeaderCode = `
 <template>
-    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-button @click="dialogValue = true">Open Dialog</dj-button>
     <dj-dialog v-model="dialogValue">
         <template #header>
             <dj-button color="#6c757d" plain @click="dialogValue = false">Closed</dj-button>
@@ -721,15 +717,11 @@ const openDialog = () => {
 <script setup>
 import { ref } from "vue";
 const dialogValue = ref(false);
-
-const openDialog = () => {
-    modalValue.value = true;
-}
 </script>`.trim();
 
     const FooterCode = `
 <template>
-    <dj-button @click="openDialog">Open Dialog</dj-button>
+    <dj-button @click="dialogValue = true">Open Dialog</dj-button>
     <dj-dialog title="Dialog Title" v-model="dialogValue">
         This is Dialog!
         <template #footer>
@@ -742,16 +734,12 @@ const openDialog = () => {
 <script setup>
 import { ref } from "vue";
 const dialogValue = ref(false);
-
-const openDialog = () => {
-    modalValue.value = true;
-}
 </script>`.trim();
 
     const VerticalCenterCode = `
 <template>
-    <dj-button @click="openDialog">Open Dialog</dj-button>
-    <dj-dialog title="Dialog Title" v-model="dialogValue" :vertical-center="true">
+    <dj-button @click="dialogValue = true">Open Dialog</dj-button>
+    <dj-dialog title="Dialog Title" v-model="dialogValue" :vertical-center="verticalCenter">
         This is Dialog!
     </dj-dialog>
 </template>
@@ -759,10 +747,25 @@ const openDialog = () => {
 <script setup>
 import { ref } from "vue";
 const dialogValue = ref(false);
+const verticalCenter = ref(true);
+</script>`.trim();
 
-const openDialog = () => {
-    modalValue.value = true;
-}
+    const OverspreadCode = `
+<template>
+    <dj-button @click="dialogValue = true">Open Dialog</dj-button>
+    <dj-dialog title="Dialog Title" v-model="dialogValue" :overspread="overspread">
+        This is Dialog!
+        <template #footer>
+            <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
+            <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>
+        </template>
+    </dj-dialog>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const dialogValue = ref(false);
+const overspread = ref(true);
 </script>`.trim();
 
     const CssVariablesCode = `
@@ -790,6 +793,174 @@ const openDialog = () => {
         FooterCode,
         CustomHeaderCode,
         VerticalCenterCode,
+        OverspreadCode,
         CssVariablesCode
+    }
+}
+
+/**
+ * dj-slider
+ * Slider 滑块
+ * @returns FoundationCode, ExtremeCode, DisabledCode, BufferCode
+ */
+export const useSlider = () => {
+    const FoundationCode = `
+<template>
+    <dj-slider v-model="value" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const value = ref(30);
+</script>`.trim();
+
+    const ExtremeCode = `
+<template>
+    <dj-slider v-model="value" :show-extreme="extreme" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const value = ref(30);
+const extreme = ref(true);
+</script>`.trim();
+
+    const DisabledCode = `
+<template>
+    <dj-slider v-model="value" :disabled="disabled" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const value = ref(30);
+const disabled = ref(true);
+</script>`.trim();
+
+    const BufferCode = `
+<template>
+    <dj-slider v-model="value" :show-buffer="showBuffer" :buffered="bufferedValue" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const value = ref(30);
+const showBuffer = ref(true);
+const bufferedValue = ref(40);
+</script>`.trim();
+
+    return {
+        FoundationCode,
+        ExtremeCode,
+        DisabledCode,
+        BufferCode
+    };
+}
+
+/**
+ * dj-watermark
+ * Watermark 水印
+ * @returns FoundationCode, CustomCode
+ */
+export const useWatermark = () => {
+    const FoundationCode = `
+<template>
+    <dj-watermark :text="text">
+        <div style="height: 550px;"></div>
+    </dj-watermark>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const text = ref(["django-ui", "easy to understand"]);
+</script>`.trim();
+
+    const CustomCode = `
+<template>
+    <dj-watermark :text="customText" :color="customColor" :font-size="customFontSize" :gap="cusotomGap" :rotate="customRotate">
+        <div style="height: 550px;"></div>
+    </dj-watermark>
+    <div class="flex-column">
+        <template v-for="(item, index) of customText" :key="index">
+            <div class="flex-row">
+                <span class="form-title">
+                    <span v-if="index === 0">text:</span>
+                </span>
+                <dj-input v-model="customText[index]" />
+                <dj-button v-if="index === 0" color="#0d6efd" plain @click="push">Push</dj-button>
+                <dj-button v-else color="#ee2b47" plain @click="remove(index)">Remove</dj-button>
+            </div>
+        </template>
+        <div class="flex-row">
+            <span class="form-title">
+                color:<span>{{ customColor }}</span>
+            </span>
+            <dj-input v-model="customColor" />
+        </div>
+        <div class="flex-row">
+            <span class="form-title">
+                font-size:<span>{{ customFontSize }}</span>
+            </span>
+            <dj-slider v-model="customFontSize" />
+        </div>
+        <div class="flex-row">
+            <span class="form-title">
+                gap:<span>{{ cusotomGap }}</span>
+            </span>
+            <dj-slider v-model="cusotomGap" :min="0" :max="500" />
+        </div>
+        <div class="flex-row">
+            <span class="form-title">
+                rotate:<span>{{ customRotate }}</span>
+            </span>
+            <dj-slider v-model="customRotate" :min="-180" :max="180" />
+        </div>
+    </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const customText = ref(["django-ui", "easy to understand"]);
+const customColor = ref("#dfdfdf");
+const customFontSize = ref(16);
+const cusotomGap = ref(150);
+const customRotate = ref(-22);
+
+const push = () => {
+    customText.value.push("")
+}
+
+const remove = (index: number) => {
+    customText.value = customText.value.filter((f, i) => i !== index);
+}
+</script>
+
+<style>
+.flex-column {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-title {
+    padding-right: 8px;
+    min-width: 150px;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+</style>`.trim();
+
+    return {
+        FoundationCode,
+        CustomCode
     }
 }

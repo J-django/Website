@@ -148,10 +148,36 @@ const Component: Array<RouteRecordRaw> = [
       },
       {
         name: "Component-Dialog",
-        path: "/component/Dialog",
+        path: "/component/dialog",
         component: () => import("@/pages/component/dj-dialog.vue"),
         meta: <RouteMeta>{
           title: "Dialog 对话框",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
+        name: "Component-Slider",
+        path: "/component/slider",
+        component: () => import("@/pages/component/dj-slider.vue"),
+        meta: <RouteMeta>{
+          title: "Slider 滑块",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
+        name: "Component-Watermark",
+        path: "/component/watermark",
+        component: () => import("@/pages/component/dj-watermark.vue"),
+        meta: <RouteMeta>{
+          title: "Watermark 水印",
           keepAlive: false,
           hasCurtain: true,
           hasFooter: false,

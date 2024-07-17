@@ -7,43 +7,28 @@ import { useDJDialog, useRoutePlugin } from '@/hooks'
 
 const { routeTitle } = useRoutePlugin();
 
-const { FoundationCode, FooterCode, CustomHeaderCode, VerticalCenterCode, CssVariablesCode } = useDJDialog();
+const { FoundationCode, FooterCode, CustomHeaderCode, VerticalCenterCode, OverspreadCode, CssVariablesCode } = useDJDialog();
 
-const modalValue = ref(false);
+const dialogValue = ref(false);
 const dialogFooterValue = ref(false)
 const dialogCustomHeaderValue = ref(false);
 const dialogVerticalCenterValue = ref(false);
-
-const openDialog = () => {
-    modalValue.value = true;
-}
-
-const openDialogFooter = () => {
-    dialogFooterValue.value = true;
-}
-
-const openDialogCustomHeader = () => {
-    dialogCustomHeaderValue.value = true;
-}
-
-const openDialogVerticalCenter = () => {
-    dialogVerticalCenterValue.value = true;
-}
+const dialogOverspreadValue = ref(false);
 </script>
 
 <template>
     <dj-anchor level="1" :text="routeTitle" id="Id_Dialog" />
     <dj-anchor level="2" text="基础 Foundation" id="Id_Dialog_Foundation" />
     <dj-example>
-        <dj-button @click="openDialog">Open Dialog</dj-button>
-        <dj-dialog title="Dialog Title" v-model="modalValue">
+        <dj-button @click="dialogValue = true">Open Dialog</dj-button>
+        <dj-dialog title="Dialog Title" v-model="dialogValue">
             This is Dialog!
         </dj-dialog>
         <dj-code title="vue" lang="html" :code="FoundationCode" />
     </dj-example>
     <dj-anchor level="2" text="自定义头部 Custom Header" id="Id_Dialog_Custom_Header" />
     <dj-example>
-        <dj-button @click="openDialogCustomHeader">Open Dialog</dj-button>
+        <dj-button @click="dialogCustomHeaderValue = true">Open Dialog</dj-button>
         <dj-dialog v-model="dialogCustomHeaderValue">
             <template #header>
                 <dj-button color="#6c757d" plain @click="dialogCustomHeaderValue = false">Closed</dj-button>
@@ -55,7 +40,7 @@ const openDialogVerticalCenter = () => {
     </dj-example>
     <dj-anchor level="2" text="页脚 Footer" id="Id_Dialog_Footer" />
     <dj-example>
-        <dj-button @click="openDialogFooter">Open Dialog</dj-button>
+        <dj-button @click="dialogFooterValue = true">Open Dialog</dj-button>
         <dj-dialog title="Dialog Title" v-model="dialogFooterValue">
             This is Dialog!
             <template #footer>
@@ -67,11 +52,22 @@ const openDialogVerticalCenter = () => {
     </dj-example>
     <dj-anchor level="2" text="垂直居中 Vertical Center" id="Id_Dialog_Vertical_Center" />
     <dj-example>
-        <dj-button @click="openDialogVerticalCenter">Open Dialog</dj-button>
+        <dj-button @click="dialogVerticalCenterValue = true">Open Dialog</dj-button>
         <dj-dialog title="Dialog Title" v-model="dialogVerticalCenterValue" vertical-center>
             This is Dialog!
         </dj-dialog>
         <dj-code title="vue" lang="html" :code="VerticalCenterCode" />
+    </dj-example>
+    <dj-anchor level="2" text="铺满 Overspread" id="Id_Dialog_Overspread" />
+    <dj-example>
+        <dj-button @click="dialogOverspreadValue = true">Open Dialog</dj-button>
+        <dj-dialog v-model="dialogOverspreadValue" overspread>
+            <template #footer>
+                <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
+                <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>
+            </template>
+        </dj-dialog>
+        <dj-code :code="OverspreadCode" />
     </dj-example>
     <dj-anchor level="2" text="Dialog API" id="Id_Dialog_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Dialog_Attributes" />
@@ -103,6 +99,30 @@ const openDialogVerticalCenter = () => {
                     <td>-</td>
                 </Tbody>
                 <Tbody>
+                    <td>width</td>
+                    <td>对话框宽度</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
+                    <td>50%</td>
+                </Tbody>
+                <Tbody>
+                    <td>min-width</td>
+                    <td>对话框最小宽度</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
+                    <td>-</td>
+                </Tbody>
+                <Tbody>
+                    <td>max-width</td>
+                    <td>对话框最大宽度</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
+                    <td>-</td>
+                </Tbody>
+                <Tbody>
                     <td>top</td>
                     <td>距离顶部偏移量</td>
                     <td>
@@ -112,7 +132,7 @@ const openDialogVerticalCenter = () => {
                 </Tbody>
                 <Tbody>
                     <td>append-body</td>
-                    <td>是否将元素挂载至<dj-badge text="body" />下</td>
+                    <td>将元素挂载至<dj-badge text="body" />下</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>
@@ -120,7 +140,7 @@ const openDialogVerticalCenter = () => {
                 </Tbody>
                 <Tbody>
                     <td>escape</td>
-                    <td>是否可以通过<dj-badge text="ESC" />按键关闭对话框</td>
+                    <td>通过<dj-badge text="ESC" />键关闭对话框</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>
@@ -128,7 +148,7 @@ const openDialogVerticalCenter = () => {
                 </Tbody>
                 <Tbody>
                     <td>dialogExternal</td>
-                    <td>是否可以通过点击外关闭对话框</td>
+                    <td>通过点击外关闭对话框</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>
@@ -136,7 +156,23 @@ const openDialogVerticalCenter = () => {
                 </Tbody>
                 <Tbody>
                     <td>verticalCenter</td>
-                    <td>是否垂直居中</td>
+                    <td>垂直居中</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>overspread</td>
+                    <td>高度铺满</td>
+                    <td>
+                        <dj-badge text="boolean" />
+                    </td>
+                    <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>closeDestroy</td>
+                    <td>关闭时销毁</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>
