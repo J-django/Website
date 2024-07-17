@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <dj-code title="bash" lang="bash" :code="'npm install django-ui'" />
-        <dj-button class="getStarted" @click="getStarted">
+        <dj-button class="getStarted" color="#0d6efd" plain @click="getStarted">
             Get Started
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                 <g fill="none">
@@ -39,9 +39,8 @@ const getStarted = () => {
     .getStarted {
         margin-top: rem(8px);
         height: rem(38px);
-        color: var(--t-text-color);
         font-size: rem(16px);
-        font-weight: bold;
+        font-weight: 600;
 
         ::v-deep .dj-button-inner {
             display: flex;
