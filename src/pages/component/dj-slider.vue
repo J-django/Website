@@ -7,7 +7,7 @@ import { useRoutePlugin, useSlider } from '@/hooks'
 
 const { routeTitle } = useRoutePlugin();
 
-const { FoundationCode, ExtremeCode, DisabledCode, BufferCode } = useSlider();
+const { FoundationCode, ExtremeCode, DisabledCode, BufferCode, CssVariablesCode } = useSlider();
 
 const sliderValue = ref(30);
 const extremeValue = ref(30);
@@ -156,5 +156,9 @@ const buffer = ref(true);
                 </Tbody>
             </template>
         </Table>
+    </dj-example>
+    <dj-anchor level="3" text="Css Variables" id="Id_Slider_Css_Variables" />
+    <dj-example>
+        <dj-code title="css" lang="css" :code="CssVariablesCode" />
     </dj-example>
 </template>

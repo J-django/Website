@@ -801,7 +801,7 @@ const overspread = ref(true);
 /**
  * dj-slider
  * Slider 滑块
- * @returns FoundationCode, ExtremeCode, DisabledCode, BufferCode
+ * @returns FoundationCode, ExtremeCode, DisabledCode, BufferCode, CssVariablesCode
  */
 export const useSlider = () => {
     const FoundationCode = `
@@ -848,18 +848,51 @@ const showBuffer = ref(true);
 const bufferedValue = ref(40);
 </script>`.trim();
 
+    const CssVariablesCode = `
+--dj-slider-min-padding
+--dj-slider-max-padding
+--dj-slider-thumb-offset
+--dj-slider-width
+--dj-slider-height
+--dj-slider-track-height
+--dj-slider-progress-height
+--dj-slider-buffered-height
+--dj-slider-thumb-width
+--dj-slider-thumb-height
+--dj-slider-thumb__wrapper-width
+--dj-slider-thumb__wrapper-height
+--dj-slider-extreme-color
+--dj-slider-extreme-font-size
+--dj-slider-extreme-font-weight
+--dj-slider-track-background-color
+--dj-slider-progress-background-color
+--dj-slider-buffered-background-color
+--dj-slider-thumb-background-color
+--dj-slider-thumb-border-color
+--dj-slider-track-border-radius
+--dj-slider-progress-border-radius
+--dj-slider-buffered-border-radius
+--dj-slider-thumb-border-radius
+--dj-slider-thumb-box-shadow
+--dj-slider-thumb-transition
+--dj-slider-buffered-transition
+--dj-slider-progress-z-index
+--dj-slider-buffered-z-index
+--dj-slider-thumb-z-index`.trim();
+
     return {
         FoundationCode,
         ExtremeCode,
         DisabledCode,
-        BufferCode
+        BufferCode,
+        CssVariablesCode
     };
 }
 
 /**
  * dj-watermark
  * Watermark 水印
- * @returns FoundationCode, CustomCode
+ * @returns FoundationCode, CustomCode, CssVariablesCode
  */
 export const useWatermark = () => {
     const FoundationCode = `
@@ -959,8 +992,12 @@ const remove = (index: number) => {
 }
 </style>`.trim();
 
+    const CssVariablesCode = `
+`.trim();
+
     return {
         FoundationCode,
-        CustomCode
+        CustomCode,
+        CssVariablesCode
     }
 }
