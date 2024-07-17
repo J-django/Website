@@ -61,7 +61,8 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="铺满 Overspread" id="Id_Dialog_Overspread" />
     <dj-example>
         <dj-button @click="dialogOverspreadValue = true">Open Dialog</dj-button>
-        <dj-dialog v-model="dialogOverspreadValue" overspread>
+        <dj-dialog title="Dialog Title" v-model="dialogOverspreadValue" overspread>
+            <div style="height: 2000px;"></div>
             <template #footer>
                 <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
                 <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>

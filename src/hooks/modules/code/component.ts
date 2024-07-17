@@ -754,7 +754,7 @@ const verticalCenter = ref(true);
 <template>
     <dj-button @click="dialogValue = true">Open Dialog</dj-button>
     <dj-dialog title="Dialog Title" v-model="dialogValue" :overspread="overspread">
-        This is Dialog!
+        <div style="height: 2000px;"></div>
         <template #footer>
             <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
             <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>
