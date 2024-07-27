@@ -3,11 +3,11 @@ import { ref } from 'vue'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-import { useRoutePlugin, useWatermark } from '@/hooks'
+import { useRoutePlugin, useDJWatermark } from '@/hooks'
 
 const { routeTitle } = useRoutePlugin();
 
-const { FoundationCode, CustomCode } = useWatermark();
+const { FoundationCode, CustomCode } = useDJWatermark();
 
 const text = ref(["django-ui", "easy to understand"]);
 

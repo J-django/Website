@@ -3,11 +3,11 @@ import { ref } from 'vue'
 import Table from "@/components/table.vue"
 import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
-import { useRoutePlugin, useSlider } from '@/hooks'
+import { useRoutePlugin, useDJSlider } from '@/hooks'
 
 const { routeTitle } = useRoutePlugin();
 
-const { FoundationCode, ExtremeCode, DisabledCode, BufferCode, CssVariablesCode } = useSlider();
+const { FoundationCode, ExtremeCode, DisabledCode, BufferCode, CssVariablesCode } = useDJSlider();
 
 const sliderValue = ref(30);
 const extremeValue = ref(30);

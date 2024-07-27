@@ -185,6 +185,19 @@ const Component: Array<RouteRecordRaw> = [
           hasSidebar: true,
         },
       },
+      {
+        name: "Component-scrollbar",
+        path: "/component/scrollbar",
+        component: () => import("@/pages/component/dj-scrollbar.vue"),
+        meta: <RouteMeta>{
+          title: "Scrollbar 滚动条",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
     ],
   },
 ];

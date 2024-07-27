@@ -803,7 +803,7 @@ const overspread = ref(true);
  * Slider 滑块
  * @returns FoundationCode, ExtremeCode, DisabledCode, BufferCode, CssVariablesCode
  */
-export const useSlider = () => {
+export const useDJSlider = () => {
     const FoundationCode = `
 <template>
     <dj-slider v-model="value" />
@@ -892,9 +892,9 @@ const bufferedValue = ref(40);
 /**
  * dj-watermark
  * Watermark 水印
- * @returns FoundationCode, CustomCode, CssVariablesCode
+ * @returns FoundationCode, CustomCode
  */
-export const useWatermark = () => {
+export const useDJWatermark = () => {
     const FoundationCode = `
 <template>
     <dj-watermark :text="text">
@@ -992,12 +992,87 @@ const remove = (index: number) => {
 }
 </style>`.trim();
 
-    const CssVariablesCode = `
-`.trim();
-
     return {
         FoundationCode,
         CustomCode,
+    }
+}
+
+/**
+ * dj-scrollbar
+ * Scrollbar 滚动条
+ * @returns FoundationCode, HorizontalCode
+ */
+export const useDJScrollbar = () => {
+    const FoundationCode = `
+<template>
+    <dj-scrollbar height="400px">
+        <p class="dj-scrollbar-item" v-for="item of 20" :key="item">{{ item }}</p>
+    </dj-scrollbar>
+</template>
+
+<style>
+.dj-scrollbar-item {
+    margin: 10px 0;
+    height: 60px;
+    color: var(--t-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--t-card-background-color);
+    border-radius: 8px;
+}
+</style>`.trim();
+
+    const HorizontalCode = `
+<template>
+    <dj-scrollbar>
+        <div class="dj-scrollbar-inline-flex">
+            <p class="dj-scrollbar-inline-item" v-for="item of 20" :key="item">{{ item }}</p>
+        </div>
+    </dj-scrollbar>
+</template>
+
+<style>
+.dj-scrollbar-inline-flex {
+    display: inline-flex;
+}
+
+.dj-scrollbar-inline-item {
+    margin: 0 10px;
+    width: 120px;
+    height: 60px;
+    color: var(--t-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--t-card-background-color);
+    border-radius: 8px;
+}
+</style>`.trim();
+
+    const CssVariablesCode = `
+--dj-scrollbar-padding
+--dj-scrollbar-vertical-width
+--dj-scrollbar-hover-vertical-width
+--dj-scrollbar-horizontal-height
+--dj-scrollbar-hover-horizontal-height
+--dj-scrollbar-vertical-background-color
+--dj-scrollbar-horizontal-background-color
+--dj-scrollbar-vertical-thumb-background-color
+--dj-scrollbar-horizontal-thumb-background-color
+--dj-scrollbar-border-color
+--dj-scrollbar-border-radius
+--dj-scrollbar-vertical-transition
+--dj-scrollbar-horizontal-transition
+--dj-scrollbar-vertical-thumb-transition
+--dj-scrollbar-horizontal-thumb-transition
+--dj-scrollbar-vertical-z-index
+--dj-scrollbar-horizontal-z-index`.trim();
+
+    return {
+        FoundationCode,
+        HorizontalCode,
         CssVariablesCode
     }
 }
