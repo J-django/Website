@@ -1,4 +1,4 @@
-<script lang="ts" setup name="dj-link">
+<script lang="ts" setup name="dj-external">
 // plugins
 import { useRouter } from 'vue-router'
 
@@ -32,7 +32,7 @@ const push = (url: string) => {
 </script>
 
 <template>
-    <a class="dj-link" :href="href" @click.prevent="push(href)" :title="title">
+    <a class="dj-external" :href="href" @click.prevent="push(href)" :title="title">
         <slot />
     </a>
 </template>

@@ -30,6 +30,19 @@ const Component: Array<RouteRecordRaw> = [
         },
       },
       {
+        name: "Component-Link",
+        path: "/component/link",
+        component: () => import("@/pages/component/dj-link.vue"),
+        meta: <RouteMeta>{
+          title: "Link 链接",
+          keepAlive: false,
+          hasCurtain: true,
+          hasFooter: false,
+          hasNav: true,
+          hasSidebar: true,
+        },
+      },
+      {
         name: "Component-Input",
         path: "/component/input",
         component: () => import("@/pages/component/dj-input.vue"),

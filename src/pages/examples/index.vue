@@ -55,7 +55,7 @@ const segmentedArray = ref(["Unread", "Read", "Archived"]);
                             Today
                             <dj-badge text="5" />
                         </label>
-                        <dj-link class="link">see All</dj-link>
+                        <dj-external class="link">see All</dj-external>
                     </div>
                     <dj-card ghosting class="user-module">
                         <span class="before"></span>
@@ -95,7 +95,7 @@ const segmentedArray = ref(["Unread", "Read", "Archived"]);
                             <dj-badge text="7" />
                         </label>
 
-                        <dj-link class="link">see All</dj-link>
+                        <dj-external class="link">see All</dj-external>
                     </div>
                     <dj-card ghosting class="user-module">
                         <div class="user-container">
@@ -163,7 +163,7 @@ const segmentedArray = ref(["Unread", "Read", "Archived"]);
                             <dj-badge text="5" />
                         </label>
 
-                        <dj-link class="link">see All</dj-link>
+                        <dj-external class="link">see All</dj-external>
                     </div>
                     <dj-card ghosting class="user-module">
                         <div class="user-container">

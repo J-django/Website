@@ -5,7 +5,7 @@ import Thead from '@/components/table-thead.vue'
 import Tbody from '@/components/table-tbody.vue'
 import { useDJInput } from '@/hooks'
 
-const { FoundationCode, DisabledCode, ClearCode, RecombinationCode, CssVariablesCode } = useDJInput();
+const { FoundationCode, DisabledCode, ClearableCode, RecombinationCode, CombinationCode, CssVariablesCode } = useDJInput();
 
 const inputFoundation = ref("");
 const inputDisabled = ref("");
@@ -13,6 +13,7 @@ const disabled = ref(true);
 const inputClear = ref("");
 const inputPrefixIcon = ref("");
 const inputSuffixIcon = ref("");
+const inputAddon = ref("");
 
 const toggleDisabled = () => {
     disabled.value = !disabled.value;
@@ -34,8 +35,8 @@ const toggleDisabled = () => {
     </dj-example>
     <dj-anchor level="2" text="清空 Clear" id="Id_Input_Clear" />
     <dj-example>
-        <dj-input placeholder="Please Input Clear" v-model="inputClear" clear />
-        <dj-code title="vue" lang="html" :code="ClearCode" />
+        <dj-input placeholder="Please Input Clear" v-model="inputClear" clearable />
+        <dj-code title="vue" lang="html" :code="ClearableCode" />
     </dj-example>
     <dj-anchor level="2" text="复合 Recombination" id="Id_Input_Recombination" />
     <dj-example>
@@ -58,6 +59,11 @@ const toggleDisabled = () => {
             </template>
         </dj-input>
         <dj-code title="vue" lang="html" :code="RecombinationCode" />
+    </dj-example>
+    <dj-anchor level="2" text="组合 Combination" id="Id_Input_Combination" />
+    <dj-example>
+        <dj-input placeholder="Please Input" v-model="inputAddon" addon-before="https://" addon-after=".com" />
+        <dj-code title="vue" lang="html" :code="CombinationCode" />
     </dj-example>
     <dj-anchor level="2" text="Input API" id="Id_Input_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Input_Attributes" />
@@ -105,12 +111,28 @@ const toggleDisabled = () => {
                     <td>false</td>
                 </Tbody>
                 <Tbody>
-                    <td>clear</td>
+                    <td>clearable</td>
                     <td>清空</td>
                     <td>
                         <dj-badge text="boolean" />
                     </td>
                     <td>false</td>
+                </Tbody>
+                <Tbody>
+                    <td>addon-before</td>
+                    <td>组合前缀</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
+                    <td>-</td>
+                </Tbody>
+                <Tbody>
+                    <td>addon-after</td>
+                    <td>组合后缀</td>
+                    <td>
+                        <dj-badge text="string" />
+                    </td>
+                    <td>-</td>
                 </Tbody>
                 <Tbody>
                     <td>enterkeyhint</td>
@@ -210,6 +232,18 @@ const toggleDisabled = () => {
                         <dj-badge text="1.0.13版本更名" />
                     </td>
                     <td>后缀</td>
+                </Tbody>
+                <Tbody>
+                    <td>
+                        addon-before
+                    </td>
+                    <td>组合前缀</td>
+                </Tbody>
+                <Tbody>
+                    <td>
+                        addon-after
+                    </td>
+                    <td>组合后缀</td>
                 </Tbody>
             </template>
         </Table>

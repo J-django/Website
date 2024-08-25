@@ -12,6 +12,7 @@ const { FoundationCode, FooterCode, CustomHeaderCode, VerticalCenterCode, Oversp
 const dialogValue = ref(false);
 const dialogFooterValue = ref(false)
 const dialogCustomHeaderValue = ref(false);
+const dialogCustomHeaderInput = ref();
 const dialogVerticalCenterValue = ref(false);
 const dialogOverspreadValue = ref(false);
 </script>
@@ -21,7 +22,8 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="基础 Foundation" id="Id_Dialog_Foundation" />
     <dj-example>
         <dj-button @click="dialogValue = true">Open Dialog</dj-button>
-        <dj-dialog title="Dialog Title" v-model="dialogValue">
+        <dj-dialog title="Dialog Title" v-model="dialogValue" @confirm="dialogValue = false"
+            @cancel="dialogValue = false">
             This is Dialog!
         </dj-dialog>
         <dj-code title="vue" lang="html" :code="FoundationCode" />
@@ -29,10 +31,10 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="自定义头部 Custom Header" id="Id_Dialog_Custom_Header" />
     <dj-example>
         <dj-button @click="dialogCustomHeaderValue = true">Open Dialog</dj-button>
-        <dj-dialog v-model="dialogCustomHeaderValue">
+        <dj-dialog v-model="dialogCustomHeaderValue" @confirm="dialogCustomHeaderValue = false"
+            @cancel="dialogCustomHeaderValue = false">
             <template #header>
-                <dj-button color="#6c757d" plain @click="dialogCustomHeaderValue = false">Closed</dj-button>
-                <dj-button color="#0d6efd" plain @click="dialogCustomHeaderValue = false">Save Changes</dj-button>
+                <dj-input placeholder="Please Input" v-model="dialogCustomHeaderInput" />
             </template>
             This is Dialog!
         </dj-dialog>
@@ -41,11 +43,12 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="页脚 Footer" id="Id_Dialog_Footer" />
     <dj-example>
         <dj-button @click="dialogFooterValue = true">Open Dialog</dj-button>
-        <dj-dialog title="Dialog Title" v-model="dialogFooterValue">
+        <dj-dialog title="Dialog Title" v-model="dialogFooterValue" @confirm="dialogFooterValue = false"
+            @cancel="dialogFooterValue = false">
             This is Dialog!
             <template #footer>
-                <dj-button color="#6c757d" plain @click="dialogCustomHeaderValue = false">Closed</dj-button>
-                <dj-button color="#0d6efd" plain @click="dialogCustomHeaderValue = false">Save Changes</dj-button>
+                <dj-button color="#6c757d" plain @click="dialogFooterValue = false">Closed</dj-button>
+                <dj-button color="#0d6efd" plain @click="dialogFooterValue = false">Save Changes</dj-button>
             </template>
         </dj-dialog>
         <dj-code title="vue" lang="html" :code="FooterCode" />
@@ -53,7 +56,8 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="垂直居中 Vertical Center" id="Id_Dialog_Vertical_Center" />
     <dj-example>
         <dj-button @click="dialogVerticalCenterValue = true">Open Dialog</dj-button>
-        <dj-dialog title="Dialog Title" v-model="dialogVerticalCenterValue" vertical-center>
+        <dj-dialog title="Dialog Title" v-model="dialogVerticalCenterValue" vertical-center
+            @confirm="dialogVerticalCenterValue = false" @cancel="dialogVerticalCenterValue = false">
             This is Dialog!
         </dj-dialog>
         <dj-code title="vue" lang="html" :code="VerticalCenterCode" />
@@ -61,12 +65,9 @@ const dialogOverspreadValue = ref(false);
     <dj-anchor level="2" text="铺满 Overspread" id="Id_Dialog_Overspread" />
     <dj-example>
         <dj-button @click="dialogOverspreadValue = true">Open Dialog</dj-button>
-        <dj-dialog title="Dialog Title" v-model="dialogOverspreadValue" overspread>
+        <dj-dialog title="Dialog Title" v-model="dialogOverspreadValue" overspread
+            @confirm="dialogOverspreadValue = false" @cancel="dialogOverspreadValue = false">
             <div style="height: 2000px;"></div>
-            <template #footer>
-                <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
-                <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>
-            </template>
         </dj-dialog>
         <dj-code :code="OverspreadCode" />
     </dj-example>
@@ -148,7 +149,7 @@ const dialogOverspreadValue = ref(false);
                     <td>true</td>
                 </Tbody>
                 <Tbody>
-                    <td>dialogExternal</td>
+                    <td>dialog-external</td>
                     <td>通过点击外关闭对话框</td>
                     <td>
                         <dj-badge text="boolean" />
@@ -156,7 +157,7 @@ const dialogOverspreadValue = ref(false);
                     <td>true</td>
                 </Tbody>
                 <Tbody>
-                    <td>verticalCenter</td>
+                    <td>vertical-center</td>
                     <td>垂直居中</td>
                     <td>
                         <dj-badge text="boolean" />
@@ -172,7 +173,7 @@ const dialogOverspreadValue = ref(false);
                     <td>false</td>
                 </Tbody>
                 <Tbody>
-                    <td>closeDestroy</td>
+                    <td>close-destroy</td>
                     <td>关闭时销毁</td>
                     <td>
                         <dj-badge text="boolean" />

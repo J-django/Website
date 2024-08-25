@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
       cors: true,
       proxy: {
         "/api": {
-          target: "http://localhost:10021",
+          target: "https://dashboard.algolia.com",
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
         },

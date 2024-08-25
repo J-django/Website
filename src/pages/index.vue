@@ -1,3 +1,16 @@
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter();
+
+const getStarted = () => {
+    router.push({
+        path: "/guide"
+    })
+}
+</script>
+
 <template>
     <div class="home">
         <dj-code title="bash" lang="bash" :code="'npm install django-ui'" />
@@ -14,18 +27,6 @@
         </dj-button>
     </div>
 </template>
-
-<script lang="ts" setup>
-import { useRouter } from 'vue-router'
-
-const router = useRouter();
-
-const getStarted = () => {
-    router.push({
-        path: "/guide"
-    })
-}
-</script>
 
 <style lang="less" scoped>
 .home {

@@ -1,8 +1,20 @@
+:root {
+  --t-dj-input-addon-background-color: #e5e5e6;
+}
+
+html.dark {
+  --t-dj-input-addon-background-color: #2b2b2d;
+}
+
 .dj-input {
   --dj-input-color: var(--t-text-color) !important;
+  --dj-input-addon-color: var(--t-text-color) !important;
   --dj-input-icon-color: var(--t-text-color-2) !important;
   --dj-input-placeholder-color: var(--t-text-color-2) !important;
   --dj-input-background-color: var(--t-card-background-color) !important;
+  --dj-input-addon-background-color: var(
+    --t-dj-input-addon-background-color
+  ) !important;
   --dj-input-border-color: var(--t-border-color) !important;
   --dj-input-focus-border-color: var(--t-text-color-3) !important;
 }

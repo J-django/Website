@@ -1,0 +1,37 @@
+:root {
+  --t-dj-scrollbar-vertical-background-color: rgba(255, 255, 255, 0.64);
+  --t-dj-scrollbar-horizontal-background-color: rgba(255, 255, 255, 0.64);
+  --t-dj-scrollbar-thumb-background-color: #c2c2c2;
+  --t-dj-scrollbar-thumb-hover-background-color: #7d7d7d;
+  --t-dj-scrollbar-border-color: rgba(231, 231, 231, 1);
+}
+
+html.dark {
+  --t-dj-scrollbar-vertical-background-color: rgba(38, 38, 38, 0.64);
+  --t-dj-scrollbar-horizontal-background-color: rgba(38, 38, 38, 0.64);
+  --t-dj-scrollbar-thumb-background-color: rgba(107, 107, 108, 0.45);
+  --t-dj-scrollbar-thumb-hover-background-color: rgba(107, 107, 108, 1);
+  --t-dj-scrollbar-border-color: rgba(55, 55, 55, 1);
+}
+
+.dj-scrollbar {
+  --dj-scrollbar-vertical-background-color: var(
+    --t-dj-scrollbar-vertical-background-color
+  ) !important;
+  --dj-scrollbar-horizontal-background-color: var(
+    --t-dj-scrollbar-horizontal-background-color
+  ) !important;
+  --dj-scrollbar-vertical-thumb-background-color: var(
+    --t-dj-scrollbar-thumb-background-color
+  ) !important;
+  --dj-scrollbar-horizontal-thumb-background-color: var(
+    --t-dj-scrollbar-thumb-background-color
+  ) !important;
+  --dj-scrollbar-vertical-thumb-hover-background-color: var(
+    --t-dj-scrollbar-thumb-hover-background-color
+  ) !important;
+  --dj-scrollbar-horizontal-thumb-hover-background-color: var(
+    --t-dj-scrollbar-thumb-hover-background-color
+  ) !important;
+  --dj-scrollbar-border-color: var(--t-dj-scrollbar-border-color) !important;
+}

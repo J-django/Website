@@ -27,14 +27,14 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <dj-link :href="'https://github.com'" outside
+                                        <dj-external :href="'https://github.com'" outside
                                             :title="'目标首页：https://github.com'">
                                             (https://github.com)
-                                        </dj-link>
+                                        </dj-external>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <dj-link :href="'https://github.com/J-django'" outside
+                                    <dj-external :href="'https://github.com/J-django'" outside
                                         :title="'https://github.com/J-django'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -42,7 +42,7 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </dj-link>
+                                    </dj-external>
                                 </div>
                             </div>
                         </span>
@@ -66,13 +66,13 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <dj-link :href="'https://gitee.com'" outside :title="'目标首页：https://gitee.com'">
+                                        <dj-external :href="'https://gitee.com'" outside :title="'目标首页：https://gitee.com'">
                                             (https://gitee.com)
-                                        </dj-link>
+                                        </dj-external>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <dj-link :href="'https://gitee.com/J-Django-Gitee'" outside
+                                    <dj-external :href="'https://gitee.com/J-Django-Gitee'" outside
                                         :title="'https://gitee.com/J-Django-Gitee'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -80,7 +80,7 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </dj-link>
+                                    </dj-external>
                                 </div>
                             </div>
                         </span>
@@ -103,13 +103,13 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <dj-link :href="'https://juejin.cn'" outside :title="'目标首页：https://juejin.cn'">
+                                        <dj-external :href="'https://juejin.cn'" outside :title="'目标首页：https://juejin.cn'">
                                             (https://juejin.cn)
-                                        </dj-link>
+                                        </dj-external>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <dj-link :href="'https://juejin.cn/user/4130211768306391'" outside
+                                    <dj-external :href="'https://juejin.cn/user/4130211768306391'" outside
                                         :title="'https://juejin.cn/user/4130211768306391'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -117,7 +117,7 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </dj-link>
+                                    </dj-external>
                                 </div>
                             </div>
                         </span>
@@ -142,14 +142,14 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                 <div class="push-desc">
                                     <span class="push-title">Source URL:</span>
                                     <span class="push-url">
-                                        <dj-link :href="'https://www.zhihu.com'" outside
+                                        <dj-external :href="'https://www.zhihu.com'" outside
                                             :title="'目标首页：https://www.zhihu.com'">
                                             (https://www.zhihu.com)
-                                        </dj-link>
+                                        </dj-external>
                                     </span>
                                 </div>
                                 <div class="push-link">
-                                    <dj-link :href="'https://www.zhihu.com/people/a-zheng-68-32-80'" outside
+                                    <dj-external :href="'https://www.zhihu.com/people/a-zheng-68-32-80'" outside
                                         :title="'https://www.zhihu.com/people/a-zheng-68-32-80'">
                                         <svg t="1687188654486" class="push-icon" viewBox="0 0 1024 1024" version="1.1"
                                             xmlns="http://www.w3.org/2000/svg" p-id="13329" width="200" height="200">
@@ -157,7 +157,7 @@ import Zhihu from '@/assets/images/zhihu.jpeg'
                                                 d="M182.033067 1006.933333A165.000533 165.000533 0 0 1 17.066667 841.966933V182.033067A165.000533 165.000533 0 0 1 182.033067 17.066667h659.933866A165.034667 165.034667 0 0 1 1006.933333 182.033067v659.933866a165.034667 165.034667 0 0 1-164.9664 164.9664H182.033067z m283.170133-286.3104l126.7712-132.983466a110.1824 110.1824 0 0 0 0-151.210667L465.237333 303.445333a36.6592 36.6592 0 0 0-53.111466 50.551467l126.7712 133.085867a36.864 36.864 0 0 1 0 50.005333l-126.7712 132.949333a36.6592 36.6592 0 1 0 53.077333 50.619734z"
                                                 p-id="13330"></path>
                                         </svg>
-                                    </dj-link>
+                                    </dj-external>
                                 </div>
                             </div>
                         </span>

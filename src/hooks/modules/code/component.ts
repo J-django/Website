@@ -93,7 +93,7 @@ import AudioSrc from "audio.mp3";
 /**
  * dj-button
  * Button 按钮
- * @returns FoundationCode, DisabledCode, CustomColorCode, CssVariablesCode
+ * @returns FoundationCode, DisabledCode, CustomColorCode, PlainCode, GroupingCode, CssVariablesCode
  */
 export const useDJButtonCode = () => {
     const FoundationCode = `
@@ -144,11 +144,20 @@ const disabled = ref(true);
 }
 </style>`.trim();
 
+    const GroupingCode = `
+<template>
+    <dj-button-group>
+        <dj-button color="#6610f2">Default</dj-button>
+        <dj-button>Default</dj-button>
+    </dj-button-group>
+</template>`.trim();
+
     const CssVariablesCode = `
 --dj-button-padding
 --dj-button-white-color
 --dj-button-black-color
 --dj-button-font-size
+--dj-button-font-weight
 --dj-button-height
 --dj-button-background-color
 --dj-button-border-radius
@@ -159,6 +168,7 @@ const disabled = ref(true);
         DisabledCode,
         CustomColorCode,
         PlainCode,
+        GroupingCode,
         CssVariablesCode
     }
 }
@@ -284,7 +294,7 @@ export const useDJDividerCode = () => {
 /**
  * <dj-input
  * Input 输入框
- * @returns FoundationCode, DisabledCode, ClearCode, IconCode, CssVariablesCode
+ * @returns FoundationCode, DisabledCode, ClearableCode, IconCode, CssVariablesCode
  */
 export const useDJInput = () => {
     const FoundationCode = `
@@ -308,36 +318,34 @@ const input = ref("");
 const disabled = ref(true);
 </script>`.trim();
 
-    const ClearCode = `
+    const ClearableCode = `
 <template>
-    <dj-input placeholder="Please Input Clear" v-model="input" :clear="clear" />
+    <dj-input placeholder="Please Input Clear" v-model="input" :clearable="clearable" />
 </template>
 
 <script setup>
 import { ref } from "vue";
 const input = ref("");
-const clear = ref(true);
+const clearable = ref(true);
 </script>`.trim();
 
     const RecombinationCode = `
 <template>
     <dj-input placeholder="Please Input" v-model="input1">
         <template #prefix>
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
-                <path fill="#DE2910"
-                    d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
-                <path fill="#FFDE02"
-                    d="M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z" />
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20">
+                <path fill="currentColor" fill-rule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11M2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9"
+                    clip-rule="evenodd" />
             </svg>
         </template>
     </dj-input>
     <dj-input placeholder="Please Input" v-model="input2">
-        <template #suffix>
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36">
-                <path fill="#DE2910"
-                    d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z" />
-                <path fill="#FFDE02"
-                    d="M11.136 8.977l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zm4.665 2.941l-.356.735l.566.59l-.809-.112l-.386.721l-.144-.805l-.805-.144l.721-.386l-.112-.809l.59.566zm-.957 3.779l.268.772l.817.017l-.651.493l.237.783l-.671-.467l-.671.467l.236-.783l-.651-.493l.817-.017zm-3.708 3.28l.736.356l.589-.566l-.111.81l.72.386l-.804.144l-.144.804l-.386-.72l-.81.111l.566-.589zM7 10.951l.929 2.671l2.826.058l-2.253 1.708l.819 2.706L7 16.479l-2.321 1.615l.819-2.706l-2.253-1.708l2.826-.058z" />
+        <template #prefix>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20">
+                <path fill="currentColor" fill-rule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11M2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9"
+                    clip-rule="evenodd" />
             </svg>
         </template>
     </dj-input>
@@ -349,14 +357,32 @@ const input1 = ref("");
 const input2 = ref("");
 </script>`.trim();
 
+    const CombinationCode = `
+<template>
+    <dj-input placeholder="Please Input" v-model="input" addon-before="https://" addon-after=".com" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+const input = ref("");
+</script>`.trim();
+
     const CssVariablesCode = `
---dj-input-padding
+--dj-input-padding-x
+--dj-input-padding-y
+--dj-input-addon-padding-x
+--dj-input-addon-padding-y
 --dj-input-color
 --dj-input-icon-color
+--dj-input-addon-color
 --dj-input-placeholder-color
 --dj-input-clear-color
+--dj-input-font-size
+--dj-input-font-weight
 --dj-input-height
 --dj-input-background-color
+--dj-input-addon-background-color
+--dj-input-border-width
 --dj-input-border-color
 --dj-input-focus-border-color
 --dj-input-border-radius
@@ -365,8 +391,9 @@ const input2 = ref("");
     return {
         FoundationCode,
         DisabledCode,
-        ClearCode,
+        ClearableCode,
         RecombinationCode,
+        CombinationCode,
         CssVariablesCode
     }
 }
@@ -705,10 +732,9 @@ const dialogValue = ref(false);
     const CustomHeaderCode = `
 <template>
     <dj-button @click="dialogValue = true">Open Dialog</dj-button>
-    <dj-dialog v-model="dialogValue">
+    <dj-dialog v-model="dialogValue" @confirm="dialogValue = false" @cancel="dialogValue = false">
         <template #header>
-            <dj-button color="#6c757d" plain @click="dialogValue = false">Closed</dj-button>
-            <dj-button color="#0d6efd" plain @click="dialogValue = false">Save Changes</dj-button>
+            <dj-input placeholder="Please Input" v-model="input" />
         </template>
         This is Dialog!
     </dj-dialog>
@@ -717,6 +743,7 @@ const dialogValue = ref(false);
 <script setup>
 import { ref } from "vue";
 const dialogValue = ref(false);
+const input = ref("");
 </script>`.trim();
 
     const FooterCode = `
@@ -739,7 +766,8 @@ const dialogValue = ref(false);
     const VerticalCenterCode = `
 <template>
     <dj-button @click="dialogValue = true">Open Dialog</dj-button>
-    <dj-dialog title="Dialog Title" v-model="dialogValue" :vertical-center="verticalCenter">
+    <dj-dialog title="Dialog Title" v-model="dialogValue" :vertical-center="verticalCenter"
+        @confirm="dialogValue = false" @cancel="dialogValue = false">
         This is Dialog!
     </dj-dialog>
 </template>
@@ -753,12 +781,9 @@ const verticalCenter = ref(true);
     const OverspreadCode = `
 <template>
     <dj-button @click="dialogValue = true">Open Dialog</dj-button>
-    <dj-dialog title="Dialog Title" v-model="dialogValue" :overspread="overspread">
+    <dj-dialog title="Dialog Title" v-model="dialogValue" :overspread="overspread" @confirm="dialogValue = false"
+         @cancel="dialogValue = false">
         <div style="height: 2000px;"></div>
-        <template #footer>
-            <dj-button color="#6c757d" plain @click="dialogOverspreadValue = false">Closed</dj-button>
-            <dj-button color="#0d6efd" plain @click="dialogOverspreadValue = false">Save Changes</dj-button>
-        </template>
     </dj-dialog>
 </template>
 
@@ -1001,7 +1026,7 @@ const remove = (index: number) => {
 /**
  * dj-scrollbar
  * Scrollbar 滚动条
- * @returns FoundationCode, HorizontalCode
+ * @returns FoundationCode, MaxHeightCode, HorizontalCode, CssVariablesCode
  */
 export const useDJScrollbar = () => {
     const FoundationCode = `
@@ -1015,11 +1040,11 @@ export const useDJScrollbar = () => {
 .dj-scrollbar-item {
     margin: 10px 0;
     height: 60px;
-    color: var(--t-text-color);
+    color: #3c3c43;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--t-card-background-color);
+    background-color: #f1f1f2;
     border-radius: 8px;
 }
 </style>`.trim();
@@ -1042,11 +1067,56 @@ export const useDJScrollbar = () => {
     margin: 0 10px;
     width: 120px;
     height: 60px;
-    color: var(--t-text-color);
+    color: #3c3c43;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--t-card-background-color);
+    background-color: #f1f1f2;
+    border-radius: 8px;
+}
+</style>`.trim();
+
+    const MaxHeightCode = `
+<template>
+    <div class="flex-box">
+        <dj-button @click="addItem">Add</dj-button>
+        <dj-button @click="deleteItem">Delete</dj-button>
+    </div>
+    <dj-scrollbar max-height="400px">
+        <p class="dj-scrollbar-item" v-for="item of count" :key="item">{{ item }}</p>
+    </dj-scrollbar>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(3);
+
+const addItem = () => {
+    count.value++;
+}
+
+const deleteItem = () => {
+    if (count.value > 0) {
+        count.value--;
+    }
+}
+</script>
+
+<style>
+.flex-box {
+  display: flex;
+  margin-top: 8px;
+}
+
+.dj-scrollbar-item {
+    margin: 10px 0;
+    height: 60px;
+    color: #3c3c43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f2;
     border-radius: 8px;
 }
 </style>`.trim();
@@ -1054,13 +1124,14 @@ export const useDJScrollbar = () => {
     const CssVariablesCode = `
 --dj-scrollbar-padding
 --dj-scrollbar-vertical-width
---dj-scrollbar-hover-vertical-width
 --dj-scrollbar-horizontal-height
---dj-scrollbar-hover-horizontal-height
 --dj-scrollbar-vertical-background-color
 --dj-scrollbar-horizontal-background-color
 --dj-scrollbar-vertical-thumb-background-color
 --dj-scrollbar-horizontal-thumb-background-color
+--dj-scrollbar-vertical-thumb-hover-background-color
+--dj-scrollbar-horizontal-thumb-hover-background-color
+--dj-scrollbar-border-width
 --dj-scrollbar-border-color
 --dj-scrollbar-border-radius
 --dj-scrollbar-vertical-transition
@@ -1073,6 +1144,54 @@ export const useDJScrollbar = () => {
     return {
         FoundationCode,
         HorizontalCode,
+        MaxHeightCode,
+        CssVariablesCode
+    }
+}
+
+/**
+ * dj-link
+ * Link 链接
+ * @returns FoundationCode, DisabledCode, CustomColorCode, CssVariablesCode
+ */
+export const useDJLink = () => {
+    const FoundationCode = `
+<template>
+    <dj-link href="#">Default Link</dj-link>
+    <dj-link target="_blank" href="https://github.com/J-django">Github Url</dj-link>
+</template>`.trim();
+
+    const DisabledCode = `
+<template>
+    <dj-link href="#" :disabled="disabled">Disabled Link</dj-link>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const disabled = ref(true);
+</script>`.trim();
+
+    const CustomColorCode = `
+<template>
+    <dj-link href="#" color="#6610f2">Custom Color</dj-link>
+    <dj-link href="#" color="#6610f2" :disabled="disabled">Disabled Custom Color</dj-link>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const disabled = ref(true);
+</script>`.trim();
+
+    const CssVariablesCode = `
+--dj-link-padding
+--dj-link-color
+--dj-link-font-size
+--dj-link-font-weight`.trim();
+
+    return {
+        FoundationCode,
+        DisabledCode,
+        CustomColorCode,
         CssVariablesCode
     }
 }

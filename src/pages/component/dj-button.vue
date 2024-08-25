@@ -4,7 +4,7 @@ import Thead from "@/components/table-thead.vue"
 import Tbody from "@/components/table-tbody.vue"
 import { useDJButtonCode } from '@/hooks'
 
-const { FoundationCode, DisabledCode, CustomColorCode, PlainCode, CssVariablesCode } = useDJButtonCode();
+const { FoundationCode, DisabledCode, CustomColorCode, PlainCode, GroupingCode, CssVariablesCode } = useDJButtonCode();
 </script>
 
 <template>
@@ -36,6 +36,14 @@ const { FoundationCode, DisabledCode, CustomColorCode, PlainCode, CssVariablesCo
             <dj-button color="#6610f2" plain disabled>Disabled Plain</dj-button>
         </div>
         <dj-code title="vue" lang="html" :code="PlainCode" />
+    </dj-example>
+    <dj-anchor level="2" text="分组 Grouping" id="Id_Button_Grouping" />
+    <dj-example>
+        <dj-button-group>
+            <dj-button color="#6610f2">Default</dj-button>
+            <dj-button>Default</dj-button>
+        </dj-button-group>
+        <dj-code title="vue" lang="html" :code="GroupingCode" />
     </dj-example>
     <dj-anchor level="2" text="Button API" id="Id_Button_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Button_Attributes" />

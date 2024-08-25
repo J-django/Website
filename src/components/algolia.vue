@@ -10,10 +10,10 @@ import '@docsearch/css';
 
 onMounted(() => {
     docsearch({
-        apiKey: '1ee70e9214d3ea21cc33afa934e4e57f',
-        indexName: 'dialin_tmp',
+        apiKey: '73c42228abb608cfd42eb92836a37e08',
+        indexName: 'dialin',
         container: '#docsearch',
-        appId: '8CEDQX2VWF',
+        appId: '41VQCFDI5L',
         insights: true,
     });
 })

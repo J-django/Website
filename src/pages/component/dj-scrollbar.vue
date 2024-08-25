@@ -7,7 +7,19 @@ import { useRoutePlugin, useDJScrollbar, } from '@/hooks'
 
 const { routeTitle } = useRoutePlugin();
 
-const { FoundationCode, HorizontalCode, CssVariablesCode } = useDJScrollbar();
+const { FoundationCode, HorizontalCode, MaxHeightCode, CssVariablesCode } = useDJScrollbar();
+
+const count = ref(3);
+
+const addItem = () => {
+    count.value++;
+}
+
+const deleteItem = () => {
+    if (count.value > 0) {
+        count.value--;
+    }
+}
 </script>
 
 <template>
@@ -27,6 +39,17 @@ const { FoundationCode, HorizontalCode, CssVariablesCode } = useDJScrollbar();
             </div>
         </dj-scrollbar>
         <dj-code :code="HorizontalCode" />
+    </dj-example>
+    <dj-anchor level="2" text="最大高度 max-Height" id="Id_Scrollbar_MaxHeight" />
+    <dj-example>
+        <div class="flex-box" style="margin-bottom: 8px;">
+            <dj-button @click="addItem">Add</dj-button>
+            <dj-button @click="deleteItem">Delete</dj-button>
+        </div>
+        <dj-scrollbar max-height="400px">
+            <p class="dj-scrollbar-item" v-for="item of count" :key="item">{{ item }}</p>
+        </dj-scrollbar>
+        <dj-code :code="MaxHeightCode" />
     </dj-example>
     <dj-anchor level="2" text="Accordion API" id="Id_Scrollbar_API" />
     <dj-anchor level="3" text="属性 Attributes" id="Id_Scrollbar_Attributes" />

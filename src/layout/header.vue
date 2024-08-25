@@ -857,6 +857,7 @@ onUnmounted(() => {
                     width: var(--sidebar-width);
                     height: var(--header-height);
                     background-color: transparent;
+                    pointer-events: none;
 
                     .navBarTitle {
                         .title {
@@ -870,6 +871,7 @@ onUnmounted(() => {
                     z-index: 1;
                     padding-right: 32px;
                     padding-left: var(--sidebar-width);
+                    pointer-events: none;
 
                     .curtain {
                         position: absolute;
